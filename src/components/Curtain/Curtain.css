@@ -1,0 +1,34 @@
+.curtain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    z-index: 9999;
+  }
+  
+  .curtain-panel {
+    background-color: #308A69; /* اللون المطلوب */
+    width: 50%;
+    height: 100%;
+    transition: transform 1s ease;
+  }
+  
+  .left-panel {
+    transform: translateX(0); /* الوضع الافتراضي */
+  }
+  
+  .right-panel {
+    transform: translateX(0); /* الوضع الافتراضي */
+  }
+  
+  .curtain.open .left-panel {
+    transform: translateX(100%); /* تحريك اللوح الأيسر للخارج */
+  }
+  
+  .curtain.open .right-panel {
+    transform: translateX(-100%); /* تحريك اللوح الأيمن للخارج */
+  }
+  

@@ -1,0 +1,154 @@
+/* .Dash{
+    padding: 20px !important;
+}
+.Dash form {
+    background-color: #f5fff0;
+    padding: 20px;
+    border-radius: 8px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+.Dash label {
+    color: #2e8b57;
+    font-weight: bold;
+}
+.Dash input[type="text"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #c0e4c3;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.Dash button {
+    background-color: #2e8b57;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+.Dash button:hover {
+    background-color: #3cb371;
+}
+.Dash ,.comment-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+.Dash ,.comment-box  {
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+} */
+
+
+
+/* Dashboard.css */
+
+
+.sidebar {
+    width: 250px;
+    background-color: #4CAF50;
+    padding: 20px;
+    color: white;
+    flex-shrink: 0;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #45a049;
+}
+
+.content {
+    margin-left: 270px;
+    padding: 20px;
+    width: calc(100% - 270px);
+}
+
+.content h2 {
+    color: #4CAF50;
+}
+
+.change-credentials, .form-section, .comments-section {
+    background-color: #e0f7e0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment-box {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment-box p {
+    margin: 5px 0;
+}
+
+.comment-box button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.comment-box button:hover {
+    background-color: #d32f2f;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 50%;
+        height: auto;
+        position: relative;
+    }
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+#change-credentials input{
+    padding: 8px;
+    margin: 10px;
+}
+#change-credentials button ,.logout ,.button_add_comment{
+    padding:8px ;
+    border-radius: 10px;
+    background-color: #45a049;
+    color: white;
+    border: none;
+}

@@ -1,0 +1,62 @@
+.icons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+.icons p svg{
+    font-size: 35px;
+}
+.textIcon{
+    width: 90%;
+    padding-top: 20px;
+}
+.icons p:nth-child(1){
+    color: yellow;
+}
+.icons p:nth-child(2){
+    color: black;
+}
+.icons p:nth-child(3){
+    color: rgb(6, 95, 136);
+}
+.icons p:nth-child(4){
+    color: green;
+}
+.icons p:nth-child(5){
+    color: red;
+}
+.icons p:nth-child(6){
+    color: rgb(6, 95, 136);
+}
+.icons p:nth-child(7){
+    color: rgb(71, 71, 197);
+}
+.category{
+    text-align: start;
+}
+.category h1{
+    font-weight: bold;
+    font-size: 45px;
+}
+.category h3{
+    font-weight: bold;
+    color: rgb(85, 45, 205);
+}
+.category p{
+    padding-top: 20px;
+    position: relative;
+    padding-right: 20px;
+    width: 90%;
+}
+.category p::after{
+    content: '';
+    width: 3px;
+    bottom: 0;
+    right: 0px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+}

@@ -1,0 +1,57 @@
+.TitleAbout::after{
+    content: "";
+    width: 80px;
+    height: 4px;
+    top: 50px;
+    right: 46.5%;
+    border-radius: 50px;
+    background-color: blue;
+    position: absolute;
+}
+.options ul{
+    margin-top: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+.Howregister p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    opacity: 0.9;
+    text-align: start;
+}
+.Howregister ul li ,.Registertrack ul li{
+    line-height: 2;
+    text-align: start;
+    font-size: 15px;
+    opacity: 0.9;
+}
+.Howregister ul li svg ,.Registertrack ul li svg{
+    margin-left: 10px;
+    color: #FFD02C
+}
+.Howregister h4 ,.Registertrack h4 ,.TitleAbout{
+    position: relative;
+}
+.Registertrack h4::after{
+    content: "";
+    width: 80px;
+    height: 4px;
+    bottom: -15px;
+    right: 30%;
+    border-radius: 50px;
+    background-color: blue;
+    position: absolute;
+}
+.Howregister h4::after{
+    content: "";
+    width: 80px;
+    height: 4px;
+    bottom: -15px;
+    right: 30%;
+    border-radius: 50px;
+    background-color: blue;
+    position: absolute;
+}

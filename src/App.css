@@ -1,0 +1,141 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap'); */
+@import url("https://www.fontstatic.com/f=sky-bold,sky");
+
+
+
+* {
+  font-family: 'sky';
+  font-weight: bold;
+  font-style: normal;
+  direction: rtl;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background: linear-gradient(to right, #f9f9f9, #e1f2e7);
+}
+.academy ul li::marker{
+  color: transparent;
+}
+.Loading {
+  width: 6vh;
+  position: absolute;
+  top: 50%;
+  left: 45.5%;
+  transform: translate(-50%, -50%);
+  animation-name: Loading;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes Loading {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+:root {
+  --main--color: white ;
+  --color--red1: #4ea550;
+  --color--red: #000000;
+  --color--green:#308A69;
+  --dark_green: #245056;
+    --light--green: #267d3d;
+    --green_blue: #00363B;
+    --light_gray: #F6F6F6;
+    --dark_gray: #555;
+    --black: #000;
+}
+
+ /* .left {
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateX(-2%);
+  transition: all 1s;
+}
+.right {
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateX(2%);
+  transition: all 1s;
+}
+.hidden {
+  opacity: 0;
+  filter: blur(4px);
+  transition: all 1s;
+}
+.top {
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(30%);
+  transition: all 1s;
+}
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}  */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color--red1);
+  cursor: pointer;
+}
+/* ::-webkit-scrollbar-thumb:hover {
+  background-color: #eeb50998;
+} */
+
+.social {
+  z-index: 10;
+  position: fixed;
+  bottom: 8vh;
+  right: 14px;
+  border: none;
+  color: white;
+  transition: 0.9s;
+}
+.social ul {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.social ul li {
+  margin-top: 6px;
+  padding: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: white;
+}
+.social ul li svg {
+  color: white;
+  font-size: 40px;
+  margin: auto;
+}
+
+.whatsapp {
+  background-color: rgb(10, 177, 10);
+  transition-delay: 150ms;
+}
+.email {
+  background-color: palevioletred;
+  transition-delay: 100ms;
+}
+.line {
+  background-color: green;
+  transition-delay: 50ms;
+}
+.click {
+  background-color: #ca4555;
+}

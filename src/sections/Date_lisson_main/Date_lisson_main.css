@@ -1,0 +1,33 @@
+.title_level_one h1 ,.title_level_two h1{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+.title_level_one p ,.title_level_two p{
+    line-height: 2;
+    margin-bottom: 40px;
+}
+.content_level_one ul h3 ,.content_level_two ul h3{
+        color: rgb(3, 150, 3);
+        font-size: 22px;
+        font-weight: bold;
+}
+.content_level_one ul,.content_level_two ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 0;
+}
+.content_level_one ul li,.content_level_two ul li{
+    margin: auto ;
+    width: 20rem;
+    border: 2px solid rgb(3, 150, 3);
+    height: 28rem;
+    padding: 20px;
+    color: black;
+    line-height: 2;
+    border-radius: 10px;
+    font-weight: 500;
+}

@@ -1,0 +1,23 @@
+.Our_Teachers h3{
+    color: var(--color--green);
+    font-weight: bold;
+    text-align: center;
+}
+.Our_Teachers ul{
+    padding-left: 0;
+}
+.Our_Teachers ul li h5{
+    font-weight: bold;
+    position: relative;
+    color: var(--color--red1);
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.Our_Teachers ul li h5::before{
+    content: "-";
+    position: absolute;
+    font-size: 20px;
+    right: -12px;
+
+}

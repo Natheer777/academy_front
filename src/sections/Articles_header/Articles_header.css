@@ -1,0 +1,9 @@
+.img_Articles{
+    background-image: url('../../assets/Image/المقالات-.png');
+    position: relative;
+    padding: 120px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: #f1fffb;
+}

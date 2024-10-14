@@ -1,0 +1,58 @@
+.elementskit-accordion .elementskit-card-header {
+  background-color: #e8f5e9; /* Light green background */
+  border: 1px solid #a5d6a7; /* Slightly darker green border */
+  padding: 15px;
+  cursor: pointer;
+  color: #1b5e20; /* Dark green text */
+}
+
+.elementskit-accordion .elementskit-card-header:hover {
+  background-color: #c8e6c9; /* Slightly darker on hover */
+}
+
+.elementskit-accordion .elementskit-card-body {
+  padding: 15px;
+  border: 1px solid #a5d6a7;
+  background-color: #f1f8e9; /* Light green content background */
+  color: #2e7d32; /* Darker green text for content */
+}
+
+/* Button styles */
+.ekit-double-btn {
+  background-color: #66bb6a; /* Main green button background */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.ekit-double-btn:hover {
+  background-color: #4caf50; /* Darker green on hover */
+}
+
+.ekit-double-btn i {
+  margin-right: 5px;
+}
+
+/* Active accordion icon styles */
+.ekit_accordion_icon_group .icon-right.icon-up-arrow {
+  transform: rotate(180deg); /* Rotate icon when active */
+}
+
+/* Accordion title styles */
+.ekit-heading--title {
+  color: #1b5e20; /* Dark green title color */
+  margin-bottom: 20px;
+}
+
+/* General wrapper padding */
+.elementor-widget-wrap {
+  padding: 20px;
+}
+.ekit-accordion-title{
+  color: black;
+}

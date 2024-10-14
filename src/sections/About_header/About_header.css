@@ -1,0 +1,23 @@
+.img{
+    background-image: url(../../assets/imgheader/1920-1.png);
+    padding: 120px 0;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: #f1fffb;
+}
+.detailsHeader{
+    /* width: 100%; */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.378);
+    color: white;
+}
+.detailsHeader h1{
+    font-size: 50px;
+    padding-top: 20px;
+}
+.detailsHeader p{
+    font-size: 20px;
+    padding-bottom: 20px;
+}

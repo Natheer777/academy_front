@@ -1,0 +1,13 @@
+.About_login h1{
+    position: relative;
+}
+.About_login h1::after{
+        content: "";
+        width: 80px;
+        height: 4px;
+        bottom: -15px;
+        right: 46%;
+        border-radius: 50px;
+        background-color: blue;
+        position: absolute;
+}

@@ -1,0 +1,65 @@
+.Date_lisson_Header ul li{
+    list-style:inside;
+}
+.title_Date_lisson_Header{
+    color: var(--color--green);
+    text-align: center;
+    font-size: 25px;
+}
+.levels{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.levels ul{
+    width: 21rem;
+    border-radius: 20px;
+    padding: 10px;
+    border: 2px rgb(3, 150, 3) solid;
+    height: 33rem;
+}
+.levels ul h3{
+    color: var(--color--red1);
+    margin-bottom: 20px;
+}
+.levels ul li{
+    font-size: 15px;
+    line-height: 2.5;
+}
+.levels ul li::marker{
+    color: var(--color--red1);
+}
+.levels ul p{
+    font-size: 14px;
+    line-height: 2;
+}
+.money_lisson h3{
+    color: var(--color--red1);
+    font-size: 30px;
+}
+.money_lisson p{
+    margin-top: 20px;
+    font-size: 18px;
+}
+.money_lisson ul li::marker{
+    color: var(--color--red1);
+}
+.money_lisson ul li{
+    line-height: 2.5;
+    font-size: 15px;
+    background-color: var(--color--green);
+    color: white;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 6px;
+    text-align: center;
+   
+}
+.money_lisson span{
+    color: red;
+}
+.money_lisson ul{
+  padding-left: 0;
+}

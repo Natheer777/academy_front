@@ -1,0 +1,13 @@
+.More_Services h3{
+    color: var(--color--red1);
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.More_Services ul li h5{
+    font-weight: bold;
+}
+.More_Services ul li p{
+    opacity: 0.9;
+    margin-top: 20px;
+}
