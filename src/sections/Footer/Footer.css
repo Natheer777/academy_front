@@ -68,7 +68,7 @@ footer {
   color: var(--black);
 }
 footer h1{
-  color: var(--dark_green);
+  color: var(--color--green);
 }
 .footerLogo img {
   width: 150px;

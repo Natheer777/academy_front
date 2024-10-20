@@ -152,3 +152,85 @@
     color: white;
     border: none;
 }
+
+/* تصميم الحاوية */
+.table-container {
+    /* margin: 20px; */
+    overflow-x: auto;  
+      scrollbar-width: thin;
+  }
+  
+  /* تصميم الجدول */
+  .responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .responsive-table th, .responsive-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  /* تصميم زر الحذف */
+  .delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
+  .delete-btn:hover {
+    background-color: darkred;
+  }
+  
+  /* جعل الجدول استجابي على الشاشات الصغيرة */
+  @media (max-width: 768px) {
+    .responsive-table thead {
+      display: none;
+    }
+  
+    .responsive-table tr {
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .responsive-table td {
+      display: block;
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+    }
+  
+    .responsive-table td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 45%;
+      padding-left: 15px;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+  
+  /* تحسين العرض على الهواتف */
+  @media (max-width: 480px) {
+    .responsive-table td {
+      padding-left: 40%;
+    }
+  
+    .responsive-table td:before {
+      width: 40%;
+      padding-left: 10px;
+    }
+  }
+  
+  @media screen and (max-width:768px) {
+    .sidebar{
+        width: 100%;
+    }
+  }

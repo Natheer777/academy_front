@@ -1,8 +1,11 @@
-.Register h3 {
-  font-weight: bold;
+.Register h2 {
   margin-top: 20px;
   margin-bottom: 20px;
-  color: var(--color--red1);
+  color: var(--color--green);
+}
+.Register p{
+  font-size: var(--sec--size);
+  line-height: 2;
 }
 .Register ul {
   display: flex;
@@ -13,16 +16,21 @@
   padding-left: 0;
 }
 .Register ul li {
-  background-color: var(--color--green);
-  color: white;
+  border: 2px solid var(--color--green);
   padding: 10px;
   border-radius: 20px;
   width: 20rem;
-  height: 10rem;
+  height: 16rem;
+}
+
+.Register ul li p{
+  font-size: var(--sec--size);
+
 }
 .step1,.step2,.step3,.step4,.step5{
     position: relative;
 }
+
 
 .step1::before {
   right: -25px;

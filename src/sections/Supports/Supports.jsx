@@ -7,7 +7,7 @@ export default function Supports() {
         <div className="row  mt-5 mb-5">
           <div className="col-lg-6">
  
-            <h3>الدعم الفني:</h3>
+            <h2>الدعم الفني:</h2>
             <p>
               يتوفر لدينا فريق دعم فني متواجد على مدار الساعة لمساعدتك في حال
               واجهت أي مشاكل فنية أثناء الدراسة أو التسجيل.

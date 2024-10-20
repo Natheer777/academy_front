@@ -1,10 +1,10 @@
-
+import './Fees_material.css'
 export default function Fees_material() {
   return (
     <>
     <div className="container">
     <div className="money_lisson">
-          <h3 className="fw-bold mt-4">الرسوم:</h3>
+          <h2 className="fw-bold mt-4">الرسوم:</h2>
           <p>
             نعمل على توفير برامج تعليمية متنوعة تلبي احتياجات مختلف المستويات،
             مع مراعاة توفير حزم مرنة للطلاب. يمكنك اختيار الدفع لكل دورة أو

@@ -7,7 +7,7 @@ export default function More_Services() {
         <div className="row mt-5 mb-5">
           <div className="col-lg-6 mt-5">
             <ul>
-              <h3>خدمات إضافية:</h3>
+              <h2>خدمات إضافية:</h2>
               <li>
                 <h5>ورش عمل حول الثقافة اليابانية:</h5>
                 <p>

@@ -8,7 +8,7 @@ export default function Header() {
       <div className="container Header">
         <div className="academy pb-4 pt-4 mt-4 left">
         <div className="acadeny_logo mb-4 ">
-        <h2 className=" left">أكاديمية اللغة اليابانية</h2>
+        <h2 className=" left fw-bold">أكاديمية اللغة اليابانية</h2>
 
           {/* <img src={Logo} alt="" /> */}
         </div>

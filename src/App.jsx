@@ -17,7 +17,9 @@ import {
   More_services,
   Support,
   Fees,
-  Login_users
+  Login_users,
+  Register_accounts,
+
 } from "./pages/index";
 
 // import {VerifyAccount , Register_account} from "./sections/index";
@@ -29,7 +31,6 @@ import Logo from "../src/assets/Logo/الشعار-2-png.png";
 import { FaLine } from "react-icons/fa";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
-import {Register_account } from './sections/index'
 
 function App() {
   /////////////////////////////////////////////
@@ -128,23 +129,23 @@ function App() {
           ) : (
             <Router>
               <Routes>
-                <Route path="/academy/" element={<Home />} />
-                <Route path="/academy/About" element={<About />} />
-                <Route path="/academy/Date" element={<Date_lisson />} />
-                <Route path="/academy/Questions" element={<Questions />} />
-                <Route path="/academy/Login" element={<Login />} />
-                <Route path="/academy/Articles" element={<Articles />} />
-                <Route path="/academy/Level_division" element={<Level_division />} />
-                <Route path="/academy/Register" element={<Register />} />
-                <Route path="/academy/Teachers" element={<Teachers />} />
-                <Route path="/academy/Study_materials" element={<Study_materials />} />
-                <Route path="/academy/More_services" element={<More_services />} />
-                <Route path="/academy/Support" element={<Support />} />
-                <Route path="/academy/Fees" element={<Fees />} />
-                <Route path="/academy/Register_account" element={<Register_account />} />
-                <Route path="/academy/Login_users" element={<Login_users />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/About" element={<About />} />
+                <Route path="/Date" element={<Date_lisson />} />
+                <Route path="/Questions" element={<Questions />} />
+                <Route path="/Login" element={<Login />} />
+                <Route path="/Articles" element={<Articles />} />
+                <Route path="/Level_division" element={<Level_division />} />
+                <Route path="/Register" element={<Register />} />
+                <Route path="/Teachers" element={<Teachers />} />
+                <Route path="/Study_materials" element={<Study_materials />} />
+                <Route path="/More_services" element={<More_services />} />
+                <Route path="/Support" element={<Support />} />
+                <Route path="/Fees" element={<Fees />} />
+                <Route path="/Register_account" element={<Register_accounts />} />
+                <Route path="/Login_users" element={<Login_users />} />
                 <Route
-                  path="/academy/Dash"
+                  path="/Dash"
                   element={
                     <ProtectedRoute isAuthenticated={isAuthenticated}>
                       <Dash />

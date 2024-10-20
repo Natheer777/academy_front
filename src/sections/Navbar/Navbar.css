@@ -1,6 +1,5 @@
- .navbar-brand img{
-    width: 11vh;
-}
+
+
     /*
 .container-fluid{
     background-color: var(--main--color);
@@ -76,6 +75,11 @@ justify-content: center;
     color: #b38628;
     border-radius: 50px;
 } */
+.navbar-brand img{
+    width: 5rem;
+    margin-left: 8px;
+}
+
 .item1{
     transition-delay: 100ms;
 }
@@ -103,12 +107,21 @@ justify-content: center;
 .item9{
     transition-delay: 900ms;
 }
+.navbar{
+    flex-direction: row-reverse;
+}
+
+.navbar .buttons{
+    flex-direction: row-reverse;
+}
 .navbar ul li a svg{
     margin-right: 10px;
     margin-left: 10px;
     color: var(--color--green);
 }
 .navbar ul li a{
+    font-weight: bold;
+    font-size: var(--sec--size);
     color: var(--green_blue);
 }
 .navbar-collapse ,.collapse ,.show{
@@ -119,20 +132,24 @@ justify-content: center;
 .navbar button{
     justify-content: end;
 }
+
 .register_nav{
     background-color: var(--color--green);
     border: none;
     padding: 10px;
     border-radius: 20px;
     color: #ffffff;
-    width: 20vh;
-    margin-right: 10px;
+    width: 24vh;
+    font-size: 15px;
+    font-weight: bold;
 }
 .login_nav{
     border: none;
+    font-weight: bold;
     padding: 10px;
-    width: 20vh;
+    width: 24vh;
     border-radius: 20px;
+    font-size: 15px;
     color: white;
     color: var(--color--green);
     border: 2px solid var(--color--green);
@@ -141,18 +158,79 @@ justify-content: center;
     display: none;
 }
 .navbar-toggler{
-    margin-left: 10px;
+    margin-right: 8px;
+
 }
-.dropdown-menu li{
+.dropdown-menu a{
     text-align: center;
     border-bottom: 1px solid green;
-    
 }
+
 @media screen and (max-width: 990px) {
+    .collapse{
+        flex-direction: column-reverse !important;
+        display: flex;
+        align-items: start;
+    }
+    
     .navbar-collapse li{
         margin-bottom: 6px;
     }
-    .buttons{
+
+}
+
+@media screen and (min-width:990px) {
+    .buttons_mobile{
+        display: none;
+    }
+    .buttons_pc{
+        display: block;
+    }
+    .register_nav{
         margin-top: 10px;
+    }
+}
+@media screen and (max-width:1200px) {
+    .buttons_mobile ,.buttons{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .buttons_pc{
+        display: none;
+    }
+
+    .register_nav{
+        margin-top: 0;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .group{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .group_1 ,.group_2{
+        display: inline-flex;
+    }
+
+}
+@media screen and (max-width:768px){
+    .login_nav{
+        font-size: 12px;
+        width: 15vh;
+    }
+    .register_nav{
+        font-size: 12px;
+        width: 15vh;
+    }
+    .navbar-brand{
+        margin: 0;
+    }
+    .navbar-brand img{
+        width: 4rem;
     }
 }

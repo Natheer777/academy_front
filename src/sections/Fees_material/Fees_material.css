@@ -1,0 +1,30 @@
+
+.money_lisson h2{
+    color: var(--color--green);
+}
+.money_lisson p{
+    margin-top: 20px;
+    font-size: var(--sec--size);
+    text-align: justify;
+    line-height: 2;
+}
+.money_lisson ul li::marker{
+    color: var(--color--red1);
+}
+.money_lisson ul li{
+    line-height: 2.5;
+    font-size: var(--sec--size);
+    background-color: var(--color--green);
+    color: white;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 6px;
+    text-align: center;
+   
+}
+.money_lisson span{
+    color: red;
+}
+.money_lisson ul{
+  padding-left: 0;
+}

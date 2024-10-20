@@ -1,13 +1,17 @@
-.More_Services h3{
-    color: var(--color--red1);
+.More_Services h2{
+    color: var(--color--green);
     font-weight: bold;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+.More_Services ul{
+    list-style: none;
 }
 .More_Services ul li h5{
-    font-weight: bold;
+    font-size: var(--sec--size);
 }
 .More_Services ul li p{
-    opacity: 0.9;
+    line-height: 2;
+    font-size: var(--sec--size);
     margin-top: 20px;
 }

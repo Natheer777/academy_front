@@ -31,7 +31,7 @@ export default function Login_user() {
           // تخزين التوكن في localStorage
           localStorage.setItem('token', data.token);
           console.log('تم تخزين التوكن:', data.token); // طباعة التوكن في الكونسول
-          navigate('/academy/');
+          navigate('/');
         }
       })
       .catch(error => {

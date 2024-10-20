@@ -1,17 +1,16 @@
 .Our_Study_materials ul {
     padding-left: 0;
 }
-.Our_Study_materials h3{
+.Our_Study_materials h2{
     color: var(--color--green);
     margin-bottom: 20px;
-    font-weight: bold;
 }
 .Our_Study_materials ul li{
-    color: var( --dark_green);
     margin-top: 20px;
     padding: 10px;
     border-radius: 10px;
-    font-size: 20px;
-    list-style:inside;
-
+    font-size: var(--sec--size);
+    /* list-style:none; */
+    text-align: justify;
+    line-height: 2;
 }

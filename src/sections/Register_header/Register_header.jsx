@@ -3,27 +3,27 @@ export default function Register_header() {
   return (
     <>
     <div className="container Register">
-        <h3>طريقة التسجيل:</h3>
+        <h2 className='fw-bold'>طريقة التسجيل:</h2>
         <p>عملية التسجيل في أكاديميتنا بسيطة ومرنة، تشمل الخطوات التالية:</p>
         <ul className='mt-5'>
-            <li className='step1 left item1'>
-                <h4>إنشاء حساب مجاني:</h4>
+            <li className='step1 left item1 academy'>
+                <h2>إنشاء حساب مجاني:</h2>
                 <p>قم بتعبئة نموذج التسجيل باستخدام بريدك الإلكتروني أو حسابات التواصل الاجتماعي. بعد ذلك، ستتلقى رسالة تأكيد بالبريد الإلكتروني.</p>
             </li>
-            <li className='step2 top item2'>
-                <h4> اختبار تحديد المستوى:</h4>
+            <li className='step2 top item2 academy'>
+                <h2> اختبار تحديد المستوى:</h2>
                 <p>خذ اختبار تحديد المستوى المجاني عبر الإنترنت لتحديد مستوى دراستك المناسب.</p>
             </li>
-            <li className='step3 right item3'>
-                <h4> اختيار الدورة المناسبة:</h4>
+            <li className='step3 right item3 academy'>
+                <h2> اختيار الدورة المناسبة:</h2>
                 <p>بناءً على نتائج اختبار تحديد المستوى، يمكنك اختيار الدورة التعليمية الأنسب وبدء التسجيل.</p>
             </li>
-            <li className='step4 left item4'>
-                <h4> إتمام عملية الدفع:</h4>
+            <li className='step4 left item4 academy'>
+                <h2> إتمام عملية الدفع:</h2>
                 <p>أتمم عملية الدفع من خلال وسائل الدفع الإلكترونية المتاحة (بطاقات ائتمان، PayPal، تحويل بنكي).</p>
             </li>
-            <li className='step5 right item5'>
-                <h4> الوصول إلى الدروس:</h4>
+            <li className='step5 right item5 academy'>
+                <h2> الوصول إلى الدروس:</h2>
                 <p>بعد الدفع، ستحصل على وصول فوري إلى منصة الدروس حيث يمكنك البدء في التعلم على الفور.</p>
             </li>
 

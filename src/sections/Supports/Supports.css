@@ -1,6 +1,11 @@
-.Supports h3{
-    color: var(--color--red1);
+.Supports h2{
+    color: var(--color--green);
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+.Supports p{
+    font-size: var(--sec--size);
+    line-height: 2;
+    text-align: justify;
 }
