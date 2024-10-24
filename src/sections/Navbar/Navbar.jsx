@@ -5,7 +5,7 @@ import { FaHome } from "react-icons/fa";
 import { useEffect, useState } from "react";
 // import { IoPerson } from "react-icons/io5";
 // import { GrServices } from "react-icons/gr";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { MdLibraryBooks } from "react-icons/md";
 import { BsCashCoin } from "react-icons/bs";
 import { FaCashRegister } from "react-icons/fa6";
@@ -15,10 +15,11 @@ import { GrMoreVertical } from "react-icons/gr";
 import { FaMicrophoneLines } from "react-icons/fa6";
 
 import { HiChevronDoubleDown } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  const [user, setUser] = useState(null); // حالة لتخزين بيانات المستخدم
-  const [error, setError] = useState(null); // حالة لتخزين الأخطاء
+  const [user, setUser] = useState(null); 
+  const [error, setError] = useState(null);
   const fetchUserData = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -75,12 +76,12 @@ export default function Navbar() {
         <div className="buttons_mobile">
         {!user ? (
           <div className="buttons">
-              <Link to="Login_users">
+              <a href="Login_users">
                 <button className="login_nav">تسجيل الدخول</button>
-              </Link>
-              <Link to="/Register_account">
-                <button className="register_nav">سجل الان</button>
-              </Link>
+              </a>
+              <a href="/Register_account">
+                <button className="register_nav">سجل الآن</button>
+              </a>
             </div>
           ) : (
             // عرض معلومات المستخدم إذا كان مسجل الدخول
@@ -119,12 +120,12 @@ export default function Navbar() {
           <div className="buttons_pc">
         {!user ? (
           <div className="buttons">
-              <Link to="Login_users">
+              <a href="/Login_users">
                 <button className="login_nav">تسجيل الدخول</button>
-              </Link>
-              <Link to="/Register_account">
-                <button className="register_nav">سجل الان</button>
-              </Link>
+              </a>
+              <a href="/Register_account">
+                <button className="register_nav">سجل  الآن</button>
+              </a>
             </div>
           ) : (
             // عرض معلومات المستخدم إذا كان مسجل الدخول
@@ -153,69 +154,69 @@ export default function Navbar() {
             <div className="group_1">
 
             <li className="nav-item active item1 hidden">
-              <Link className="nav-link" to="/">
+              <a className="nav-a" href="/">
                 <FaHome />
                 الصفحة الرئيسية
                 <span className="sr-only"></span>
-              </Link>
+              </a>
             </li>
             {/* <li className="nav-item item2 hidden">
-              <Link className="nav-link" to="/academy/about">
+              <a className="nav-a" href="/academy/about">
                 <IoPerson /> من نحن ؟
-              </Link>
+              </a>
             </li> */}
             {/* <li className="nav-item item3 hidden">
-              <Link className="nav-link" to="/academy/Date">
+              <a className="nav-a" href="/academy/Date">
                 <GrServices /> محتويات الدروس
-                </Link>
+                </a>
                 </li> */}
             <li className="nav-item item2 hidden">
-              <Link className="nav-link" to="/Level_division">
+              <a className="nav-a" href="#Level_division">
                 <MdLibraryBooks />
                 تقسيم المستويات
-              </Link>
+              </a>
             </li>
             <li className="nav-item item3 hidden">
-              <Link className="nav-link" to="/Fees">
+              <a className="nav-a" href="#Fees">
                 <BsCashCoin />
                 الرسوم
-              </Link>
+              </a>
             </li>
             <li className="nav-item item4 hidden">
-              <Link className="nav-link dropdown-item" to="/Register">
+              <a className="nav-a dropdown-item" href="#Register">
                 <FaCashRegister />
                 طريقة التسجيل
-              </Link>
+              </a>
             </li>
                 </div>
 <div className="group_2">
 
             <li className="nav-item item4 hidden">
-              <Link className="nav-link dropdown-item" to="/Study_materials">
+              <a className="nav-a dropdown-item" href="#Study_materials">
                 <FaBook />
                 المواد الدراسية
-              </Link>
+              </a>
             </li>
             <li className="nav-item item4 hidden">
-              <Link className="nav-link dropdown-item" to="/Teachers">
+              <a className="nav-a dropdown-item" href="#Teachers">
                 <FaUserGroup />
                 التعريف بالأساتذة
-              </Link>
+              </a>
             </li>
             <li className="nav-item item4 hidden">
-              <Link className="nav-link dropdown-item" to="/More_services">
+              <a className="nav-a dropdown-item" href="#More_services">
                 <GrMoreVertical />
                 خدمات إضافية
-              </Link>
+              </a>
               </li>
             <li className="nav-item item4 hidden">
-              <Link className="nav-link dropdown-item" to="/Support">
+              <a className="nav-a dropdown-item" href="#Support">
               <FaMicrophoneLines />
                 الدعم الفني
-              </Link>
+              </a>
             </li>
               <li>
-              <Link className="nav-link dropdown-item" to="/Login">
+              <Link className="nav-a dropdown-item" to="/Login">
                 <FaCashRegister />
                 لوحة التحكم
               </Link>
@@ -225,9 +226,9 @@ export default function Navbar() {
             </div>
             {/* <li className="nav-item dropdown">
               <a
-              className="nav-link dropdown-toggle"
+              className="nav-a dropdown-toggle"
                 href="#"
-                id="navbarDropdownMenuLink"
+                id="navbarDropdownMenua"
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
@@ -236,33 +237,33 @@ export default function Navbar() {
               </a>
               <div
                 className="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
+                aria-labelledby="navbarDropdownMenua"
               >
                 <div className="nav-item item4 hidden">
-                  <Link
-                    className="nav-link dropdown-item"
-                    to="/Study_materials"
+                  <a
+                    className="nav-a dropdown-item"
+                    href="/Study_materials"
                   >
                     المواد الدراسية
-                  </Link>
+                  </a>
                 </div>
                 <div className="nav-item item4 hidden">
-                  <Link className="nav-link dropdown-item" to="/Teachers">
+                  <a className="nav-a dropdown-item" href="/Teachers">
                     التعريف بالأساتذة
-                  </Link>
+                  </a>
                 </div>
                 <div className="nav-item item4 hidden">
-                  <Link className="nav-link dropdown-item" to="/More_services">
+                  <a className="nav-a dropdown-item" href="/More_services">
                     خدمات إاضافية
-                  </Link>
-                  <Link className="nav-link dropdown-item" to="/Login">
+                  </a>
+                  <a className="nav-a dropdown-item" href="/Login">
                     لوحة التحكم
-                  </Link>
+                  </a>
                 </div>
                 <div className="nav-item item4 hidden">
-                  <Link className="nav-link dropdown-item" to="/Support">
+                  <a className="nav-a dropdown-item" href="/Support">
                     الدعم الفني
-                  </Link>
+                  </a>
                 </div>
               </div>
             </li> */}

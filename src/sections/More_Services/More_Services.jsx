@@ -3,8 +3,8 @@ import img_services from "../../assets/imgheader/OIP.jpg";
 export default function More_Services() {
   return (
     <>
-      <div className="container More_Services">
-        <div className="row mt-5 mb-5">
+      <div className="container More_Services" id="More_services">
+        <div className="row academy mt-5 mb-5">
           <div className="col-lg-6 mt-5">
             <ul>
               <h2>خدمات إضافية:</h2>

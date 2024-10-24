@@ -1,13 +1,27 @@
 import "./Date_lisson_Header.css";
+import img_lisson from "../../assets/Ai_img/_9bf252b1-f72c-4ab3-b8d4-f9dbd6ba947f.jpg";
 export default function Date_lisson_Header() {
   return (
     <>
       <div className="container Date_lisson_Header mt-5">
-        <h2 className="title_Date_lisson_Header fw-bold">تقسيم المستويات:</h2>
-        <div className="details  mt-3">
-          نحن نقدم مسارًا متدرجًا يتيح لك الانتقال بسلاسة من المبتدئ إلى
-          الاحتراف، مع مراعاة احتياجات كل طالب وتوفير برامج مصممة خصيصًا لتلبي
-          تطلعاتك اللغوية.
+        <div className="row academy">
+          <div className="col-lg-7">
+            <h2
+              className="title_Date_lisson_Header fw-bold"
+              id="Level_division"
+            >
+              تقسيم المستويات:
+            </h2>
+
+            <div className="details  mt-3">
+              نحن نقدم مسارًا متدرجًا يتيح لك الانتقال بسلاسة من المبتدئ إلى
+              الاحتراف، مع مراعاة احتياجات كل طالب وتوفير برامج مصممة خصيصًا
+              لتلبي تطلعاتك اللغوية.
+            </div>
+          </div>
+          <div className="col-lg-5">
+            <img className="w-100" src={img_lisson} alt=""/>
+          </div>
         </div>
         <div className="levels mt-5">
           <ul className="right">
@@ -83,7 +97,6 @@ export default function Date_lisson_Header() {
             <li> تحليل نصوص أدبية يابانية قديمة وحديثة.</li>
           </ul>
         </div>
-    
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 
 .login-container, .dashboard-container {
+    /* background-color: #e0f7e0; لون أخضر خفيف */
     background-color: #e0f7e0; /* لون أخضر خفيف */
     padding: 20px;
     border-radius: 8px;

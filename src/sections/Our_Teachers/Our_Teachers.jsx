@@ -1,9 +1,9 @@
 import "./Our_Teachers.css";
-// import Our_Teachers_img from '../../assets/imgheader/Teacher-Appreciation-blog-post-1024x576.png'
+import Our_Teachers_img from '../../assets/Ai_img/_d0260767-0c90-4923-9381-3f0fb9b206d2.jpg'
 export default function Our_Teachers() {
   return (
     <>
-      <div className="container mt-5 mb-5 Our_Teachers">
+      <div className="container mt-5 mb-5 Our_Teachers" id="Teachers">
         <h2 className="mb-4 fw-bold">التعريف بالأساتذة:</h2>
         <p>
           نفتخر في أكاديمية اللغة اليابانية بفريق متميز من المدرسين المعتمدين
@@ -12,7 +12,12 @@ export default function Our_Teachers() {
         </p>
         {/* <img className="w-75 d-flex  m-auto" src={Our_Teachers_img} alt="" /> */}
        <div className="academy">
-        
+        <div className="row">
+          <div className="col-lg-12">
+            <img className="w-100" src={Our_Teachers_img} alt="" />
+          </div>
+<div className="col-lg-12">
+
         <ul>
           <li>
             <h2>الأستاذة يوكو تاناكا:</h2>
@@ -39,6 +44,8 @@ export default function Our_Teachers() {
             </p>
           </li>
         </ul>
+</div>
+        </div>
        </div>
       </div>
     </>

@@ -76,8 +76,10 @@ justify-content: center;
     border-radius: 50px;
 } */
 .navbar-brand img{
-    width: 5rem;
+    width: 7rem;
     margin-left: 8px;
+    background-color: white;
+    border-radius: 60px;
 }
 
 .item1{
@@ -123,6 +125,7 @@ justify-content: center;
     font-weight: bold;
     font-size: var(--sec--size);
     color: var(--green_blue);
+    text-decoration: none;
 }
 .navbar-collapse ,.collapse ,.show{
     margin-left: 5px;
@@ -134,22 +137,36 @@ justify-content: center;
 }
 
 .register_nav{
-    background-color: var(--color--green);
+    background-color: white;
     border: none;
     padding: 10px;
     border-radius: 20px;
-    color: #ffffff;
+    color: var(--color--green);
     width: 24vh;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
+    border: 2px var(--color--green) solid;
+    /* transition: 0.4s; */
 }
+/* .register_nav:hover{
+    background-color: white;
+    color: var(--color--green);
+    border: 2px var(--color--green) solid;
+}
+.login_nav:hover{
+    background-color: var(--color--green);
+    color: white;
+    border: 2px var(--color--green) solid;
+} */
 .login_nav{
+    background-color: white;
+    transition: 0.4s;
     border: none;
     font-weight: bold;
     padding: 10px;
     width: 24vh;
     border-radius: 20px;
-    font-size: 15px;
+    font-size: 18px;
     color: white;
     color: var(--color--green);
     border: 2px solid var(--color--green);
@@ -193,7 +210,7 @@ justify-content: center;
 @media screen and (max-width:1200px) {
     .buttons_mobile ,.buttons{
         display: flex;
-        gap: 10px;
+        gap: 6px;
         align-items: center;
     }
     .buttons_pc{
@@ -213,6 +230,9 @@ justify-content: center;
         justify-content: center;
         text-align: center;
     }
+    .group_1{
+        margin-bottom: 15px;
+    }
     .group_1 ,.group_2{
         display: inline-flex;
     }
@@ -220,17 +240,17 @@ justify-content: center;
 }
 @media screen and (max-width:768px){
     .login_nav{
-        font-size: 12px;
-        width: 15vh;
+        font-size: 15px;
+        width: 7rem;
     }
     .register_nav{
-        font-size: 12px;
-        width: 15vh;
+        font-size: 15px;
+        width: 7rem;
     }
     .navbar-brand{
         margin: 0;
     }
     .navbar-brand img{
-        width: 4rem;
+        width: 4.2rem;
     }
 }

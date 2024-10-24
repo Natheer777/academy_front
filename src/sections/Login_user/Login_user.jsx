@@ -44,7 +44,7 @@ export default function Login_user() {
 
     return (
         <>
-            <form className="login-form container academy mt-5" onSubmit={handleSubmit}>
+            <form className="login-form academy   container  mt-5 mb-5" onSubmit={handleSubmit}>
                 <h1 className='fw-bold m-auto'>تسجيل الدخول</h1>
                 <div className='w-100'>
                     <label>البريد الإلكتروني:</label>

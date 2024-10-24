@@ -1,10 +1,10 @@
 import "./Supports.css";
-import img_Supports from "../../assets/imgheader/OIP (2).jpg";
+import img_Supports from "../../assets/Ai_img/_f43c3626-6c13-4a8d-82d5-697203e33105.jpg";
 export default function Supports() {
   return (
     <>
-      <div className="container Supports">
-        <div className="row  mt-5 mb-5">
+      <div className="container Supports" id="Support">
+        <div className="row academy  mt-5 mb-5">
           <div className="col-lg-6">
  
             <h2>الدعم الفني:</h2>
@@ -19,7 +19,7 @@ export default function Supports() {
           </div>
         <div className="col-lg-6">
     
-          <img className="w-75 m-auto d-flex" src={img_Supports} alt="" />
+          <img className="w-100 m-auto d-flex" src={img_Supports} alt="" />
         </div>
         </div>
       </div>

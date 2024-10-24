@@ -147,7 +147,7 @@ function App() {
                 <Route
                   path="/Dash"
                   element={
-                    <ProtectedRoute isAuthenticated={isAuthenticated}>
+                    <ProtectedRoute isAuthenticated={!!localStorage.getItem('auth')}>
                       <Dash />
                     </ProtectedRoute>
                   }

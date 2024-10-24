@@ -18,7 +18,13 @@
     border-radius: 20px;
     padding: 10px;
     border: 2px var(--color--green) solid;
-    height: 40rem
+    height: 48rem;
+    background: linear-gradient(-20deg, #f9f9f9, #e1f2e7);
+}
+@media (max-width: 768px){
+    .levels ul{
+        height: 40rem;
+    }
 }
 .levels ul h2{
     color: var(--color--green);

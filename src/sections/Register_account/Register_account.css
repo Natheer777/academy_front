@@ -58,7 +58,6 @@
   .register_half{
     background-color: var(--color--green);
     /* margin-left: 20px; */
-    margin-right: 4%;
   }
   .register_half img{
     border-radius: 20px;
@@ -68,7 +67,7 @@
   .register_half p{
     color: white;
     font-size: var(--sec--size);
-    padding: 10px;
+    padding: 30px;
   }
   .register_half div{
     margin-top: 15vh;

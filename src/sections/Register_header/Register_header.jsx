@@ -3,7 +3,7 @@ export default function Register_header() {
   return (
     <>
     <div className="container Register">
-        <h2 className='fw-bold'>طريقة التسجيل:</h2>
+        <h2 className='fw-bold' id='Register'>طريقة التسجيل:</h2>
         <p>عملية التسجيل في أكاديميتنا بسيطة ومرنة، تشمل الخطوات التالية:</p>
         <ul className='mt-5'>
             <li className='step1 left item1 academy'>

@@ -14,13 +14,11 @@
 .money_lisson ul li{
     line-height: 2.5;
     font-size: var(--sec--size);
-    background-color: var(--color--green);
-    color: white;
     margin-top: 10px;
     border-radius: 10px;
     padding: 6px;
     text-align: center;
-   
+   border: 2px var(--color--green) solid;
 }
 .money_lisson span{
     color: red;

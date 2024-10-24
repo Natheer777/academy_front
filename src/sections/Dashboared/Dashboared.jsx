@@ -1,157 +1,3 @@
-// import './Dashboared.css'
-// import { useState , useEffect } from 'react';
-// import { useNavigate } from 'react-router';
-// export default function Dashboared() {
-//     const [name, setName] = useState('');
-//     const [country, setCountry] = useState('');
-//     const [comment, setComment] = useState('');
-
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-//         fetch('https://academy-backend-pq91.onrender.com/addcomment', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify({ name, country, comment }),
-//         })
-//         .then(response => {
-//             if (response.ok) {
-//                 alert('تم إضافة التعليق بنجاح');
-//                 setName('');
-//                 setCountry('');
-//                 setComment('');
-//             } else {
-//                 alert('حدث خطأ أثناء محاولة إضافة التعليق');
-//             }
-//         })
-//         .catch(error => console.error('Error adding comment:', error));
-//     };
-//     ///////////////////////////////////
-//     const [comments, setComments] = useState([]);
-
-//     useEffect(() => {
-//         fetchComments();
-//     }, []);
-
-//     const fetchComments = () => {
-//         fetch('https://academy-backend-pq91.onrender.com/allcomments')
-//             .then(response => response.json())
-//             .then(data => setComments(data))
-//             .catch(error => console.error('Error fetching comments:', error));
-//     };
-
-//     const deleteComment = (id) => {
-//         fetch('https://academy-backend-pq91.onrender.com/deletecomment', {
-//             method: 'DELETE',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify({ id }),
-//         })
-//         .then(response => {
-//             if (response.ok) {
-//                 alert('تم حذف التعليق بنجاح');
-//                 fetchComments();
-//             } else {
-//                 alert('حدث خطأ أثناء محاولة حذف التعليق');
-//             }
-//         })
-//         .catch(error => console.error('Error deleting comment:', error));
-//     };
-
-// /////////////////////
-
-// const [newUsername, setNewUsername] = useState('');
-// const [newPassword, setNewPassword] = useState('');
-
-// const handleSave = () => {
-//     if (newUsername && newPassword) {
-//         localStorage.setItem('username', newUsername);
-//         localStorage.setItem('password', newPassword);
-//         alert('تم تغيير اسم المستخدم وكلمة المرور بنجاح');
-//     } else {
-//         alert('الرجاء إدخال اسم مستخدم وكلمة مرور جديدة');
-//     }
-// };
-// //////////////
-
-// const navigate = useNavigate();
-// const handleLogout = () => {
-//     localStorage.removeItem('auth');
-//     navigate('/academy/Login');
-// };
-
-//   return (
-//     <>
-//     <div className="container Dash">
-//     <div className="dashboard-container">
-//             <h2>لوحة التحكم</h2>
-//             <div className="change-credentials">
-//                 <h3>تغيير اسم المستخدم وكلمة المرور</h3>
-//                 <input
-//                     type="text"
-//                     placeholder="اسم المستخدم الجديد"
-//                     value={newUsername}
-//                     onChange={(e) => setNewUsername(e.target.value)}
-//                 />
-//                 <input
-//                     type="password"
-//                     placeholder="كلمة المرور الجديدة"
-//                     value={newPassword}
-//                     onChange={(e) => setNewPassword(e.target.value)}
-//                 />
-//                 <button onClick={handleSave}>حفظ التغييرات</button>
-//             </div>
-//         </div>
-//     <form onSubmit={handleSubmit}>
-//             <label htmlFor="name">Name</label>
-//             <input
-//                 type="text"
-//                 id="name"
-//                 name="name"
-//                 value={name}
-//                 onChange={(e) => setName(e.target.value)}
-//             /><br/><br/>
-
-//             <label htmlFor="country">Country</label>
-//             <input
-//                 type="text"
-//                 id="country"
-//                 name="country"
-//                 value={country}
-//                 onChange={(e) => setCountry(e.target.value)}
-//             /><br/><br/>
-
-//             <label htmlFor="comment">Comment</label>
-//             <textarea
-//                 name="comment"
-//                 id="comment"
-//                 value={comment}
-//                 onChange={(e) => setComment(e.target.value)}
-//             ></textarea><br/><br/>
-
-//             <button type="submit">أضف تعليق</button>
-//         </form>
-//         <hr />
-//         <div id="comments">
-//             <h1 className='fw-bold text-center'>جميع التعليقات</h1>
-//             {comments.map((comment) => (
-//                 <div key={comment.id} className="comment-box">
-//                     <p><strong>الاسم:</strong> {comment.name}</p>
-//                     <p><strong>الدولة:</strong> {comment.country}</p>
-//                     <p><strong>التعليق:</strong> {comment.comment}</p>
-//                     <button onClick={() => deleteComment(comment.id)}>حذف</button>
-//                 </div>
-//             ))}
-//         </div>
-//         <hr />
-//         <button onClick={handleLogout}>تسجيل الخروج</button>
-
-//     </div>
-//     </>
-//   )
-// }
 
 import "./Dashboared.css";
 import { useState, useEffect } from "react";
@@ -168,8 +14,10 @@ export default function Dashboard() {
 
   const navigate = useNavigate();
 
+  // Fetch comments on component mount
   useEffect(() => {
     fetchComments();
+    fetchUsers(); // Fetch users when the component mounts
   }, []);
 
   const handleSubmit = (e) => {
@@ -222,31 +70,44 @@ export default function Dashboard() {
   };
 
   const handleSave = () => {
+    const userId = 1; // افتراضًا أنك تعرف معرف المستخدم الحالي
+    const token = localStorage.getItem('token'); // الحصول على التوكن
+
     if (newUsername && newPassword) {
-      localStorage.setItem("username", newUsername);
-      localStorage.setItem("password", newPassword);
-      alert("تم تغيير اسم المستخدم وكلمة المرور بنجاح");
+      fetch("https://academy-backend-pq91.onrender.com/updatecredentials", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}` // إضافة التوكن إلى الهيدر
+        },
+        body: JSON.stringify({ newUsername, newPassword, userId }),
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert("تم تغيير اسم المستخدم وكلمة المرور بنجاح");
+          } else {
+            alert("حدث خطأ أثناء محاولة تغيير اسم المستخدم وكلمة المرور");
+          }
+        })
+        .catch((error) => console.error("Error updating credentials:", error));
     } else {
       alert("الرجاء إدخال اسم مستخدم وكلمة مرور جديدة");
     }
   };
 
-
-  ////////////////////////////
-
-  // جلب بيانات المستخدمين عند تحميل الصفحة
-  useEffect(() => {
+  // Fetch users when the component mounts
+  const fetchUsers = () => {
     fetch("https://academy-backend-pq91.onrender.com/allusers")
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);
       })
       .catch((error) => console.error("Error fetching users:", error));
-  }, []);
+  };
 
-  // دالة لحذف المستخدم
+  // Delete user function
   const deleteUser = (id) => {
-    fetch(`https://academy-backend-pq91.onrender.com/deleteusers`, {
+    fetch("https://academy-backend-pq91.onrender.com/deleteusers", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -255,7 +116,7 @@ export default function Dashboard() {
     })
       .then((response) => {
         if (response.ok) {
-          // تحديث حالة المستخدمين بعد الحذف
+          // Update user state after deletion
           setUsers(users.filter((user) => user.id !== id));
         } else {
           console.error("Failed to delete user");
@@ -263,6 +124,7 @@ export default function Dashboard() {
       })
       .catch((error) => console.error("Error deleting user:", error));
   };
+
   const handleLogout = () => {
     localStorage.removeItem("auth");
     navigate("/Login");
@@ -356,6 +218,7 @@ export default function Dashboard() {
             </div>
           ))}
         </div>
+
         <div className="table-container" id="view-users">
           <h2>جدول المستخدمين</h2>
           <table className="responsive-table">
@@ -386,10 +249,7 @@ export default function Dashboard() {
                   <td>{user.phone}</td>
                   <td>{user.email}</td>
                   <td>
-                    <button
-                      className="delete-btn"
-                      onClick={() => deleteUser(user.id)}
-                    >
+                    <button className="delete-btn" onClick={() => deleteUser(user.id)}>
                       🗑️
                     </button>
                   </td>

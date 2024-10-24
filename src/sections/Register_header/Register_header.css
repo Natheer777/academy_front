@@ -19,10 +19,15 @@
   border: 2px solid var(--color--green);
   padding: 10px;
   border-radius: 20px;
-  width: 20rem;
-  height: 16rem;
+  width: 23rem;
+  height: 19rem;
 }
-
+@media (max-width: 768px){
+  .Register ul li{
+    height: 16rem;
+    margin: 15px;
+  }
+}
 .Register ul li p{
   font-size: var(--sec--size);
 
@@ -36,7 +41,7 @@
   right: -25px;
   top: -15px;
   content: "1";
-  background-color: red;
+  background-color: var(--color--green);
   position: absolute;
   color: white;
   width: 40px;
@@ -49,7 +54,7 @@
   right: -25px;
   top: -15px;
   content: "2";
-  background-color: red;
+  background-color: var(--color--green);
   position: absolute;
   color: white;
   width: 40px;
@@ -62,7 +67,7 @@
   right: -25px;
   top: -15px;
   content: "3";
-  background-color: red;
+  background-color: var(--color--green);
   position: absolute;
   color: white;
   width: 40px;
@@ -75,7 +80,7 @@
   right: -25px;
   top: -15px;
   content: "4";
-  background-color: red;
+  background-color: var(--color--green);
   position: absolute;
   color: white;
   width: 40px;
@@ -88,7 +93,7 @@
   right: -25px;
   top: -15px;
   content: "5";
-  background-color: red;
+  background-color: var(--color--green);
   position: absolute;
   color: white;
   width: 40px;
