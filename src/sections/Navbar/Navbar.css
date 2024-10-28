@@ -121,6 +121,7 @@ justify-content: center;
     margin-left: 10px;
     color: var(--color--green);
 }
+
 .navbar ul li a{
     font-weight: bold;
     font-size: var(--sec--size);
@@ -253,4 +254,7 @@ justify-content: center;
     .navbar-brand img{
         width: 4.2rem;
     }
+}
+.user-name{
+    display: inline-block;
 }

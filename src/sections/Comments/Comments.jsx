@@ -94,7 +94,7 @@ export default function Comments() {
 
     return (
         <>
-            <div className="container">
+            <div className="container" id="Comments">
                 <h1 className="text-center fw-bold mt-5 mb-5">من آراء الأهالي الكرام في أكاديمية اللغة العربية</h1>
                 <Swiper
                     spaceBetween={30}

@@ -1,6 +1,30 @@
 import './Fees_material.css'
+import   {useNavigate}  from 'react-router'
 import img_fees from '../../assets/Ai_img/_73a4c5e5-2e9c-40f3-8260-f94d1fb42248.jpg'
 export default function Fees_material() {
+  // const navigate = useNavigate();
+
+  // const handleRedirect = () => {
+  //   const token = localStorage.getItem("token");
+    
+  //   if (token) {
+  //     // إذا كان المستخدم مسجل الدخول
+  //     navigate("/dashboard");
+  //   } else {
+  //     // إذا لم يكن مسجل الدخول
+  //     navigate("/login");
+  //   }
+  // };
+const navigate = useNavigate()
+
+const handleRedirect = () =>{
+  const token = localStorage.getItem("token")
+  if(token){
+    navigate('/Dash_users/:userId')
+  }else{
+    navigate('/Login_users')
+  }
+}
   return (
     <>
     <div className="container">
@@ -17,6 +41,16 @@ export default function Fees_material() {
 <div className="col-lg-5">
 <img className='w-100' src={img_fees} alt="" />
 </div>
+          <div className="How_to_pay">
+          <h2 className='fw-bold'>وسائل الدفع:</h2>
+          <div className="means">
+            <div className="mean_1" onClick={handleRedirect}></div>
+            <div className="mean_2" onClick={handleRedirect}></div>
+            <div className="mean_3" onClick={handleRedirect}></div>
+            <div className="mean_4" onClick={handleRedirect}></div>
+            <div className="mean_5" onClick={handleRedirect}></div>
+          </div>
+        </div>
         
       </div>
           <ul className='mt-5'>
@@ -45,6 +79,7 @@ export default function Fees_material() {
             التمارين التفاعلية، والدعم المباشر مع الأساتذة.
           </p>
         </div>
+
     </div>
     
     </>

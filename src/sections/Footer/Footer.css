@@ -1,9 +1,4 @@
-/* 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 .Contact img{
   width: 100%;
 }
@@ -18,13 +13,16 @@
   display: flex;
   flex-wrap: wrap;
 }
-ul {
+.footer ul{
+  line-height: 2;
   list-style: none;
 }
 .footer ul li {
-opacity: 0.8;
+  margin-bottom: 10px;
 }
-
+.list-unstyled{
+  text-align: start;
+}
 .logo_white {
   display: flex;
   justify-content: center;
@@ -33,44 +31,73 @@ opacity: 0.8;
   width: 10vh;
 }
 .Logo_Footer {
-  width: 20vh;
+  width: 10rem;
 }
 
 .adress {
+  text-align: start;
   font-size: 18px;
   margin-bottom: 10px;
   line-height: 2;
-  opacity: 0.8;
 }
 
-.list-unstyled{
-    display: flex;
-    justify-content:space-around;
-    gap: 25px;
-    margin-top: 35px;
-    flex-wrap: wrap;
-
+@media screen and (min-width:1200px) and (max-width:1440px){
+  .adress[lang="en"]{
+    font-size: 17px;
+    }  
 }
+
 svg{
   font-size: 20px;
 }
 a{
+text-decoration: none;
   color:antiquewhite;
-} */
-
-
-
-
-footer {
-  background-color: var(--light_gray);
-  padding: 50px 0;
-  text-align: right;
-  color: var(--black);
 }
-footer h1{
-  color: var(--color--green);
+.Ulfooter{
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.footerLogo img {
-  width: 150px;
+.Ulfooter a{
+  font-size: 15px;
 }
-
+.DesktopView{
+  position: relative;
+  background-color: var(--color--red1);
+}
+.DesktopView h5{
+  font-size: 12px;
+  color: white;
+position: absolute;
+left: 50%;
+top: 46%;
+transform: translate(-50%,-50%);
+}
+.DesktopView svg{
+  color: white;
+  font-size: 2rem;
+}
+.App button{
+  border: none;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+.rowFooter{
+  flex-direction: row-reverse;
+}
+.App button{
+  display: none;
+}
+@media screen and (min-width:5px) and (max-width:650px) {
+  .App button{
+    display: block;
+  }
+  .Ulfooter{
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

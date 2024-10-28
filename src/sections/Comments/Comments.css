@@ -40,7 +40,7 @@
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    /* background: #fff; */
   
     /* Center slide text vertically */
     display: flex;
@@ -55,10 +55,19 @@
     object-fit: cover;
   }
   .name{
-    color: rgb(100, 100, 255);
+    color: var( --dark_green);
+    font-size: var(--sec--size);
+    font-weight: bold;
   }
   .main_comment{
-    border-top: 4px rgb(100, 100, 255) solid;
-    opacity: 0.8;
+    border-top: 4px var(--color--green) solid;
     padding: 20px;
+    font-size: 20px;
+  }
+.swiper-button-next ,.swiper-button-disabled::after,
+.swiper-button-prev ,.swiper-button-disabled::before{
+  color: var(--color--green) !important;
+  }
+  .swiper-pagination-bullet ,.swiper-pagination-bullet-active{
+    background-color: var(--color--green) !important;
   }

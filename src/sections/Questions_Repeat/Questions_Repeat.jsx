@@ -1,6 +1,7 @@
-
 import './Questions_Repeat.css'
+import { GoChevronDown } from "react-icons/go";
 import  { useState } from 'react';
+
 
 const ArabicAcademy = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -10,14 +11,14 @@ const ArabicAcademy = () => {
   };
 
   return (
-    <div className="container elementor-column elementor-col-100 elementor-top-column elementor-element">
-      <div className="elementor-widget-wrap elementor-element-populated">
+    <div className="container elementor-column elementor-col-100 elementor-top-column elementor-element" >
+      <div className="elementor-widget-wrap elementor-element-populated" id="Questions">
         <div className="elementor-element elementor-widget elementor-widget-elementskit-heading">
           <div className="elementor-widget-container">
             <div className="ekit-wid-con">
               <div className="ekit-heading elementskit-section-title-wraper text_center">
                 <h2 className="ekit-heading--title elementskit-section-title fw-bold text-center">
-                  لماذا سأسجل أبنائي في أكاديمية اللغة العربية؟
+                  لماذا سأسجل أبنائي في أكاديمية اللغة اليابانية ؟
                 </h2>
               </div>
             </div>
@@ -38,7 +39,7 @@ const ArabicAcademy = () => {
                         aria-expanded={activeIndex === index}
                         aria-controls={`Collapse-${index}`}
                       >
-                        <span className="ekit-accordion-title">{item.title}</span>
+                        <span className="ekit-accordion-title"><span> {item.title} </span> <span><GoChevronDown /></span> </span>
                         <div className="ekit_accordion_icon_group">
                           <div className="ekit_accordion_normal_icon">
                             <i aria-hidden="true" className={`icon-right icon ${activeIndex === index ? 'icon-up-arrow' : 'icon-down-arrow1'}`}></i>
@@ -64,14 +65,7 @@ const ArabicAcademy = () => {
           <div className="elementor-widget-container">
             <div className="ekit-wid-con">
               <div className="ekit-element-align-wrapper">
-                <div className="ekit_double_button">
-                  <a className="ekit-double-btn ekit-double-btn-one" href="https://arabicacademy.online/the-courses/live-courses/">
-                    <i aria-hidden="true" className="tsicon tsicon-plus_fill"></i>الدورات
-                  </a>
-                  <a className="ekit-double-btn ekit-double-btn-two" href="https://arabicacademy.online/the-courses/live-courses/">
-                    سجل معنا<i aria-hidden="true" className="tsicon tsicon-user_plus"></i>
-                  </a>
-                </div>
+               
               </div>
             </div>
           </div>

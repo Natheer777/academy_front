@@ -1,14 +1,24 @@
 import "./Date_lisson_Header.css";
 import img_lisson from "../../assets/Ai_img/_9bf252b1-f72c-4ab3-b8d4-f9dbd6ba947f.jpg";
+import { useNavigate } from "react-router";
 export default function Date_lisson_Header() {
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      navigate("/Dash_users/:userId");
+    } else {
+      navigate("/Login_users");
+    }
+  };
   return (
     <>
-      <div className="container Date_lisson_Header mt-5">
+      <div className="container Date_lisson_Header mt-5" id="Level_division">
         <div className="row academy">
           <div className="col-lg-7">
             <h2
               className="title_Date_lisson_Header fw-bold"
-              id="Level_division"
             >
               تقسيم المستويات:
             </h2>
@@ -20,7 +30,7 @@ export default function Date_lisson_Header() {
             </div>
           </div>
           <div className="col-lg-5">
-            <img className="w-100" src={img_lisson} alt=""/>
+            <img className="w-100" src={img_lisson} alt="" />
           </div>
         </div>
         <div className="levels mt-5">
@@ -38,6 +48,7 @@ export default function Date_lisson_Header() {
             <li>تدريبات على النطق السليم.</li>
             <li>قواعد الجملة الأساسية (فعل، فاعل، مفعول).</li>
             <li>جلسات حوار بسيطة (مع تطبيقات عملية).</li>
+            <button onClick={handleRedirect}>اشترك الآن</button>
           </ul>
           <ul className="top">
             <h2 className="fw-bold mt-4">المستوى المتوسط (N4):</h2>
@@ -52,6 +63,7 @@ export default function Date_lisson_Header() {
             <li> كتابة وقراءة نصوص قصيرة.</li>
             <li>تدريبات على فهم النصوص (استماع وقراءة).</li>
             <li>تدريبات تفاعلية على الحوار اليومي.</li>
+            <button onClick={handleRedirect}>اشترك الآن</button>
           </ul>
           <ul className="left">
             <h2 className="fw-bold mt-4">المستوى المتقدم (N3):</h2>
@@ -67,6 +79,7 @@ export default function Date_lisson_Header() {
             <li> كتابة مقالات قصيرة باللغة اليابانية.</li>
             <li>قراءة نصوص إخبارية وقصص يابانية.</li>
             <li>جلسات نقاش مفتوحة.</li>
+            <button onClick={handleRedirect}>اشترك الآن</button>
           </ul>
           <ul className="hidden">
             <h2 className="fw-bold mt-4"> المستوى المتقدم جدًا (N2):</h2>
@@ -80,6 +93,7 @@ export default function Date_lisson_Header() {
             <li> 1000 مفردة متقدمة.</li>
             <li> تحليل نصوص ثقافية وأدبية يابانية.</li>
             <li> محادثات يومية ومهنية مع اليابانيين.</li>
+            <button onClick={handleRedirect}>اشترك الآن</button>
           </ul>
           <ul className="hidden">
             <h2 className="fw-bold mt-4">المستوى الاحترافي (N1):</h2>
@@ -95,6 +109,7 @@ export default function Date_lisson_Header() {
             <li> تدريبات على النقاشات الأكاديمية والمهنية.</li>
             <li> كتابة أبحاث وتقارير احترافية.</li>
             <li> تحليل نصوص أدبية يابانية قديمة وحديثة.</li>
+            <button onClick={handleRedirect}>اشترك الآن</button>
           </ul>
         </div>
       </div>

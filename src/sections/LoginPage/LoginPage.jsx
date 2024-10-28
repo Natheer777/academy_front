@@ -21,6 +21,7 @@ function LoginPage() {
             });
 
             if (response.ok) {
+
                 const data = await response.json();
                 console.log('Login successful:', data); // تسجيل النتيجة
                 localStorage.setItem('auth', data.token);

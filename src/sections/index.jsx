@@ -28,5 +28,6 @@ export {default as Supports} from './Supports/Supports'
 export {default as Fees_material} from './Fees_material/Fees_material'
 export {default as Register_account} from './Register_account/Register_account'
 export {default as Login_user} from './Login_user/Login_user'
+export {default as Dash_user} from './Dash_user/Dash_user'
 
 

@@ -19,6 +19,7 @@ import {
   Fees,
   Login_users,
   Register_accounts,
+  Dash_users,
 
 } from "./pages/index";
 
@@ -144,6 +145,8 @@ function App() {
                 <Route path="/Fees" element={<Fees />} />
                 <Route path="/Register_account" element={<Register_accounts />} />
                 <Route path="/Login_users" element={<Login_users />} />
+                <Route path="/Dash_users/:userId" element={<Dash_users />} />
+                <Route path="/Questions" element={<Questions />} />
                 <Route
                   path="/Dash"
                   element={

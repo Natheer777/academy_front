@@ -14,7 +14,7 @@
   padding: 15px;
   border: 1px solid #a5d6a7;
   background-color: #f1f8e9; /* Light green content background */
-  color: #2e7d32; /* Darker green text for content */
+  font-size: 20px; /* Darker green text for content */
 }
 
 /* Button styles */
@@ -55,4 +55,7 @@
 }
 .ekit-accordion-title{
   color: black;
+  font-size: var(--sec--size);
+  display: flex;
+  justify-content: space-between;
 }

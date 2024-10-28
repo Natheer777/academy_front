@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Navbar, Header , Contact, Footer, Date_lisson_Header, Fees_material, Register_header, Our_Study_materials, Our_Teachers, More_Services, Supports } from "../../sections/index";
+import { Navbar, Header , Contact, Footer, Date_lisson_Header, Fees_material, Register_header, Our_Study_materials, Our_Teachers, More_Services, Supports , Questions_Repeat, Comments } from "../../sections/index";
 
 export default function Home() {
   useEffect(() => {
@@ -14,6 +14,8 @@ export default function Home() {
       <Register_header />
       <Our_Study_materials />
       <Our_Teachers />
+      <Questions_Repeat />
+      <Comments />
       <More_Services />
       <Supports />
       {/* <Contact /> */}

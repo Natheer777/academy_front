@@ -1,11 +1,7 @@
 import "./Navbar.css";
 import Logo from "../../assets/Logo/الشعار-2-png.png";
 import { FaHome } from "react-icons/fa";
-// import axios from "axios";
 import { useEffect, useState } from "react";
-// import { IoPerson } from "react-icons/io5";
-// import { GrServices } from "react-icons/gr";
-// import { Link } from "react-router-dom";
 import { MdLibraryBooks } from "react-icons/md";
 import { BsCashCoin } from "react-icons/bs";
 import { FaCashRegister } from "react-icons/fa6";
@@ -13,58 +9,71 @@ import { FaBook } from "react-icons/fa6";
 import { FaUserGroup } from "react-icons/fa6";
 import { GrMoreVertical } from "react-icons/gr";
 import { FaMicrophoneLines } from "react-icons/fa6";
-
-import { HiChevronDoubleDown } from "react-icons/hi";
+import { FaCommentAlt } from "react-icons/fa";
+import { FaQuestionCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
+  const userEmail = localStorage.getItem('userEmail')
   const [user, setUser] = useState(null); 
   const [error, setError] = useState(null);
-  const fetchUserData = async () => {
-    try {
-      const token = localStorage.getItem("token");
+const fetchUserData = async () => {
+  try {
+    const token = localStorage.getItem("token");
 
-      // تحقق مما إذا كان التوكن موجودًا
-      if (!token) {
-        throw new Error("No token found");
-      }
-
-      const response = await fetch(
-        "https://academy-backend-pq91.onrender.com/user",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Invalid token");
-      }
-
-      const data = await response.json();
-      setUser(data.user); // تحديث حالة المستخدم بالبيانات
-    } catch (err) {
-      console.error("Error:", err.message);
-      setError(err.message); // تحديث حالة الخطأ
-
-      // إعادة التوجيه لصفحة تسجيل الدخول إذا كانت الجلسة غير صالحة
-      // if (err.message === "Invalid token" || err.message === "No token found") {
-      //   alert("Invalid session, please log in again.");
-      //   localStorage.removeItem("token"); // إزالة التوكن من التخزين المحلي
-      //   window.location.href = "/Login_users"; // إعادة التوجيه لصفحة تسجيل الدخول
-      // }
+    if (!token) {
+      setError("لا يوجد توكن. يرجى تسجيل الدخول.");
+      return;
     }
-  };
 
+    const response = await fetch("https://academy-backend-pq91.onrender.com/allusers", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("توكن غير صالح");
+    }
+
+    const contentType = response.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      throw new Error("الرد من الخادم ليس بصيغة JSON");
+    }
+
+    const data = await response.json();
+
+    // استبدال البحث عن المستخدم باستخدام شرط محدد (مثال: باستخدام id أو email)
+    const currentUser = data.find(user => user.email === userEmail); // استخدم بريد المستخدم هنا
+
+    if (currentUser) {
+      setUser(currentUser);
+    } else {
+      setError("اسم المستخدم أو كلمة المرور خطأ");
+    }
+  } catch (err) {
+    console.error("Error:", err.message);
+    setError(err.message);
+  }
+};
+
+  
   // استخدام useEffect لاستدعاء fetchUserData عند تحميل المكون
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      fetchUserData();
-    }
+    fetchUserData();
   }, []);
+  
+
+  // استخدام useEffect لاستدعاء fetchUserData عند تحميل المكون
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token");
+  //   if (token) {
+  //     fetchUserData();
+  //   }
+
+
+  // }, []);
 
   return (
     <>
@@ -87,7 +96,10 @@ export default function Navbar() {
             // عرض معلومات المستخدم إذا كان مسجل الدخول
             <div className="user-info">
               <span className="user-icon">{/* يمكنك إضافة أيقونة هنا */}</span>
-              <span className="user-name">مرحباً، {user.firstName}</span>
+              <h3 className="user-name">مرحباً، {user.firstName}</h3>
+              <Link to={`/Dash_users/${user.id}`}>
+              <button className="register_nav">لوحة التحكم </button>
+              </Link>
               <button
                 className="logout_nav register_nav"
                 onClick={() => {
@@ -131,7 +143,10 @@ export default function Navbar() {
             // عرض معلومات المستخدم إذا كان مسجل الدخول
             <div className="user-info">
               <span className="user-icon">{/* يمكنك إضافة أيقونة هنا */}</span>
-              <span className="user-name">مرحباً، {user.firstName}</span>
+              <h3 className="user-name">مرحباً، {user.firstName}</h3>
+              <Link to={`/Dash_users/${user.id}`}>
+              <button className="register_nav">لوحة التحكم </button>
+              </Link>
               <button
                 className="logout_nav register_nav"
                 onClick={() => {
@@ -145,6 +160,7 @@ export default function Navbar() {
                 >
                 تسجيل الخروج
               </button>
+
             </div>
           )}
           </div>
@@ -188,6 +204,13 @@ export default function Navbar() {
                 طريقة التسجيل
               </a>
             </li>
+            <li className="nav-item item4 hidden">
+              <a className="nav-a dropdown-item" href="#Questions">
+              <FaQuestionCircle />
+                الأسئلة الشائعة
+              </a>
+            </li>
+        
                 </div>
 <div className="group_2">
 
@@ -204,6 +227,12 @@ export default function Navbar() {
               </a>
             </li>
             <li className="nav-item item4 hidden">
+              <a className="nav-a dropdown-item" href="#Comments">
+              <FaCommentAlt />
+                اراء الطلاب
+              </a>
+            </li>
+            <li className="nav-item item4 hidden">
               <a className="nav-a dropdown-item" href="#More_services">
                 <GrMoreVertical />
                 خدمات إضافية
@@ -215,12 +244,13 @@ export default function Navbar() {
                 الدعم الفني
               </a>
             </li>
-              <li>
+        
+              {/* <li>
               <Link className="nav-a dropdown-item" to="/Login">
                 <FaCashRegister />
                 لوحة التحكم
               </Link>
-            </li>
+            </li> */}
             </div>
 
             </div>
