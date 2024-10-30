@@ -63,6 +63,7 @@
     border-top: 4px var(--color--green) solid;
     padding: 20px;
     font-size: 20px;
+    border-radius: 10px;
   }
 .swiper-button-next ,.swiper-button-disabled::after,
 .swiper-button-prev ,.swiper-button-disabled::before{
@@ -71,3 +72,8 @@
   .swiper-pagination-bullet ,.swiper-pagination-bullet-active{
     background-color: var(--color--green) !important;
   }
+  .Comments h2{
+    line-height: 2;
+    color: var(--color--green);
+  }
+ 

@@ -132,242 +132,295 @@ export default function Register_account() {
 
   return (
     <>
-    <div className="container">
-
-      <div className="row RegisteR">
-        <div className="register_half container col-lg-6">
-          <div>
-            <img className="m-auto d-flex" src={register_img} alt="" />
-            <p className=" m-auto d-flex ">
-              قم بتعبئة نموذج التسجيل باستخدام بريدك الإلكتروني أو حسابات
-              التواصل الاجتماعي. بعد ذلك، ستتلقى رسالة تأكيد بالبريد الإلكتروني.
-            </p>
+      <div className="container">
+        <div className="row RegisteR">
+          <div className="register_half  col-lg-6">
+            <div>
+              <img className="m-auto d-flex" src={register_img} alt="" />
+              <p className=" m-auto d-flex ">
+                قم بتعبئة نموذج التسجيل باستخدام بريدك الإلكتروني أو حسابات
+                التواصل الاجتماعي. بعد ذلك، ستتلقى رسالة تأكيد بالبريد
+                الإلكتروني.
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div className="col-lg-6">
-          <form
-            className="form-container academy p-5 mt-5 mb-5 m-auto"
-            onSubmit={handleSubmit}
-          >
-            <h1 className="fw-bold m-auto mb-4 mt-4">إنشاء حساب</h1>
-
-            <div>
-              <label>
-                الاسم الشخصي: <span style={{ color: "red" }}>*</span>
-              </label>
-              <input
-                type="text"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div>
-              <label>
-                اسم العائلة: <span style={{ color: "red" }}>*</span>
-              </label>
-              <input
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div>
-              <label>
-                دولة الإقامة: <span style={{ color: "red" }}>*</span>
-              </label>
-              <input
-                type="text"
-                name="country"
-                value={formData.country}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div>
-              <label>
-                العمر: <span style={{ color: "red" }}>*</span>
-              </label>
-              <input
-                type="number"
-                name="age"
-                value={formData.age}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div>
-              <label>
-                الجنس: <span style={{ color: "red" }}>*</span>
-              </label>
-              <select
-                name="gender"
-                value={formData.gender}
-                onChange={handleChange}
-                required
-              >
-                <option value="">اختر</option>
-                <option value="male">ذكر</option>
-                <option value="female">أنثى</option>
-              </select>
-            </div>
-
-            <div>
-              <label>
-                المستوى التعليمي: <span style={{ color: "red" }}>*</span>
-              </label>
-              <input
-                type="text"
-                name="educationLevel"
-                value={formData.educationLevel}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div>
-              <label>مستوى اللغة اليابانية:</label>
-              <input
-                type="text"
-                name="japaneseLevel"
-                value={formData.japaneseLevel}
-                onChange={handleChange}
-              />
-            </div>
-
-            <div>
-              <label>
-                رقم الواتساب: <span style={{ color: "red" }}>*</span>
-              </label>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div>
-              <label>
-                البريد الإلكتروني: <span style={{ color: "red" }}>*</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div>
-              <label>
-                كلمة السر: <span style={{ color: "red" }}>*</span>
-              </label>
-              <input
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                required
-              />
-              {passwordError && <p style={{ color: "red" }}>{passwordError}</p>}
-              <ul className="password">
-                <li
-                  style={{ color: passwordCriteria.length ? "green" : "red" }}
-                >
-                  {passwordCriteria.length
-                    ? "✔️  تحتوي على 8 أحرف على الأقل"
-                    : "❌ يجب أن تحتوي على 8 أحرف على الأقل"}
-                </li>
-                <li
-                  style={{
-                    color: passwordCriteria.uppercase ? "green" : "red",
-                  }}
-                >
-                  {passwordCriteria.uppercase
-                    ? "✔️  تحتوي على حرف كبير واحد على الأقل"
-                    : "❌ يجب أن تحتوي على حرف كبير واحد على الأقل"}
-                </li>
-                <li
-                  style={{
-                    color: passwordCriteria.lowercase ? "green" : "red",
-                  }}
-                >
-                  {passwordCriteria.lowercase
-                    ? "✔️  تحتوي على حرف صغير واحد على الأقل"
-                    : "❌ يجب أن تحتوي على حرف صغير واحد على الأقل"}
-                </li>
-                <li
-                  style={{ color: passwordCriteria.number ? "green" : "red" }}
-                >
-                  {passwordCriteria.number
-                    ? "✔️  تحتوي على رقم واحد على الأقل"
-                    : "❌ يجب أن تحتوي على رقم واحد على الأقل"}
-                </li>
-                <li
-                  style={{
-                    color: passwordCriteria.specialChar ? "green" : "red",
-                  }}
-                >
-                  {passwordCriteria.specialChar
-                    ? "✔️  تحتوي على رمز واحد على الأقل"
-                    : "❌ يجب أن تحتوي على رمز واحد على الأقل"}
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <label>
-                تأكيد كلمة السر: <span style={{ color: "red" }}>*</span>
-              </label>
-              <input
-                type="password"
-                name="confirmPassword"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <button className="mt-4" type="submit" disabled={isRegistering}>
-              {isRegistering ? "جاري التسجيل..." : "سجل الآن"}
-            </button>
-          </form>
-
-          {showVerificationField && (
+          <div className="col-lg-6">
             <form
-              className="form-container academy"
-              onSubmit={handleVerification}
+              className="form-container academy p-5 mt-5 mb-5 m-auto"
+              onSubmit={handleSubmit}
             >
-              <label className="fs-5">أدخل كود التحقق:</label>
-              <input
-                type="text"
-                placeholder="أدخل كود التحقق"
-                value={verificationCode}
-                onChange={(e) => setVerificationCode(e.target.value)}
-              />
-              <button
-                className="mt-4 mb-5"
-                type="submit"
-                disabled={isVerifying}
-              >
-                {isVerifying ? "جاري التحقق..." : "تحقق"}
+              <h1 className="fw-bold m-auto mb-4 mt-4">إنشاء حساب</h1>
+
+              <div>
+                <label>
+                  <span style={{ color: "red" }}>*</span> الاسم الشخصي:
+                </label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div>
+                <label>
+                  <span style={{ color: "red" }}>*</span> اسم العائلة:
+                </label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div>
+                <label>
+                  <span style={{ color: "red" }}>*</span> دولة الإقامة:
+                </label>
+                <input
+                  type="text"
+                  name="country"
+                  value={formData.country}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div>
+                <label>
+                  <span style={{ color: "red" }}>*</span> العمر:
+                </label>
+                <input
+                  type="number"
+                  name="age"
+                  value={formData.age}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div>
+                <label>
+                  <span style={{ color: "red" }}>*</span> الجنس:
+                </label>
+                <select
+                  name="gender"
+                  value={formData.gender}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="">اختر</option>
+                  <option value="male">ذكر</option>
+                  <option value="female">أنثى</option>
+                </select>
+              </div>
+
+              <div>
+                <label>
+                  <span style={{ color: "red" }}>*</span> المستوى التعليمي:
+                </label>
+                <select
+                  name="educationLevel"
+                  value={formData.educationLevel}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="">اختر المستوى التعليمي</option>
+                  <option value="المرحلة الابتدائية">المرحلة الابتدائية</option>
+                  <option value="المرحلة الإعدادية">المرحلة الإعدادية</option>
+                  <option value="المرحلة الثانوية">المرحلة الثانوية</option>
+                  <option value="مرحلة المعاهد المتوسطة">
+                    مرحلة المعاهد المتوسطة
+                  </option>
+                  <option value="مرحلة التعليم الجامعي">
+                    مرحلة التعليم الجامعي
+                  </option>
+                  <option value="مرحلة الدراسات العليا (ماجستير)">
+                    مرحلة الدراسات العليا (ماجستير)
+                  </option>
+                  <option value="مرحلة الدراسات العليا (دكتوراه)">
+                    مرحلة الدراسات العليا (دكتوراه)
+                  </option>
+                </select>
+              </div>
+
+              <div>
+             
+                <label>
+                <span style={{ color: "red" }}>*</span> مستوى اللغة اليابانية:</label>
+                <select
+                  name="japaneseLevel"
+                  value={formData.japaneseLevel}
+                  onChange={handleChange}
+                >
+                  <option value="">اختر المستوى</option>
+                  <option value="beginner">
+                    المستوى المبتدئ 
+                    (قبل البدء بتعلم اللغة اليابانية)
+                  </option>
+                  <option value="beginnerIntermediate">
+                  المستوى المبتدئ المتوسط
+(إمكانية قراءة وكتابة الهيراغانا والكتاكانا وبعض حروف الكانجي البسيطة، وقراءة وفهم بعض الكلمات والجمل)
+
+                  </option>
+                  <option value="beginnerAdvanced">
+                  المستوى المبتدئ المتقدم (N5)
+(إجادة قراءة وكتابة الهيراغانا والكاتاكانا وحوالي 100 حرف كانجي، والقدرة على التعريف بالنفس، وقراءة وكتابة جمل بسيطة)
+
+                  </option>
+                  <option value="intermediateBeginner">
+                  المستوى المتوسط المبتدئ (N4)
+(إجادة قراءة وكتابة حوالي 200 حرف كانجي بالإضافة إلى الهيراغانا والكتاكانا، والتعريف بالنفس مع القدرة على فهم الأسئلة المتعلقة بالحياة اليومية والإجابة عنها)
+
+                  </option>
+                  <option value="intermediate">المستوى المتوسط (N3)</option>
+                  <option value="intermediateAdvanced">
+                    المستوى المتوسط المتقدم
+                  </option>
+                  <option value="advancedBeginner">
+                    المستوى المتقدم المبتدئ (N2)
+                  </option>
+                  <option value="advancedIntermediate">
+                    المستوى المتقدم المتوسط
+                  </option>
+                  <option value="advanced">المستوى المتقدم (N1)</option>
+                  <option value="postAdvanced">ما بعد المستوى المتقدم
+                  (طلاب الدراسات العليا المتخصصون باللغة اليابانية والأدب الياباني)</option>
+                </select>
+              </div>
+
+              <div>
+                <label>
+                  <span style={{ color: "red" }}>*</span> رقم الواتساب:
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div>
+                <label>
+                  <span style={{ color: "red" }}>*</span> البريد الإلكتروني:
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div>
+                <label>
+                  <span style={{ color: "red" }}>*</span> كلمة السر:
+                </label>
+                <input
+                  type="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                />
+                {passwordError && (
+                  <p style={{ color: "red" }}>{passwordError}</p>
+                )}
+                <ul className="password">
+                  <li
+                    style={{ color: passwordCriteria.length ? "green" : "red" }}
+                  >
+                    {passwordCriteria.length
+                      ? "✔️  تحتوي على 8 أحرف على الأقل"
+                      : "❌ يجب أن تحتوي على 8 أحرف على الأقل"}
+                  </li>
+                  <li
+                    style={{
+                      color: passwordCriteria.uppercase ? "green" : "red",
+                    }}
+                  >
+                    {passwordCriteria.uppercase
+                      ? "✔️  تحتوي على حرف كبير واحد على الأقل"
+                      : "❌ يجب أن تحتوي على حرف كبير واحد على الأقل"}
+                  </li>
+                  <li
+                    style={{
+                      color: passwordCriteria.lowercase ? "green" : "red",
+                    }}
+                  >
+                    {passwordCriteria.lowercase
+                      ? "✔️  تحتوي على حرف صغير واحد على الأقل"
+                      : "❌ يجب أن تحتوي على حرف صغير واحد على الأقل"}
+                  </li>
+                  <li
+                    style={{ color: passwordCriteria.number ? "green" : "red" }}
+                  >
+                    {passwordCriteria.number
+                      ? "✔️  تحتوي على رقم واحد على الأقل"
+                      : "❌ يجب أن تحتوي على رقم واحد على الأقل"}
+                  </li>
+                  <li
+                    style={{
+                      color: passwordCriteria.specialChar ? "green" : "red",
+                    }}
+                  >
+                    {passwordCriteria.specialChar
+                      ? "✔️  تحتوي على رمز واحد على الأقل"
+                      : "❌ يجب أن تحتوي على رمز واحد على الأقل"}
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <label>
+                  تأ<span style={{ color: "red" }}>*</span>كيد كلمة السر:
+                </label>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <button className="mt-4" type="submit" disabled={isRegistering}>
+                {isRegistering ? "جاري التسجيل..." : "سجل الآن"}
               </button>
             </form>
-          )}
+
+            {showVerificationField && (
+              <form
+                className="form-container academy"
+                onSubmit={handleVerification}
+              >
+                <label className="fs-5">أدخل كود التحقق:</label>
+                <input
+                  type="text"
+                  placeholder="أدخل كود التحقق"
+                  value={verificationCode}
+                  onChange={(e) => setVerificationCode(e.target.value)}
+                />
+                <button
+                  className="mt-4 mb-5"
+                  type="submit"
+                  disabled={isVerifying}
+                >
+                  {isVerifying ? "جاري التحقق..." : "تحقق"}
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 }

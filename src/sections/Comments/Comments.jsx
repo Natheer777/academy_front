@@ -94,33 +94,47 @@ export default function Comments() {
 
     return (
         <>
-            <div className="container" id="Comments">
-                <h1 className="text-center fw-bold mt-5 mb-5">من آراء الأهالي الكرام في أكاديمية اللغة العربية</h1>
+            <div className="container Comments" id="Comments">
+                <h2 className="text-center fw-bold mt-5 mb-5">من آراء الطلاب الكرام في أكاديمية اللغة اليابانية</h2>
                 <Swiper
-                    spaceBetween={30}
-                    centeredSlides={true}
-                    slidesPerView={3} // عرض 3 شرائح في نفس الوقت
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                    }}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    navigation={true}
-                    modules={[Autoplay, Pagination, Navigation]}
-                    className="mySwiper"
-                >
-                    {comments.map((comment) => (
-                        <SwiperSlide className="comments" key={comment.id}>
-                            <li>
-                                <p className="main_comment shadow"> {comment.comment}</p>
-                                <p className="country">{comment.country}</p>
-                                <p className="name">{comment.name}</p>
-                            </li>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+    spaceBetween={30}
+    centeredSlides={true}
+    autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+    }}
+    pagination={{
+        clickable: true,
+    }}
+    navigation={true}
+    modules={[Autoplay, Pagination, Navigation]}
+    className="mySwiper"
+    breakpoints={{
+        // شاشات الموبايل
+        0: {
+            slidesPerView: 1,
+        },
+        // الشاشات المتوسطة
+        768: {
+            slidesPerView: 2,
+        },
+        // الشاشات الكبيرة
+        1024: {
+            slidesPerView: 3,
+        },
+    }}
+>
+    {comments.map((comment) => (
+        <SwiperSlide className="comments" key={comment.id}>
+            <li>
+                <p className="main_comment shadow">{comment.comment}</p>
+                <p className="country">{comment.country}</p>
+                <p className="name">{comment.name}</p>
+            </li>
+        </SwiperSlide>
+    ))}
+</Swiper>
+
             </div>
         </>
     );

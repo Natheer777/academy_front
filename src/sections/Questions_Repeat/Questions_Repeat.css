@@ -47,6 +47,7 @@
 .ekit-heading--title {
   color: #1b5e20; /* Dark green title color */
   margin-bottom: 20px;
+  line-height: 2;
 }
 
 /* General wrapper padding */

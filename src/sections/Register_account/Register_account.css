@@ -100,6 +100,10 @@
       display: none !important;
     }
     .register_half p{
-      padding: 30px;
+      padding: 5px;
+      text-align: justify;
+    }
+    .register_half{
+      padding: 5px;
     }
   }

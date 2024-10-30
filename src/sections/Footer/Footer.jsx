@@ -4,6 +4,7 @@ import { RiHomeOfficeLine } from "react-icons/ri";
 import { FaMobileAlt } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import DesktopViewButton from "../../components/DesktopViewButton";
 import logo from "../../assets/Logo/الشعار-2-png.png";
 export default function Footer() {
   return (
@@ -59,11 +60,11 @@ export default function Footer() {
                       لاين: 819018409625+
                     </li>
                     </a>
-                    <a href="mailto:contact@sawagroup.jp">
+                    <a href="mailto:info@japaneseacademy.jp">
                       
 
                     <li>
-                      <MdEmail />contact@sawagroup.jp
+                      <MdEmail />info@japaneseacademy.jp
                     </li>
                   </a>
                 </ul>
@@ -74,13 +75,15 @@ export default function Footer() {
           <div
             className="text-center p-3"
             style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
-          >
-            <ul className="Ulfooter">
-              <li>
-            <a className="text-white">
-              Copyright © 2022 Sawa Group. All Rights Reserved.
-            </a></li>
-            </ul>
+          >  <ul className="Ulfooter">
+          <li>
+        <a className="text-white">
+          Copyright © 2022 japanese Academy. All Rights Reserved.
+        </a></li>
+          <li className="App">       
+  <DesktopViewButton />
+</li>
+        </ul>
             
      
           </div>

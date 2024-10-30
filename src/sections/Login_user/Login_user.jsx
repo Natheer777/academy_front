@@ -172,7 +172,7 @@ export default function Login_user() {
         {isLoading ? "جارٍ تسجيل الدخول..." : "تسجيل الدخول"}
       </button>
       {error && <p className="error-message">{error}</p>}
-    <h5 className="text-center m-auto mt-5">لا تمتلك حساب؟ 
+    <h5 className="text-center m-auto mt-5 Dont_have_account"> لا تمتلك حساب؟ 
       <Link to='/Register_account'>
       <span>إنشاء حساب </span>
       </Link>

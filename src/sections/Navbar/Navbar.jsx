@@ -229,7 +229,7 @@ const fetchUserData = async () => {
             <li className="nav-item item4 hidden">
               <a className="nav-a dropdown-item" href="#Comments">
               <FaCommentAlt />
-                اراء الطلاب
+              آراء الطلاب
               </a>
             </li>
             <li className="nav-item item4 hidden">
