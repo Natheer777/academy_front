@@ -17,7 +17,7 @@ export default function Header() {
         <div className="acadeny_logo mb-4 ">
         <h2 className=" left fw-bold">أكاديمية اللغة اليابانية</h2>
         </div>
-        <div className="title_academy mb-3">التعريف بالأكاديمية:</div>
+        <h2 className="title_academy mb-3">التعريف بالأكاديمية:</h2>
         <div className="details">
           مرحبًا بكم في أكاديمية اللغة اليابانية، الوجهة المثالية لتعلم اللغة
           اليابانية للعرب عبر الإنترنت! نقدم تجربة تعليمية تفاعلية وفريدة تمكنك
@@ -32,7 +32,7 @@ export default function Header() {
           </div>
         <div className="academy mt-5 mb-5 right">
 
-        <div className="title_academy mb-3">رسالة الأكاديمية ورؤيتها:</div>
+        <h2 className="title_academy mb-3">رسالة الأكاديمية ورؤيتها:</h2>
         <div className="details">
           نسعى إلى تمكين الطلاب العرب من التواصل بثقة واحترافية باللغة اليابانية
           في مختلف مجالات الحياة، سواء كانت أكاديمية، مهنية، أو حتى ترفيهية.

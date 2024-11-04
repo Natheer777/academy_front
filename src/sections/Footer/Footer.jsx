@@ -25,7 +25,7 @@ export default function Footer() {
                 <p></p>
               </MDBCol>
               <MDBCol lg="9" md="8">
-                <h5 className=" adress">العنوان: اليابان، طوكيو، هاتشيوجي، هيغاشي ناكانو، تيراس K&K رقم المكتب 201، ص.ب: 0351-192 ,</h5>
+                <h5 className=" adress">العنوان: اليابان، طوكيو، هاتشيوجي، هيغاشي ناكانو، تيراس K&K رقم المكتب 201، ص.ب: 0351-192 </h5>
 
                 <ul className="list-unstyled">
                   
@@ -77,8 +77,8 @@ export default function Footer() {
             style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
           >  <ul className="Ulfooter">
           <li>
-        <a className="text-white">
-          Copyright © 2022 japanese Academy. All Rights Reserved.
+        <a className="text-white fs-5">
+          Copyright © 2022 Japanese Academy. All Rights Reserved
         </a></li>
           <li className="App">       
   <DesktopViewButton />

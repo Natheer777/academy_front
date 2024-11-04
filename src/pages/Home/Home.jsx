@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Navbar />
       <Header />
-      <Date_lisson_Header />
+      {/* <Date_lisson_Header />
       <Fees_material />
       <Register_header />
       <Our_Study_materials />
@@ -17,7 +17,7 @@ export default function Home() {
       <Questions_Repeat />
       <Comments />
       <More_Services />
-      <Supports />
+      <Supports /> */}
       {/* <Contact /> */}
       <Footer />
     </>

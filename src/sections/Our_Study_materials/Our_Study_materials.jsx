@@ -3,7 +3,7 @@ import img_material from '../../assets/Ai_img/_6f2f27d9-4995-4117-aa80-149abadfe
 export default function Our_Study_materials() {
   return (
     <>
-    <div className="container Our_Study_materials mt-5 mb-5" id='Study_materials'>
+    <div className="container Our_Study_materials mt-5 mb-3" id='Study_materials'>
         <h2 className='fw-bold'>تشمل موادنا الدراسية:</h2>
         <div className="academy">
       <div className="row">

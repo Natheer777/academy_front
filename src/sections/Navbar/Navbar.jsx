@@ -11,7 +11,10 @@ import { GrMoreVertical } from "react-icons/gr";
 import { FaMicrophoneLines } from "react-icons/fa6";
 import { FaCommentAlt } from "react-icons/fa";
 import { FaQuestionCircle } from "react-icons/fa";
+import { MdPrivacyTip } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { FaHandshake } from "react-icons/fa6";
+
 
 export default function Navbar() {
   const userEmail = localStorage.getItem('userEmail')
@@ -95,8 +98,9 @@ const fetchUserData = async () => {
           ) : (
             // عرض معلومات المستخدم إذا كان مسجل الدخول
             <div className="user-info">
+              <div className="user-info-buttons">
+
               <span className="user-icon">{/* يمكنك إضافة أيقونة هنا */}</span>
-              <h3 className="user-name">مرحباً، {user.firstName}</h3>
               <Link to={`/Dash_users/${user.id}`}>
               <button className="register_nav">لوحة التحكم </button>
               </Link>
@@ -113,8 +117,11 @@ const fetchUserData = async () => {
                 >
                 تسجيل الخروج
               </button>
+            <p  className="user-name">مرحبا, {user.firstName} {user.lastName}</p>
             </div>
-          )}
+              </div>
+          )
+        }
           </div>
         <button
           className="navbar-toggler"
@@ -143,7 +150,7 @@ const fetchUserData = async () => {
             // عرض معلومات المستخدم إذا كان مسجل الدخول
             <div className="user-info">
               <span className="user-icon">{/* يمكنك إضافة أيقونة هنا */}</span>
-              <h3 className="user-name">مرحباً، {user.firstName}</h3>
+              <h4 className="user-name">{user.firstName}</h4>
               <Link to={`/Dash_users/${user.id}`}>
               <button className="register_nav">لوحة التحكم </button>
               </Link>
@@ -170,11 +177,11 @@ const fetchUserData = async () => {
             <div className="group_1">
 
             <li className="nav-item active item1 hidden">
-              <a className="nav-a" href="/">
+              <Link className="nav-a" to="/">
                 <FaHome />
                 الصفحة الرئيسية
                 <span className="sr-only"></span>
-              </a>
+              </Link>
             </li>
             {/* <li className="nav-item item2 hidden">
               <a className="nav-a" href="/academy/about">
@@ -187,62 +194,66 @@ const fetchUserData = async () => {
                 </a>
                 </li> */}
             <li className="nav-item item2 hidden">
-              <a className="nav-a" href="#Level_division">
+              <Link className="nav-a" to="/Level_division">
                 <MdLibraryBooks />
                 تقسيم المستويات
-              </a>
+              </Link>
             </li>
             <li className="nav-item item3 hidden">
-              <a className="nav-a" href="#Fees">
+              <Link className="nav-a" to="/Fees">
                 <BsCashCoin />
                 الرسوم
-              </a>
+              </Link>
             </li>
             <li className="nav-item item4 hidden">
-              <a className="nav-a dropdown-item" href="#Register">
+              <Link className="nav-a dropdown-item" to="/Teachers">
+                <FaUserGroup />
+               الهيئة التدريسية
+              </Link>
+            </li>
+            <li className="nav-item item4 hidden">
+              <Link className="nav-a dropdown-item" to="/Register">
                 <FaCashRegister />
                 طريقة التسجيل
-              </a>
+              </Link>
             </li>
-            <li className="nav-item item4 hidden">
-              <a className="nav-a dropdown-item" href="#Questions">
-              <FaQuestionCircle />
-                الأسئلة الشائعة
-              </a>
-            </li>
+         
         
                 </div>
 <div className="group_2">
 
             <li className="nav-item item4 hidden">
-              <a className="nav-a dropdown-item" href="#Study_materials">
+              <Link className="nav-a dropdown-item" to="/Study_materials">
                 <FaBook />
                 المواد الدراسية
-              </a>
+              </Link>
             </li>
+     
+
             <li className="nav-item item4 hidden">
-              <a className="nav-a dropdown-item" href="#Teachers">
-                <FaUserGroup />
-                التعريف بالأساتذة
-              </a>
+              <Link className="nav-a dropdown-item" to="/Questions">
+              <FaQuestionCircle />
+                الأسئلة الشائعة
+              </Link>
             </li>
+
             <li className="nav-item item4 hidden">
-              <a className="nav-a dropdown-item" href="#Comments">
+              <Link className="nav-a dropdown-item" to="/Comments">
               <FaCommentAlt />
               آراء الطلاب
-              </a>
+              </Link>
             </li>
             <li className="nav-item item4 hidden">
-              <a className="nav-a dropdown-item" href="#More_services">
+              <Link className="nav-a dropdown-item" to="/More_services">
                 <GrMoreVertical />
                 خدمات إضافية
-              </a>
+              </Link>
               </li>
             <li className="nav-item item4 hidden">
-              <a className="nav-a dropdown-item" href="#Support">
+              <Link className="nav-a dropdown-item" to="/Support">
               <FaMicrophoneLines />
                 الدعم الفني
-              </a>
+              </Link>
             </li>
         
               {/* <li>
@@ -252,7 +263,20 @@ const fetchUserData = async () => {
               </Link>
             </li> */}
             </div>
-
+          <div className="group_3">
+          <li className="nav-item item4 hidden">
+              <Link className="nav-a dropdown-item" to="/Privacy">
+              <MdPrivacyTip />
+              سياسة الخصوصية
+              </Link>
+            </li>
+          <li className="nav-item item4 hidden">
+              <Link className="nav-a dropdown-item" to="/Terms"> 
+              <FaHandshake />
+              شروط الاستخدام
+              </Link>
+            </li>
+          </div>
             </div>
             {/* <li className="nav-item dropdown">
               <a

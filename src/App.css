@@ -184,3 +184,35 @@ body{
 .click {
   background-color: #ca4555;
 }
+
+
+
+.up {
+  z-index: 10;
+  position: fixed;
+  bottom: 30px;
+  left: -50px;
+  border: none;
+  color: white;
+  background-color: var(--color--green);
+  font-weight: bold;
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.9s;
+  animation-name: up;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.up.look {
+  left: 21px;
+}
+
+@keyframes up {
+  50% {
+    transform: translateY(20px);
+  }
+}

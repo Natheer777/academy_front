@@ -1,7 +1,6 @@
 .title_academy{
     text-align: right;
     font-weight: bold;
-    font-size: var(--sec--size);
     color: var(--color--green);
 }
 .Header ,.details{

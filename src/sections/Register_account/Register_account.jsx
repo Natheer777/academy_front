@@ -214,7 +214,7 @@ export default function Register_account() {
                   onChange={handleChange}
                   required
                 >
-                  <option value="">اختر</option>
+                  <option value=""></option>
                   <option value="male">ذكر</option>
                   <option value="female">أنثى</option>
                 </select>
@@ -230,7 +230,7 @@ export default function Register_account() {
                   onChange={handleChange}
                   required
                 >
-                  <option value="">اختر المستوى التعليمي</option>
+                  <option value=""></option>
                   <option value="المرحلة الابتدائية">المرحلة الابتدائية</option>
                   <option value="المرحلة الإعدادية">المرحلة الإعدادية</option>
                   <option value="المرحلة الثانوية">المرحلة الثانوية</option>
@@ -258,7 +258,7 @@ export default function Register_account() {
                   value={formData.japaneseLevel}
                   onChange={handleChange}
                 >
-                  <option value="">اختر المستوى</option>
+                  <option value=""></option>
                   <option value="beginner">
                     المستوى المبتدئ 
                     (قبل البدء بتعلم اللغة اليابانية)
@@ -339,8 +339,8 @@ export default function Register_account() {
                     style={{ color: passwordCriteria.length ? "green" : "red" }}
                   >
                     {passwordCriteria.length
-                      ? "✔️  تحتوي على 8 أحرف على الأقل"
-                      : "❌ يجب أن تحتوي على 8 أحرف على الأقل"}
+                      ? "-  تحتوي على 8 أحرف على الأقل"
+                      : "- يجب أن تحتوي على 8 أحرف على الأقل"}
                   </li>
                   <li
                     style={{
@@ -348,8 +348,8 @@ export default function Register_account() {
                     }}
                   >
                     {passwordCriteria.uppercase
-                      ? "✔️  تحتوي على حرف كبير واحد على الأقل"
-                      : "❌ يجب أن تحتوي على حرف كبير واحد على الأقل"}
+                      ? "-  تحتوي على حرف كبير واحد على الأقل"
+                      : "- يجب أن تحتوي على حرف كبير واحد على الأقل"}
                   </li>
                   <li
                     style={{
@@ -357,15 +357,15 @@ export default function Register_account() {
                     }}
                   >
                     {passwordCriteria.lowercase
-                      ? "✔️  تحتوي على حرف صغير واحد على الأقل"
-                      : "❌ يجب أن تحتوي على حرف صغير واحد على الأقل"}
+                      ? "-  تحتوي على حرف صغير واحد على الأقل"
+                      : "- يجب أن تحتوي على حرف صغير واحد على الأقل"}
                   </li>
                   <li
                     style={{ color: passwordCriteria.number ? "green" : "red" }}
                   >
                     {passwordCriteria.number
-                      ? "✔️  تحتوي على رقم واحد على الأقل"
-                      : "❌ يجب أن تحتوي على رقم واحد على الأقل"}
+                      ? "-  تحتوي على رقم واحد على الأقل"
+                      : "- يجب أن تحتوي على رقم واحد على الأقل"}
                   </li>
                   <li
                     style={{
@@ -373,15 +373,15 @@ export default function Register_account() {
                     }}
                   >
                     {passwordCriteria.specialChar
-                      ? "✔️  تحتوي على رمز واحد على الأقل"
-                      : "❌ يجب أن تحتوي على رمز واحد على الأقل"}
+                      ? "-  تحتوي على رمز واحد على الأقل"
+                      : "- يجب أن تحتوي على رمز واحد على الأقل"}
                   </li>
                 </ul>
               </div>
 
               <div>
                 <label>
-                  تأ<span style={{ color: "red" }}>*</span>كيد كلمة السر:
+                <span style={{ color: "red" }}>*</span> تأكيد كلمة السر:
                 </label>
                 <input
                   type="password"

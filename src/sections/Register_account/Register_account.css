@@ -102,8 +102,12 @@
     .register_half p{
       padding: 5px;
       text-align: justify;
+      font-size: var(--sec--size);
     }
     .register_half{
       padding: 5px;
     }
+  }
+  .RegisteR option{
+    text-align: right;
   }

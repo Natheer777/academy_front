@@ -1,11 +1,14 @@
 .Our_Teachers h2{
     color: var(--color--green);
     font-weight: bold;
-    /* text-align: center; */
+    text-align: start;
+    margin-bottom: 0 ;
 }
 .Our_Teachers p{
     font-size: var(--sec--size);
     line-height: 2;
+    text-align: justify;
+    margin-bottom: 0 !important;
 }
 .Our_Teachers ul{
     padding-left: 0;
@@ -14,17 +17,73 @@
     font-weight: bold;
     position: relative;
     color: var(--color--green);
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 .Our_Teachers ul li p{
     font-size: var(--sec--size);
     color: var(--green_blue);
     line-height: 2;
 }
-
+/* 
 .Our_Teachers ul li h2::before{
     content: "-";
     position: absolute;
     font-size: 25px;
     right: -12px;
+} */
+.img_teacher{
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; */
 }
+.face{
+    border-radius: 200px;
+    width: 14rem;
+    height: 14rem;
+    position: relative;
+    top: -50px;
+    left: 10px;
+}
+@media screen and (max-width:715px) {
+    .Our_Teachers h2{
+        line-height: 2.5;
+    }
+    .Our_Teachers h2 span{
+        display: block;
+    }
+    .face{
+        width: 5rem;
+        height: 5rem;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+    .img_teacher{
+        gap: 10px;
+        flex-flow: column-reverse;
+    }
+}
+
+ .img_teacher {
+    gap: 20px;
+    display: flex;
+   justify-content: space-between;
+  }
+  /*
+  .teacher_image {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .teacher_image img {
+    height: auto;
+    border-radius: 50%; 
+  }
+  
+  .teacher_text {
+    text-align: justify;
+    flex: 1;
+  }
+   */

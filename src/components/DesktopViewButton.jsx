@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { CgScreen } from "react-icons/cg";
 
 const DesktopViewButton = () => {
-  const [t] = useTranslation();
   const [desktopView, setDesktopView] = useState(false);
 
   const requestDesktopSite = () => {
@@ -11,7 +9,7 @@ const DesktopViewButton = () => {
     if (userAgent.match(/(iphone|ipod|ipad|android)/)) {
       const viewport = document.querySelector("meta[name=viewport]");
       if (viewport) {
-        viewport.setAttribute('content', 'width=1300px');
+        viewport.setAttribute('content', 'width=1250');
       }
     }
     setDesktopView(true);
@@ -19,7 +17,7 @@ const DesktopViewButton = () => {
 
   return (
     <div>
-      <button className='DesktopView m-1' onClick={requestDesktopSite}><h5>Pc</h5> <CgScreen /></button>
+      <button className='DesktopView m-1' onClick={requestDesktopSite}><h5>PC</h5> <CgScreen /></button>
     </div>
   );
 };
