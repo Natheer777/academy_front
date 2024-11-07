@@ -34,4 +34,10 @@
     .acadeny_logo h2 {
         margin-top: 20px;
     }
+    .Header_revers{
+        flex-direction: column-reverse;
+    }
+    .Header_revers img{
+        margin-top: 20px;
+    }
 }

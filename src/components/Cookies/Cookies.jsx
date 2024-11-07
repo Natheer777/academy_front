@@ -1,19 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Cookies.css";
 
 export default function Cookies() {
   const [cookiesAccepted, setCookiesAccepted] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
   const [cookiesSettings, setCookiesSettings] = useState({
-    necessary: true, // دائمًا مفعلة لأنها أساسية
-    analytics: false,
-    preferences: false,
+    necessary: true,
+    analytics: true,
+    preferences: true,
   });
+
+  useEffect(() => {
+    // تحميل إعدادات ملفات تعريف الارتباط من اللوكال ستورج عند تحميل الصفحة
+    const savedSettings = localStorage.getItem("cookiesSettings");
+    if (savedSettings) {
+      setCookiesSettings(JSON.parse(savedSettings));
+      setCookiesAccepted(true);
+    }
+  }, []);
 
   const handleAcceptCookies = () => {
     setCookiesAccepted(true);
     document.cookie =
       "acceptCookies=true; path=/; max-age=" + 60 * 60 * 24 * 30;
+    localStorage.setItem("cookiesSettings", JSON.stringify(cookiesSettings));
   };
 
   const handleRejectCookies = () => {
@@ -22,38 +32,33 @@ export default function Cookies() {
       "acceptCookies=false; path=/; max-age=" + 60 * 60 * 24 * 30;
   };
 
-  const handleToggle = (type) => {
+  const handleToggle = (type, isEnabled) => {
     setCookiesSettings((prevSettings) => ({
       ...prevSettings,
-      [type]: !prevSettings[type],
+      [type]: isEnabled,
     }));
   };
 
-  const handleAcceptAll = () => {
-    setCookiesSettings({
-      necessary: true,
-      analytics: true,
-      preferences: true,
-    });
-  };
-
-  const handleSaveSettings = () => {
+  const handleSaveSettingsAndClose = () => {
+    localStorage.setItem("cookiesSettings", JSON.stringify(cookiesSettings));
     document.cookie = `cookiesSettings=${JSON.stringify(
       cookiesSettings
     )}; path=/`;
     alert("تم حفظ إعدادات ملفات تعريف الارتباط بنجاح!");
-    setShowSettingsModal(false); // إغلاق النافذة بعد الحفظ
+    setCookiesAccepted(true); // إخفاء جميع نوافذ الكوكيز بعد الحفظ
+    setShowSettingsModal(false); // إغلاق نافذة الإعدادات
   };
 
   return (
     <div className="Cookies">
-
       {!cookiesAccepted && (
         <div className="cookie-banner">
           <p className="mb-4">
-          مرحبًا بكم في موقع أكاديمية اللغة اليابانية! <br />
-نحن نستخدم ملفات تعريف الارتباط (الكوكيز) لتحسين تجربتكم في التصفح، وتحليل استخدام الموقع. بالضغط على ”قبول جميع ملفات تعريف الارتباط“، فإنكم توافقون على استخدامها لأغراض التحليل والتخصيص. يمكنكم أيضًا اختيار ”إعدادات ملفات تعريف الارتباط“ لتخصيص التفضيلات أو رفض بعض الملفات. <br />
-لمزيد من التفاصيل حول كيفية استخدامنا لملفات تعريف الارتباط، يُرجى الاطلاع على  .
+            مرحبًا بكم في موقع أكاديمية اللغة اليابانية! <br />
+            نحن نستخدم ملفات تعريف الارتباط لتحسين تجربتكم. بالضغط على "قبول
+            جميع ملفات تعريف الارتباط"، فإنكم توافقون على استخدامها.
+            <br />
+            لمزيد من التفاصيل، يُرجى الاطلاع على{" "}
             <a href="/Privacy">سياسة الخصوصية</a>.
           </p>
           <div className="buttonsCookies">
@@ -73,47 +78,56 @@ export default function Cookies() {
           <div className="modal">
             <h2>إعدادات ملفات تعريف الارتباط</h2>
             <p>
-            قبل البدء بتصفح موقع أكاديمية اللغة اليابانية، يمكنك تعديل إعدادات ملفات الارتباط حسب تفضيلاتك لضمان تجربة تصفح مخصصة وآمنة. وتشمل ملفات تعريف الارتباط الخيارات التالية:
+              قبل البدء بتصفح الموقع، يمكنك تعديل إعدادات ملفات تعريف الارتباط
+              حسب تفضيلاتك.
             </p>
 
             <div className="cookie-option">
               <h3>1. ملفات الارتباط الضرورية</h3>
               <p>
-              هذه الملفات ضرورية لتشغيل الموقع بشكل صحيح، مثل تسجيل الدخول وتقديم المحتوى الأساسي. لا يمكن تعطيلها لأنها أساسية لوظائف الموقع.
+                هذه الملفات ضرورية لتشغيل الموقع بشكل صحيح ولا يمكن تعطيلها.
               </p>
             </div>
 
             <div className="cookie-option">
               <h3>2. ملفات الارتباط التحليلية</h3>
-              <p>
-              تساعدنا هذه الملفات في تتبع زيارات الموقع وتحليل سلوك المستخدم لتحسين الأداء وتطوير المحتوى. يمكنك اختيار تفعيلها أو تعطيلها حسب رغبتك.
-              </p>
-              <button onClick={() => handleToggle("analytics")}>
-                {cookiesSettings.analytics ? "تعطيل" : "تفعيل"}
+              <p>تساعدنا في تحسين الأداء وتحليل سلوك المستخدم.</p>
+              <button
+                className={cookiesSettings.analytics ? "active_disable" : ""}
+                onClick={() => handleToggle("analytics", true)}
+              >
+                تفعيل
+              </button>
+              <button
+                className={!cookiesSettings.analytics ? "active_enable" : ""}
+                onClick={() => handleToggle("analytics", false)}
+              >
+                تعطيل
               </button>
             </div>
 
             <div className="cookie-option">
               <h3>3. ملفات الارتباط الخاصة بالتفضيلات</h3>
-              <p>
-              تسمح بحفظ تفضيلاتك، مثل إعدادات العرض وغيرها، لتوفير تجربة مخصصة عند العودة للموقع. يمكن تفعيلها أو تعطيلها حسب احتياجاتك.
-تفعيل. تعطيل
-
-              </p>
-              <button onClick={() => handleToggle("preferences")}>
-                {cookiesSettings.preferences ? "تعطيل" : "تفعيل"}
+              <p>تسمح بحفظ تفضيلاتك لتوفير تجربة مخصصة عند العودة للموقع.</p>
+              <button
+                className={cookiesSettings.preferences ? "active_disable" : ""}
+                onClick={() => handleToggle("preferences", true)}
+              >
+                تفعيل
+              </button>
+              <button
+                className={!cookiesSettings.preferences ? "active_enable" : ""}
+                onClick={() => handleToggle("preferences", false)}
+              >
+                تعطيل
               </button>
             </div>
 
             <div className="actions">
-              <button onClick={handleAcceptAll}>
-                تفعيل جميع ملفات الارتباط
+              <button onClick={handleSaveSettingsAndClose}>
+                حفظ الإعدادات
               </button>
-              <button onClick={handleSaveSettings}>حفظ الإعدادات</button>
-              <button onClick={() => setShowSettingsModal(false)}>إغلاق</button>
             </div>
-            <hr />
-          <p className="mt-2">يمكنك ضبط إعدادات ملفات الارتباط هذه من خلال نافذة إعدادات الخصوصية التي تظهر عند زيارتك الأولى للموقع، ويمكنك تعديل تفضيلاتك في أي وقت من خلال إعدادات الخصوصية في الموقع.</p>
           </div>
         </div>
       )}

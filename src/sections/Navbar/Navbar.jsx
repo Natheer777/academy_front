@@ -88,12 +88,12 @@ const fetchUserData = async () => {
         <div className="buttons_mobile">
         {!user ? (
           <div className="buttons">
-              <a href="Login_users">
+              <Link to="/Login_users">
                 <button className="login_nav">تسجيل الدخول</button>
-              </a>
-              <a href="/Register_account">
+              </Link>
+              <Link to="/Register_account">
                 <button className="register_nav">سجل الآن</button>
-              </a>
+              </Link>
             </div>
           ) : (
             // عرض معلومات المستخدم إذا كان مسجل الدخول
@@ -139,12 +139,12 @@ const fetchUserData = async () => {
           <div className="buttons_pc">
         {!user ? (
           <div className="buttons">
-              <a href="/Login_users">
+              <Link to="/Login_users">
                 <button className="login_nav">تسجيل الدخول</button>
-              </a>
-              <a href="/Register_account">
+              </Link>
+              <Link to="/Register_account">
                 <button className="register_nav">سجل  الآن</button>
-              </a>
+              </Link>
             </div>
           ) : (
             // عرض معلومات المستخدم إذا كان مسجل الدخول

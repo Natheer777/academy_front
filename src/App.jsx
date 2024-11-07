@@ -33,7 +33,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import Logo from "../src/assets/Logo/الشعار-2-png.png";
 import { FaLine } from "react-icons/fa";
-import ProtectedRoute from "./pages/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { Cookies } from "./components";
 
@@ -222,7 +222,6 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/About" element={<About />} />
               <Route path="/Date" element={<Date_lisson />} />
-              <Route path="/Questions" element={<Questions />} />
               <Route path="/Login" element={<Login />} />
               <Route path="/Articles" element={<Articles />} />
               <Route path="/Level_division" element={<Level_division />} />
