@@ -1,8 +1,9 @@
 import "./Header.css";
-import Logo from "../../assets/Logo/الشعار-2-png.png";
 import img_header from "../../assets/Ai_img/_c44c06cf-5421-4193-b9bb-cd39a86e679f.jpg";
-import img_what_we_do from '../../assets/imgheader/_dcdcbe88-4c28-4699-bb82-1d2754efe109.jpg'
-import img_why_we_choos from '../../assets/imgheader/_993a5416-0b18-4ddb-869a-a5b99532ffe5.jpg'
+import img_what_we_do from "../../assets/imgheader/_dcdcbe88-4c28-4699-bb82-1d2754efe109.jpg";
+import img_why_we_choos from "../../assets/imgheader/_993a5416-0b18-4ddb-869a-a5b99532ffe5.jpg";
+import vision_img from "../../assets/imgheader/_fa1d11a6-f7f0-49d6-8ba9-5ea0abd69afe.jpg";
+import letter_img from "../../assets/imgheader/_9e9b0610-8fca-4c60-8d4d-d734e8182c46.jpg";
 // import learn_img from '../../assets/imgheader/R (1).jpg'
 export default function Header() {
   return (
@@ -11,10 +12,7 @@ export default function Header() {
         <div className="academy pb-4 pt-4 mt-4 left">
           <div className="row Header_revers">
             <div className="col-lg-6">
-              <img className="w-100" src={img_header} alt="" />
-            </div>
-            <div className="col-lg-6">
-              <div className="acadeny_logo mb-4 ">
+              <div className="academy_logo mb-4 ">
                 <h2 className=" left fw-bold">أكاديمية اللغة اليابانية</h2>
               </div>
               {/* <h2 className="title_academy mb-3">التعريف بالأكاديمية:</h2> */}
@@ -33,46 +31,64 @@ export default function Header() {
                 تعليمية مخصصة تساعدكم على تحقيق أهدافكم اللغوية والثقافية.
               </div>
             </div>
+            <div className="col-lg-6">
+              <img className="w-100" src={img_header} alt="" />
+            </div>
           </div>
         </div>
-        <div className="academy mt-5 mb-5 right">
-          <h2 className="title_academy mb-3">رؤيتنا:</h2>
-          <div className="details">
-            تأسست أكاديمية اللغة اليابانية لتكون جسرًا يربط بين العالم العربي
-            واليابان من خلال اللغة والثقافة. فنحن نؤمن أن تعلم اللغة ليس مجرد
-            إتقان المفردات والقواعد، بل هو نافذة لفهم الثقافات والحضارات
-            المختلفة. ومن هنا، جاءت رؤيتنا في تقديم تعليم شامل يمزج بين التعليم
-            اللغوي والتواصل الثقافي، بحيث يصبح الطلاب قادرين على استخدام اللغة
-            اليابانية بشكل فعال في حياتهم اليومية والعملية. وبناء جسر ثقافي بين
-            العالم العربي واليابان من خلال تعليم اللغة اليابانية بطريقة مبتكرة،
-            ومتدرجة، وشاملة. ونسعى إلى تمكين الطلاب من التواصل بثقة واحترافية
-            باللغة اليابانية في مختلف مجالات الحياة، سواء كانت أكاديمية، أو
-            مهنية، أو حتى ترفيهية. وفي أكاديمية اللغة اليابانية نؤمن بأن اللغة
-            ليست مجرد أداة تواصل، بل هي مفتاح لفهم ثقافات جديدة وتوسيع آفاق
-            الفكر.
+        <div className="academy mt-5 mb-5 right row">
+          <div className="col-lg-6 ">
+            <img className="w-100" src={vision_img} alt="" />
+          </div>
+          <div className="col-lg-6">
+            <h2 className="title_academy mb-3">رؤيتنا:</h2>
+            <div className="details">
+              تأسست أكاديمية اللغة اليابانية لتكون جسرًا يربط بين العالم العربي
+              واليابان من خلال اللغة والثقافة. فنحن نؤمن أن تعلم اللغة ليس مجرد
+              إتقان المفردات والقواعد، بل هو نافذة لفهم الثقافات والحضارات
+              المختلفة. ومن هنا، جاءت رؤيتنا في تقديم تعليم شامل يمزج بين
+              التعليم اللغوي والتواصل الثقافي، بحيث يصبح الطلاب قادرين على
+              استخدام اللغة اليابانية بشكل فعال في حياتهم اليومية والعملية.
+              وبناء جسر ثقافي بين العالم العربي واليابان من خلال تعليم اللغة
+              اليابانية بطريقة مبتكرة، ومتدرجة، وشاملة. ونسعى إلى تمكين الطلاب
+              من التواصل بثقة واحترافية باللغة اليابانية في مختلف مجالات الحياة،
+              سواء كانت أكاديمية، أو مهنية، أو حتى ترفيهية. وفي أكاديمية اللغة
+              اليابانية نؤمن بأن اللغة ليست مجرد أداة تواصل، بل هي مفتاح لفهم
+              ثقافات جديدة وتوسيع آفاق الفكر.
+            </div>
           </div>
         </div>
 
-        <div className="academy mt-5 mb-5 right">
-          <h2 className="title_academy mb-3">رسالتنا:</h2>
-          <div className="details">
-            رسالتنا هي توفير تعليم عالي الجودة يمكِّن جميع المتعلمين من اكتساب
-            اللغة اليابانية بفعالية، مع فهم عميق للثقافة اليابانية. ونهدف إلى أن
-            نصبح وجهة أساسية لكل من يسعى لتعلم اللغة اليابانية في العالم العربي.
-            ونحرص على أن يكون التعليم في أكاديميتنا ليس فقط تفاعليًا وممتعًا، بل
-            أيضًا مبنيًا على أسس علمية وتربوية مدروسة تضمن الفهم العميق والتطبيق
-            السليم للغة. وفي أكاديمية اللغة اليابانية، نؤمن أن إتقان اللغة
-            اليابانية سيفتح أمامك أبوابًا واسعة من الفرص سواء في مجالات العمل،
-            أو الدراسة، أو حتى التواصل الشخصي. وتعلم اللغة اليابانية ليس مجرد
-            اكتساب مهارات جديدة، بل هو رحلة لاكتشاف عالم جديد مليء بالإثارة
-            والتحديات.
+        <div className="academy mt-5 mb-5 right row">
+          <div className="col-lg-6 ">
+            <h2 className="title_academy mb-3">رسالتنا:</h2>
+            <div className="details">
+              رسالتنا هي توفير تعليم عالي الجودة يمكِّن جميع المتعلمين من اكتساب
+              اللغة اليابانية بفعالية، مع فهم عميق للثقافة اليابانية. ونهدف إلى
+              أن نصبح وجهة أساسية لكل من يسعى لتعلم اللغة اليابانية في العالم
+              العربي. ونحرص على أن يكون التعليم في أكاديميتنا ليس فقط تفاعليًا
+              وممتعًا، بل أيضًا مبنيًا على أسس علمية وتربوية مدروسة تضمن الفهم
+              العميق والتطبيق السليم للغة. وفي أكاديمية اللغة اليابانية، نؤمن أن
+              إتقان اللغة اليابانية سيفتح أمامك أبوابًا واسعة من الفرص سواء في
+              مجالات العمل، أو الدراسة، أو حتى التواصل الشخصي. وتعلم اللغة
+              اليابانية ليس مجرد اكتساب مهارات جديدة، بل هو رحلة لاكتشاف عالم
+              جديد مليء بالإثارة والتحديات.
+            </div>
+          </div>
+          <div className="col-lg-6">
+            <img className="w-100" src={letter_img} alt="" />
           </div>
         </div>
+
         <div className="what_we_do ">
           <h2 className="fw-bold text-center mb-4">
             ماذا نقدم في أكاديمية اللغة اليابانية؟
           </h2>
-          <img className="w-75 m-auto d-flex mb-4" src={img_what_we_do} alt="" />
+          <img
+            className="w-75 m-auto d-flex mb-4"
+            src={img_what_we_do}
+            alt=""
+          />
           <ul className="ps-0">
             <li className="academy mb-4">
               <h2>1. دورات تعليمية شاملة: </h2>
@@ -128,7 +144,11 @@ export default function Header() {
           <h2 className="fw-bold text-center">
             لماذا تختار أكاديمية اللغة اليابانية؟
           </h2>
-          <img className="w-75 m-auto d-flex mb-4" src={img_why_we_choos} alt="" />
+          <img
+            className="w-75 m-auto d-flex mb-4"
+            src={img_why_we_choos}
+            alt=""
+          />
           <ul className="ps-0">
             <li className="academy mb-4">
               <h2>1. فريق تدريس متخصص:</h2>
@@ -172,7 +192,7 @@ export default function Header() {
             <li className="academy mb-4">
               <h2>5. شبكة تواصل مع المتعلمين والخبراء: </h2>
               <p>
-                : من خلال الأكاديمية، يتاح للطلاب التواصل مع متعلمين آخرين من
+                من خلال الأكاديمية، يتاح للطلاب التواصل مع متعلمين آخرين من
                 مختلف أنحاء العالم العربي، بالإضافة إلى الخبراء والمدرسين
                 اليابانيين والعرب على حد السواء. وهذا يساهم في بناء مجتمع تعليمي
                 داعم يمكن للطلاب فيه تبادل الخبرات والتجارب.

@@ -9,7 +9,7 @@
 .levels{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     gap: 20px;
 }
@@ -55,4 +55,19 @@
     position: absolute;
     left: 20px;
     bottom: 20px;
+}
+.All_level ul li{
+    list-style: none;
+}
+.All_level ul li h2{
+    color: var(--color--green);
+    font-weight: bold;
+}
+.All_level ul li p{
+    line-height: 2;
+    font-size: var(--sec--size);
+}
+.single{
+    font-size: var(--sec--size);
+    text-align: center;
 }

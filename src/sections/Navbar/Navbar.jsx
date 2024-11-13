@@ -4,16 +4,13 @@ import { FaHome } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { MdLibraryBooks } from "react-icons/md";
 import { BsCashCoin } from "react-icons/bs";
-import { FaCashRegister } from "react-icons/fa6";
 import { FaBook } from "react-icons/fa6";
 import { FaUserGroup } from "react-icons/fa6";
 import { GrMoreVertical } from "react-icons/gr";
 import { FaMicrophoneLines } from "react-icons/fa6";
 import { FaCommentAlt } from "react-icons/fa";
 import { FaQuestionCircle } from "react-icons/fa";
-import { MdPrivacyTip } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { FaHandshake } from "react-icons/fa6";
 
 
 export default function Navbar() {
@@ -193,34 +190,20 @@ const fetchUserData = async () => {
                 <GrServices /> محتويات الدروس
                 </a>
                 </li> */}
-            <li className="nav-item item2 hidden">
-              <Link className="nav-a" to="/Level_division">
-                <MdLibraryBooks />
-                تقسيم المستويات
-              </Link>
-            </li>
-            <li className="nav-item item3 hidden">
-              <Link className="nav-a" to="/Fees">
-                <BsCashCoin />
-                الرسوم
-              </Link>
-            </li>
             <li className="nav-item item4 hidden">
               <Link className="nav-a dropdown-item" to="/Teachers">
                 <FaUserGroup />
                الهيئة التدريسية
               </Link>
             </li>
-            <li className="nav-item item4 hidden">
-              <Link className="nav-a dropdown-item" to="/Register">
-                <FaCashRegister />
-                طريقة التسجيل
+
+            <li className="nav-item item2 hidden">
+              <Link className="nav-a" to="/Level_division">
+                <MdLibraryBooks />
+              المستويات الدراسية
               </Link>
             </li>
-         
-        
-                </div>
-<div className="group_2">
+     
 
             <li className="nav-item item4 hidden">
               <Link className="nav-a dropdown-item" to="/Study_materials">
@@ -229,13 +212,35 @@ const fetchUserData = async () => {
               </Link>
             </li>
      
+   
 
-            <li className="nav-item item4 hidden">
-              <Link className="nav-a dropdown-item" to="/Questions">
-              <FaQuestionCircle />
-                الأسئلة الشائعة
+            {/* <li className="nav-item item4 hidden">
+              <Link className="nav-a dropdown-item" to="/Register">
+              <FaCashRegister />
+              طريقة التسجيل
+              </Link>
+              </li>
+              */}
+        
+                </div>
+<div className="group_2">
+
+            <li className="nav-item item3 hidden">
+              <Link className="nav-a" to="/Fees">
+                <BsCashCoin />
+                الرسوم الدراسية
               </Link>
             </li>
+
+
+              <li className="nav-item item4 hidden">
+                <Link className="nav-a dropdown-item" to="/Questions">
+                <FaQuestionCircle />
+                  الأسئلة الشائعة
+                </Link>
+              </li>
+  
+     
 
             <li className="nav-item item4 hidden">
               <Link className="nav-a dropdown-item" to="/Comments">
@@ -258,13 +263,18 @@ const fetchUserData = async () => {
         
               {/* <li>
               <Link className="nav-a dropdown-item" to="/Login">
-                <FaCashRegister />
-                لوحة التحكم
+              <FaCashRegister />
+              لوحة التحكم
               </Link>
-            </li> */}
+              </li> */}
             </div>
           <div className="group_3">
-          <li className="nav-item item4 hidden">
+              <li className="nav-item item4 hidden">
+                <Link className="nav-a dropdown-item" to="/Dash_Teachers">
+                 لوحة تحكم الأساتذة
+                </Link>
+              </li>
+          {/* <li className="nav-item item4 hidden">
               <Link className="nav-a dropdown-item" to="/Privacy">
               <MdPrivacyTip />
               سياسة الخصوصية
@@ -275,7 +285,7 @@ const fetchUserData = async () => {
               <FaHandshake />
               شروط الاستخدام
               </Link>
-            </li>
+            </li> */}
           </div>
             </div>
             {/* <li className="nav-item dropdown">

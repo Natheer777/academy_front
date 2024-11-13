@@ -111,3 +111,12 @@
   .RegisteR option{
     text-align: right;
   }
+  .RegisteR .nav-item {
+    color: white;
+    font-size: var(--sec--size);
+    text-align: center;
+  }
+  .RegisteR .nav-item span{
+    color: #14ee81;
+    font-weight: bold;
+  }

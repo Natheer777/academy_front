@@ -1,6 +1,7 @@
 import "./Questions_Repeat.css";
 import { GoChevronDown } from "react-icons/go";
 import { useState } from "react";
+import question_img from '../../assets/_951e1fca-31d2-4544-acc4-7e540675ec7d.jpg'
 
 const ArabicAcademy = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -26,7 +27,7 @@ const ArabicAcademy = () => {
             </div>
           </div>
         </div>
-
+<img className="w-75 d-flex m-auto" src={question_img} alt="" />
         <div className="elementor-element elementor-widget elementor-widget-elementskit-accordion mt-5 mb-5">
           <div className="elementor-widget-container">
             <div className="ekit-wid-con">

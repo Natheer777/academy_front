@@ -25,6 +25,7 @@ import {
   Privacy,
   CommetS,
   Term,
+  Dash_Teachers,
 } from "./pages/index";
 
 // import {VerifyAccount , Register_account} from "./sections/index";
@@ -238,6 +239,7 @@ function App() {
               <Route path="/Questions" element={<Questions />} />
               <Route path="/Privacy" element={<Privacy />} />
               <Route path="/Terms" element={<Term />} />
+              <Route path="/Dash_Teachers" element={<Dash_Teachers />} />
               <Route
                 path="/Dash"
                 element={

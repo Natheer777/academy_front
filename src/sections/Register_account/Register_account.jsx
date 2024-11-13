@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./Register_account.css";
 import { useNavigate } from "react-router-dom";
 import register_img from "../../assets/Image/undraw_Team_page_re_cffb.png";
+import { Link } from "react-router-dom";
+import { FaCashRegister } from "react-icons/fa6";
 
 export default function Register_account() {
   const [formData, setFormData] = useState({
@@ -143,8 +145,16 @@ export default function Register_account() {
                 الإلكتروني.
               </p>
             </div>
-          </div>
+   <li className="nav-item item4 hidden">
+              <Link className="nav-a dropdown-item" to="/Register">
+              اضغط هنا للتعرف على <span> طريقة التسجيل </span>
 
+              <FaCashRegister />
+              </Link>
+              </li>
+             
+          </div>
+        
           <div className="col-lg-6">
             <form
               className="form-container academy p-5 mt-5 mb-5 m-auto"

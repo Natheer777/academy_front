@@ -72,6 +72,7 @@
 import "./Comments.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import comment_img from '../../assets/_c41fd9c8-37b4-4ced-a109-30ba1dde9350.jpg'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -96,6 +97,7 @@ export default function Comments() {
         <>
             <div className="container Comments" id="Comments">
                 <h2 className="text-center fw-bold mt-5 mb-5">من آراء الطلاب الكرام في أكاديمية اللغة اليابانية</h2>
+                <img className="w-75 m-auto d-flex" src={comment_img} alt="" />
                 <Swiper
     spaceBetween={30}
     centeredSlides={true}

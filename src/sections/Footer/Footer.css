@@ -1,9 +1,8 @@
-
-.Contact img{
+.Contact img {
   width: 100%;
 }
-.footer{
-    background-color: rgba(0, 0, 0, 0.819);
+.footer {
+  background-color: #d1f0dc;
 }
 .container {
   max-width: 1170px;
@@ -13,14 +12,16 @@
   display: flex;
   flex-wrap: wrap;
 }
-.footer ul{
+.footer ul {
   line-height: 2;
   list-style: none;
 }
 .footer ul li {
   margin-bottom: 10px;
+  color: black;
+  font-weight: bold;
 }
-.list-unstyled{
+.list-unstyled {
   text-align: start;
 }
 .logo_white {
@@ -38,66 +39,145 @@
   text-align: start;
   font-size: 18px;
   margin-bottom: 10px;
-  line-height: 2;
+  /* line-height: 2; */
+  color: black;
+}
+.social_icons a svg {
+  color: black;
+  font-size: var(--sec--size);
+  margin-left: 10px;
 }
 
-@media screen and (min-width:1200px) and (max-width:1440px){
-  .adress[lang="en"]{
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+  .adress[lang="en"] {
     font-size: 17px;
-    }  
+  }
 }
 
-svg{
+@media screen and (max-width: 877px) {
+  .rowFooter {
+    justify-content: center !important;
+  }
+  .adress{
+    line-height: 2;
+  }
+  .group_footer {
+    border-top: 2px green solid;
+    margin-top: 20px;
+  }
+  .Footer_all_list{
+    flex-direction: column-reverse;
+  }
+  .footer-img{
+    margin: auto;
+  }
+}
+@media screen and (min-width: 877px) {
+  .adress {
+    top: 8px;
+    position: absolute;
+  }
+  .rowFooter {
+    margin-top: 20px;
+  }
+  .group_footer{
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+
+  }
+}
+
+svg {
   font-size: 20px;
 }
-a{
-text-decoration: none;
-  color:antiquewhite;
+a {
+  text-decoration: none;
+  color: antiquewhite;
 }
-.Ulfooter{
+.Ulfooter {
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.Ulfooter a{
+.Ulfooter a {
   font-size: 15px;
 }
-.DesktopView{
+.DesktopView {
   position: relative;
   background-color: var(--color--red1);
 }
-.DesktopView h5{
+.DesktopView h5 {
   font-size: 12px;
   color: white;
-position: absolute;
-left: 50%;
-top: 46%;
-transform: translate(-50%,-50%);
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
 }
-.DesktopView svg{
+.DesktopView svg {
   color: white;
   font-size: 2rem;
 }
-.App button{
+.App button {
   border: none;
   padding: 5px;
   display: flex;
   justify-content: space-between;
   border-radius: 10px;
 }
-.rowFooter{
-  flex-direction: row-reverse;
+.rowFooter {
+  /* flex-direction: row-reverse;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px; */
 }
-.App button{
+.group_footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+.group_1_footer li a,
+.group_2_footer li a,
+.group_3_footer li a {
+  line-height: 2.5;
+  font-weight: bold;
+  font-size: 15px;
+  color: black;
+}
+.group_1_footer li a svg,
+.group_2_footer li a svg,
+.group_3_footer li a svg {
+  margin-left: 10px;
+  color: var(--color--red1);
+}
+.Footer_all_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: start;
+  gap: 30px;
+  /* margin-top: 20px; */
+}
+.App button {
   display: none;
 }
-@media screen and (min-width:5px) and (max-width:650px) {
-  .App button{
+@media screen and (min-width: 5px) and (max-width: 650px) {
+  .App button {
     display: block;
   }
-  .Ulfooter{
+  .Ulfooter {
     display: flex;
     justify-content: space-evenly;
   }
+}
+.list_footer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }

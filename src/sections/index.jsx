@@ -30,5 +30,6 @@ export {default as Register_account} from './Register_account/Register_account'
 export {default as Login_user} from './Login_user/Login_user'
 export {default as Dash_user} from './Dash_user/Dash_user'
 export {default as Privacy_sec} from './Privacy_sec/Privacy_sec'
+export {default as Dash_Teacher} from './Dash_Teacher/Dash_Teacher'
 
 
