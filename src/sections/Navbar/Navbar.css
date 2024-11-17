@@ -204,6 +204,8 @@ justify-content: center;
     border: 2px green solid;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    display: flex;
+    align-items: center;
   }
   .navbar-collapse li {
     margin-bottom: 6px;
@@ -297,7 +299,9 @@ justify-content: center;
   margin: 0;
 }
 
-
+.user-info{
+  text-align: center;
+}
 .user-name {
   display: inline-block;
 }

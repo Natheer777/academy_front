@@ -1,4 +1,3 @@
-
 import "./Dashboared.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -71,14 +70,14 @@ export default function Dashboard() {
 
   const handleSave = () => {
     const userId = 1; // افتراضًا أنك تعرف معرف المستخدم الحالي
-    const token = localStorage.getItem('token'); // الحصول على التوكن
+    const token = localStorage.getItem("token"); // الحصول على التوكن
 
     if (newUsername && newPassword) {
       fetch("https://academy-backend-pq91.onrender.com/updatecredentials", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}` // إضافة التوكن إلى الهيدر
+          Authorization: `Bearer ${token}`, // إضافة التوكن إلى الهيدر
         },
         body: JSON.stringify({ newUsername, newPassword, userId }),
       })
@@ -123,6 +122,28 @@ export default function Dashboard() {
         }
       })
       .catch((error) => console.error("Error deleting user:", error));
+  };
+
+  const updateUserRole = (id, role) => {
+    fetch("https://academy-backend-pq91.onrender.com/update-role", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userId: id, role }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("تم تغيير الدور !");
+          // Update the role locally in the state
+          setUsers(
+            users.map((user) => (user.id === id ? { ...user, role } : user))
+          );
+        } else {
+          console.error("Failed to update role");
+        }
+      })
+      .catch((error) => console.error("Error updating role:", error));
   };
 
   const handleLogout = () => {
@@ -233,6 +254,7 @@ export default function Dashboard() {
                 <th>مستوى اللغة اليابانية</th>
                 <th>الهاتف</th>
                 <th>الإيميل</th>
+                <th>الدور</th>
                 <th>الحذف</th>
               </tr>
             </thead>
@@ -249,7 +271,19 @@ export default function Dashboard() {
                   <td>{user.phone}</td>
                   <td>{user.email}</td>
                   <td>
-                    <button className="delete-btn" onClick={() => deleteUser(user.id)}>
+                    <select
+                      value={user.role}
+                      onChange={(e) => updateUserRole(user.id, e.target.value)}
+                    >
+                      <option value="student">Student</option>
+                      <option value="teacher">Teacher</option>
+                    </select>
+                  </td>
+                  <td>
+                    <button
+                      className="delete-btn"
+                      onClick={() => deleteUser(user.id)}
+                    >
                       🗑️
                     </button>
                   </td>

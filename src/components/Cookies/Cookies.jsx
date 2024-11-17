@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import "./Cookies.css";
 
 export default function Cookies() {
@@ -50,6 +50,7 @@ export default function Cookies() {
   };
 
   return (
+    <>
     <div className="Cookies">
       {!cookiesAccepted && (
         <div className="cookie-banner">
@@ -132,5 +133,6 @@ export default function Cookies() {
         </div>
       )}
     </div>
+    </>
   );
 }
