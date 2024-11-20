@@ -56,7 +56,10 @@ export default function DesktopViewButton() {
     <>
       <div>
         <button className="DesktopView m-1" onClick={requestDesktopSite}>
-          <h5>PC</h5> <CgScreen />
+          <h5>
+            PC <br />
+            VIEW
+            </h5> <CgScreen />
         </button>
       </div>
     </>

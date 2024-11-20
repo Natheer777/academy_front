@@ -120,10 +120,10 @@ export default function Navbar() {
                     localStorage.removeItem("userRole");
                     // إزالة بيانات المستخدم
                     sessionStorage.removeItem("auth"); // إزالة التوكن من sessionStorage
-                    sessionStorage.removeItem("token"); // إزالة التوكن من sessionStorage
-                    sessionStorage.removeItem("userEmail"); // إزالة التوكن من sessionStorage
-                    sessionStorage.removeItem("userId"); // إزالة التوكن من sessionStorage
-                    sessionStorage.removeItem("userRole"); // إزالة التوكن من sessionStorage
+                    // sessionStorage.removeItem("token"); // إزالة التوكن من sessionStorage
+                    // sessionStorage.removeItem("userEmail"); // إزالة التوكن من sessionStorage
+                    // sessionStorage.removeItem("userId"); // إزالة التوكن من sessionStorage
+                    // sessionStorage.removeItem("userRole"); // إزالة التوكن من sessionStorage
                    
 
                     // عمل reload للصفحة
@@ -180,10 +180,10 @@ export default function Navbar() {
                     localStorage.removeItem("userRole");
                     // إزالة بيانات المستخدم
                     sessionStorage.removeItem("auth"); // إزالة التوكن من sessionStorage
-                    sessionStorage.removeItem("token"); // إزالة التوكن من sessionStorage
-                    sessionStorage.removeItem("userEmail"); // إزالة التوكن من sessionStorage
-                    sessionStorage.removeItem("userId"); // إزالة التوكن من sessionStorage
-                    sessionStorage.removeItem("userRole"); // إزالة التوكن من sessionStorage
+                    // sessionStorage.removeItem("token"); // إزالة التوكن من sessionStorage
+                    // sessionStorage.removeItem("userEmail"); // إزالة التوكن من sessionStorage
+                    // sessionStorage.removeItem("userId"); // إزالة التوكن من sessionStorage
+                    // sessionStorage.removeItem("userRole"); // إزالة التوكن من sessionStorage
                    
                     // عمل reload للصفحة
                     window.location.reload();

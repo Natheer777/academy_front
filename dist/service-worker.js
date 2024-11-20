@@ -63,7 +63,7 @@
 //   );
 // });
 
-const CACHE_NAME = "vite-react-offline-cache-v22"; // تأكد من تغيير الرقم مع كل تحديث
+const CACHE_NAME = "vite-react-offline-cache-v31"; // تأكد من تغيير الرقم مع كل تحديث
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();

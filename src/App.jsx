@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import { FaTurnUp } from "react-icons/fa6";
+import { FaArrowAltCircleUp } from "react-icons/fa";
+
 import {
   About,
   Dash,
@@ -183,8 +185,9 @@ function App() {
       {/* {!isLoaded && <Curtain />}  */}
       {/* {isLoaded && ( */}
       <>
+        <Cookies  />
         <button className="up">
-          <FaTurnUp />
+          <FaArrowAltCircleUp />
         </button>
 
         <div className="social">
@@ -217,7 +220,6 @@ function App() {
           <img className="Loading" src={Logo} alt="" />
         ) : (
           <Router>
-              <Cookies  />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/About" element={<About />} />

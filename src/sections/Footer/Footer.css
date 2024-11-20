@@ -107,23 +107,24 @@ a {
 }
 .DesktopView {
   position: relative;
-  background-color: var(--color--red1);
+  background-color: var(--color--green);
 }
 .DesktopView h5 {
-  font-size: 12px;
+  font-weight: bold;
+  font-size: 9px;
   color: white;
   position: absolute;
   left: 50%;
-  top: 46%;
+  top: 41.5%;
   transform: translate(-50%, -50%);
 }
 .DesktopView svg {
   color: white;
-  font-size: 2rem;
+  font-size: 3.2rem;
 }
 .App button {
   border: none;
-  padding: 5px;
+  /* padding: 5px; */
   display: flex;
   justify-content: space-between;
   border-radius: 10px;
