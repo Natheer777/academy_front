@@ -1,3 +1,6 @@
 .Dont_have_account span{
     color: var(--color--green);
 }
+.login-form  label{
+    text-align: start;
+}

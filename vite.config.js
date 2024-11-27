@@ -23,11 +23,25 @@
 //   },
 // });
 
-
+import fs from 'fs'
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+  // server: {
+  //   host: '0.0.0.0', // للسماح بالوصول من الأجهزة الأخرى
+  //   port: 5173,      // يمكن تغييره حسب الحاجة
+  //   https: {
+  //     key: fs.readFileSync('./key.pem'),  // مسار ملف المفتاح الخاص
+  //     cert: fs.readFileSync('./cert.pem') // مسار ملف الشهادة
+  //   }
+  // },
+  optimizeDeps: {
+    exclude: ['lucide-react'],
+  },
+  define: {
+    'global': {},
+  },
   plugins: [
     react(),
   ],

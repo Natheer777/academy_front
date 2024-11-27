@@ -206,6 +206,7 @@ justify-content: center;
     border-bottom-right-radius: 20px;
     display: flex;
     align-items: center;
+    text-align: right;
   }
   .navbar-collapse li {
     margin-bottom: 6px;
