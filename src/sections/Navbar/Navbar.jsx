@@ -39,12 +39,12 @@ export default function Navbar() {
       );
 
       if (!response.ok) {
-        throw new Error("توكن غير صالح");
+        throw new ("توكن غير صالح");
       }
 
       const contentType = response.headers.get("content-type");
       if (!contentType || !contentType.includes("application/json")) {
-        throw new Error("الرد من الخادم ليس بصيغة JSON");
+        throw new ("الرد من الخادم ليس بصيغة JSON");
       }
 
       const data = await response.json();
@@ -70,19 +70,11 @@ export default function Navbar() {
     }
   }, []);
 
-  // استخدام useEffect لاستدعاء fetchUserData عند تحميل المكون
   useEffect(() => {
     fetchUserData();
   }, []);
 
-  // استخدام useEffect لاستدعاء fetchUserData عند تحميل المكون
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (token) {
-  //     fetchUserData();
-  //   }
 
-  // }, []);
 
   return (
     <>
@@ -118,6 +110,7 @@ export default function Navbar() {
                     localStorage.removeItem("userEmail"); // إزالة التوكن من التخزين المحلي
                     localStorage.removeItem("userId");
                     localStorage.removeItem("userRole");
+                    localStorage.removeItem("firstName");
                     // إزالة بيانات المستخدم
                     sessionStorage.removeItem("auth"); // إزالة التوكن من sessionStorage
                     // sessionStorage.removeItem("token"); // إزالة التوكن من sessionStorage
@@ -178,6 +171,8 @@ export default function Navbar() {
                     localStorage.removeItem("userEmail"); // إزالة التوكن من التخزين المحلي
                     localStorage.removeItem("userId");
                     localStorage.removeItem("userRole");
+                    localStorage.removeItem("firstName");
+
                     // إزالة بيانات المستخدم
                     sessionStorage.removeItem("auth"); // إزالة التوكن من sessionStorage
                     // sessionStorage.removeItem("token"); // إزالة التوكن من sessionStorage

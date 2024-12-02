@@ -1,0 +1,16 @@
+.chat-box {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+  }
+  
+  .text-primary {
+    color: #007bff !important;
+  }
+  
+  .text-success {
+    color: #28a745 !important;
+  }

@@ -221,6 +221,7 @@ export default function Login_user() {
           localStorage.setItem("token", data.token);
 
           // تخزين بيانات المستخدم في localStorage إذا لزم الأمر
+          localStorage.setItem('firstName', data.user.firstName);
           localStorage.setItem('userEmail', data.user.email);
           localStorage.setItem('userId', data.user.id);
           localStorage.setItem('userRole', data.user.role);
