@@ -84,7 +84,7 @@ export default function Comments() {
 
     useEffect(() => {
         axios
-            .get("https://academy-backend-pq91.onrender.com/allcomments")
+            .get("https://api.japaneseacademy.online/allcomments")
             .then((response) => {
                 setComments(response.data);
             })

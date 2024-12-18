@@ -29,7 +29,7 @@ export default function Navbar() {
       }
 
       const response = await fetch(
-        "https://academy-backend-pq91.onrender.com/allusers",
+        "https://api.japaneseacademy.online/allusers",
         {
           headers: {
             Authorization: `Bearer ${token}`,

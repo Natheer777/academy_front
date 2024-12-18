@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { io } from "socket.io-client";
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import './Chat.css'
-const socket = io("https://academy-backend-pq91.onrender.com"); // الاتصال بالخادم
+const socket = io("https://api.japaneseacademy.online"); // الاتصال بالخادم
 
 const Chat = ({ userRole, firstName }) => {
   const [message, setMessage] = useState("");

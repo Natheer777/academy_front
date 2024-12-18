@@ -79,7 +79,7 @@ export default function Register_account() {
 
     setIsRegistering(true); // تغيير الزر إلى "جاري التسجيل"
 
-    fetch("https://academy-backend-pq91.onrender.com/register", {
+    fetch("https://api.japaneseacademy.online/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -108,7 +108,7 @@ export default function Register_account() {
 
     setIsVerifying(true); // تغيير الزر إلى "جاري التحقق"
 
-    fetch("https://academy-backend-pq91.onrender.com/verify", {
+    fetch("https://api.japaneseacademy.online/verify", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

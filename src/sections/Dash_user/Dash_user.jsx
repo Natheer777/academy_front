@@ -15,7 +15,7 @@ function Dash_user() {
     }
 
     // جلب بيانات المستخدمين من الخادم
-    fetch(`https://academy-backend-pq91.onrender.com/allusers`, {
+    fetch(`https://api.japaneseacademy.online/allusers`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

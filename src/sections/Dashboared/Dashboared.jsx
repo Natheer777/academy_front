@@ -21,7 +21,7 @@ export default function Dashboard() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://academy-backend-pq91.onrender.com/addcomment", {
+    fetch("https://api.japaneseacademy.online/addcomment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,14 +43,14 @@ export default function Dashboard() {
   };
 
   const fetchComments = () => {
-    fetch("https://academy-backend-pq91.onrender.com/allcomments")
+    fetch("https://api.japaneseacademy.online/allcomments")
       .then((response) => response.json())
       .then((data) => setComments(data))
       .catch((error) => console.error("Error fetching comments:", error));
   };
 
   const deleteComment = (id) => {
-    fetch("https://academy-backend-pq91.onrender.com/deletecomment", {
+    fetch("https://api.japaneseacademy.online/deletecomment", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -73,7 +73,7 @@ export default function Dashboard() {
     const token = localStorage.getItem("token"); // الحصول على التوكن
 
     if (newUsername && newPassword) {
-      fetch("https://academy-backend-pq91.onrender.com/updatecredentials", {
+      fetch("https://api.japaneseacademy.online/updatecredentials", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -96,7 +96,7 @@ export default function Dashboard() {
 
   // Fetch users when the component mounts
   const fetchUsers = () => {
-    fetch("https://academy-backend-pq91.onrender.com/allusers")
+    fetch("https://api.japaneseacademy.online/allusers")
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);
@@ -106,7 +106,7 @@ export default function Dashboard() {
 
   // Delete user function
   const deleteUser = (id) => {
-    fetch("https://academy-backend-pq91.onrender.com/deleteusers", {
+    fetch("https://api.japaneseacademy.online/deleteusers", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -125,7 +125,7 @@ export default function Dashboard() {
   };
 
   const updateUserRole = (id, role) => {
-    fetch("https://academy-backend-pq91.onrender.com/update-role", {
+    fetch("https://api.japaneseacademy.online/update-role", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

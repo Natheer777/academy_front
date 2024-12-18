@@ -14,7 +14,7 @@ function LoginPage() {
         setIsLoading(true); // تعيين حالة التحميل إلى true
 
         try {
-            const response = await fetch('https://academy-backend-pq91.onrender.com/login', {
+            const response = await fetch('https://api.japaneseacademy.online/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password })
