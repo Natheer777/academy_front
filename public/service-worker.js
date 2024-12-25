@@ -1,4 +1,4 @@
-const CACHE_NAME = "vite-react-offline-cache-v129";
+const CACHE_NAME = "vite-react-offline-cache-v139";
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
@@ -7,10 +7,10 @@ self.addEventListener("install", (event) => {
       return cache.addAll([
         "/",
         "/index.html",
+        "/assets/index.DLKFD4La.js",
         "/assets/vendor.CqcSyPVE.js",
-        "/assets/index.DWcpXSUm.js",
-        "/assets/index.D2ikb-tf.css",
-        "/Fonts/ScheherazadeNew-Bold.ttf",
+        "/assets/index.CzIcRRo8.css",
+        "/Fonts/ScheherazadeNew-Bold.CrbhGG_h.ttf",
         "/About",
         "/Date",
         "/Login",

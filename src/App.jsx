@@ -29,6 +29,8 @@ import {
   Dash_Teachers,
 } from "./pages/index";
 
+
+
 // import {VerifyAccount , Register_account} from "./sections/index";
 import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -38,8 +40,10 @@ import { FaLine } from "react-icons/fa";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { Cookies } from "./components";
+import { MeetingNow } from "./sections";
 
 function App() {
+
   /////////////////////////////////////////////
 
   // const [cookiesAccepted, setCookiesAccepted] = useState(false);
@@ -159,6 +163,7 @@ function App() {
 
   return (
     <>
+
       {/* <div>
         {!cookiesAccepted && (
           <div className="cookie-banner">
@@ -241,6 +246,8 @@ function App() {
               <Route path="/Privacy" element={<Privacy />} />
               <Route path="/Terms" element={<Term />} />
               <Route path="/Dash_Teachers" element={<Dash_Teachers />} />
+              <Route path="/meetingNow" element={<MeetingNow />} />
+
               <Route
                 path="/Dash"
                 element={

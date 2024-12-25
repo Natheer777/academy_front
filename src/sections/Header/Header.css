@@ -3,6 +3,10 @@
     font-weight: bold;
     color: var(--color--green);
 }
+.academySpan{
+    font-weight: bold;
+    color: var(--color--green);
+}
 .Header ,.details{
     font-weight: normal;
     font-size: var(--sec--size);

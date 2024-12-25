@@ -41,15 +41,14 @@ const Chat = ({ userRole, firstName }) => {
 const name = localStorage.getItem("firstName")
   return (
     <>
-      <hr />
       <Container>
         <Row className="justify-content-center mt-4">
-          <Col md={8}>
-            <h3 className="text-center">
+          <Col md={11}>
+            {/* <h3 className="text-center">
               {localStorage.getItem("userRole") === "teacher"
                 ? "دردشة المعلم"
                 : "دردشة الطالب"}
-            </h3>
+            </h3> */}
             <Card className="w-100">
               <Card.Body>
                 <div
@@ -92,7 +91,7 @@ const name = localStorage.getItem("firstName")
                     />
                   </Form.Group>
                   <Button
-                    className="mt-2"
+                    className="webRtcSend mt-2"
                     variant="primary"
                     onClick={handleSendMessage}
                   >

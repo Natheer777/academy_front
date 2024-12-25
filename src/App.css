@@ -82,6 +82,11 @@ ol ,ul{
 }
 
 :root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --background-color: #f4f6f7;
+  --text-color: #ffffff;
+  --border-radius: 12px;
   --main--color: white ;
   --color--red1: #4ea550;
   --color--red: #000000;
@@ -101,6 +106,8 @@ ol ,ul{
     --sec--size: 20px; 
   }
 }
+
+
 
  /* .left {
   opacity: 0;
@@ -152,11 +159,13 @@ ol ,ul{
   color: white;
   transition: 0.9s;
 }
+
 .social ul {
   cursor: pointer;
   display: flex;
   flex-direction: column-reverse;
 }
+
 .social ul li {
   margin-top: 6px;
   padding: 10px;
@@ -164,6 +173,7 @@ ol ,ul{
   cursor: pointer;
   color: white;
 }
+
 .social ul li svg {
   color: white;
   font-size: 40px;

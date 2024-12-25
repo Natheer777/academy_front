@@ -35,5 +35,7 @@ export {default as Student_Card} from './Student_Card/Student_Card'
 export {default as VideoCall} from './VideoCall/VideoCall'
 export {default as JoinCall} from './JoinCall/JoinCall'
 export {default as Chat} from './chat/Chat'
+export {default as MeetingNow} from './VideoCall/MeetingNow'
+export {default as FileSharing } from './VideoCall/FileSharing '
 
 
