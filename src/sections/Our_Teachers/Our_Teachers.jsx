@@ -8,6 +8,8 @@ export default function Our_Teachers() {
   return (
     <>
       <div className="container   mb-5 Our_Teachers" id="Teachers">
+        <div className="academy mb-4 ">
+
         <h2 className=" fw-bold">أعضاء الهيئة التدريسية</h2>
         <p>
           مزيج من الخبرة والمعرفة العميقة باللغتين والثقافتين العربية
@@ -42,6 +44,7 @@ export default function Our_Teachers() {
           يساهم في تعزيز التفاهم بين الثقافات، ويعمل على بناء جسر ثقافي بين
           العالم العربي واليابان.
         </p>
+        </div>
         {/* <img className="w-75 d-flex  m-auto" src={Our_Teachers_img} alt="" /> */}
         <div className="row">
           <div className="col-lg-12">

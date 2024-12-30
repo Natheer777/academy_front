@@ -39,7 +39,7 @@ import Logo from "../src/assets/Logo/الشعار-2-png.png";
 import { FaLine } from "react-icons/fa";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
-import { Cookies } from "./components";
+import { Cookies, ScrollToTop } from "./components";
 import { MeetingNow } from "./sections";
 
 function App() {
@@ -225,6 +225,7 @@ function App() {
           <img className="Loading" src={Logo} alt="" />
         ) : (
           <Router>
+            <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/About" element={<About />} />
@@ -246,7 +247,7 @@ function App() {
               <Route path="/Privacy" element={<Privacy />} />
               <Route path="/Terms" element={<Term />} />
               <Route path="/Dash_Teachers" element={<Dash_Teachers />} />
-              <Route path="/meetingNow" element={<MeetingNow />} />
+              <Route path="/MeetingNow" element={<MeetingNow />} />
 
               <Route
                 path="/Dash"

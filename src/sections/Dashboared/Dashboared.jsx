@@ -146,6 +146,30 @@ export default function Dashboard() {
       .catch((error) => console.error("Error updating role:", error));
   };
 
+
+
+  const updateUserShow = (id, show) => {
+    fetch("https://api.japaneseacademy.online/update-show-video", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userId: id, show }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("تم تغيير الصلاحية !");
+          // Update the show locally in the state
+          setUsers(
+            users.map((user) => (user.id === id ? { ...user, show } : user))
+          );
+        } else {
+          console.error("Failed to update show");
+        }
+      })
+      .catch((error) => console.error("Error updating show:", error));
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("auth");
     navigate("/Login");
@@ -255,6 +279,7 @@ export default function Dashboard() {
                 <th>الهاتف</th>
                 <th>الإيميل</th>
                 <th>الدور</th>
+                <th>إظهار صفحة الفيديو</th>
                 <th>الحذف</th>
               </tr>
             </thead>
@@ -279,6 +304,34 @@ export default function Dashboard() {
                       <option value="teacher">Teacher</option>
                     </select>
                   </td>
+
+
+                  <td>
+                    <select
+                      value={user.show}
+                      onChange={(e) => updateUserShow(user.id, e.target.value)}
+                    >
+                      <option value="عدم الاظهار">عدم الاظهار</option>
+                      <option value="المستوى_الاول">المستوى الاول</option>
+                      <option value="المستوى_الثاني">المستوى الثاني</option>
+                      <option value="المستوى_الثالث">المستوى الثالث</option>
+                      <option value="المستوى_الرابع">المستوى الرابع</option>
+                      <option value="المستوى_الخامس">المستوى الخامس</option>
+                      <option value="المستوى_السادس">المستوى السادس</option>
+                      <option value="المستوى_السابع">المستوى السابع</option>
+                      <option value="المستوى_الثامن">المستوى الثامن</option>
+                      <option value="المستوى_التاسع">المستوى التاسع</option>
+                      <option value="المستوى_العاشر">المستوى العاشر</option>
+                      <option value="المستوى_الحادي_عشر">المستوى الحادي عشر</option>
+                      <option value="المستوى_الثاني_عشر">المستوى الثاني عشر</option>
+                      <option value="المستوى_الثالث_عشر">المستوى الثالث عشر</option>
+                      <option value="المستوى_الرابع_عشر">المستوى الرابع عشر</option>
+                      <option value="المستوى_الخامس_عشر">المستوى الخامس عشر</option>
+                      <option value="المستوى_السادس_عشر">المستوى السادس عشر</option>
+                    </select>
+                  </td>
+
+
                   <td>
                     <button
                       className="delete-btn"
@@ -287,6 +340,44 @@ export default function Dashboard() {
                       🗑️
                     </button>
                   </td>
+
+
+
+                  {/* <td>
+  <select
+    value={user.showVideoCall ? "1" : "0"} // تعيين القيمة حسب حالة showVideoCall
+    onChange={(e) =>
+      fetch("https://api.japaneseacademy.online/update-show-video-call", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userId: user.userId,
+          showVideoCall: e.target.value === "1", // تحويل القيمة النصية إلى boolean
+        }),
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert("تم تحديث حالة صفحة الفيديو بنجاح");
+            setUsers(
+              users.map((u) =>
+                u.id === user.userId
+                  ? { ...u, showVideoCall: e.target.value === "1" }
+                  : u
+              )
+            );
+          } else {
+            console.error("فشل تحديث showVideoCall");
+          }
+        })
+        .catch((error) => console.error("خطأ في تحديث showVideoCall:", error))
+    }
+  >
+    <option value="1">نعم</option>
+    <option value="0">لا</option>
+  </select>
+</td> */}
+
+
                 </tr>
               ))}
             </tbody>

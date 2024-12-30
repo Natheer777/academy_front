@@ -34,7 +34,7 @@
 .levels ul li{
     font-size: var(--sec--size);
     line-height: 2;
-
+    
 }
 .levels ul li::marker{
     color: var(--color--green);
@@ -43,6 +43,7 @@
     font-size: var(--sec--size);
     text-align: justify;
     line-height: 2;
+    padding: 10px;
 }
 .levels button{
     background-color: var(--color--green);
@@ -69,5 +70,5 @@
 }
 .single{
     font-size: var(--sec--size);
-    text-align: center;
+    text-align: justify;
 }

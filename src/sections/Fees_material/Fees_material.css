@@ -2,6 +2,10 @@
 .money_lisson h2{
     color: var(--color--green);
 }
+.money_lisson a{
+    color: red !important;
+    font-weight: bold;
+}
 .money_lisson p{
     margin-top: 20px;
     font-size: var(--sec--size);
@@ -20,7 +24,7 @@
     text-align: center;
    border: 2px var(--color--green) solid;
 }
-.money_lisson span{
+.note{
     color: red;
 }
 .money_lisson ul{

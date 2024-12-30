@@ -1,36 +1,45 @@
 .Contact img {
   width: 100%;
 }
+
 .footer {
   background-color: #d1f0dc;
 }
+
 .container {
   max-width: 1170px;
   margin: auto;
 }
+
 .row {
   display: flex;
   flex-wrap: wrap;
 }
+
 .footer ul {
   line-height: 2;
   list-style: none;
 }
+
 .footer ul li {
   margin-bottom: 10px;
   color: black;
   font-weight: bold;
 }
+
 .list-unstyled {
   text-align: start;
 }
+
 .logo_white {
   display: flex;
   justify-content: center;
 }
+
 .logo_white img {
   width: 10vh;
 }
+
 .Logo_Footer {
   width: 10rem;
 }
@@ -42,6 +51,7 @@
   /* line-height: 2; */
   color: black;
 }
+
 .social_icons a svg {
   color: black;
   font-size: var(--sec--size);
@@ -58,57 +68,71 @@
   .rowFooter {
     justify-content: center !important;
   }
-  .adress{
+
+  .adress {
     line-height: 2;
   }
+
   .group_footer {
     border-top: 2px green solid;
     margin-top: 20px;
   }
-  .Footer_all_list{
+
+  .Footer_all_list {
     flex-direction: column-reverse;
   }
-  .footer-img{
+
+  .footer-img {
     margin: auto;
   }
 }
+
 @media screen and (min-width: 877px) {
   .adress {
     top: 8px;
     position: absolute;
   }
+
   .rowFooter {
     margin-top: 20px;
   }
-  .group_footer{
+
+  .group_footer {
     position: absolute;
     left: 50%;
     top: 45%;
     transform: translate(-50%, -50%);
 
   }
+
+
 }
 
 svg {
   font-size: 20px;
 }
+
 a {
   text-decoration: none;
   color: antiquewhite;
 }
+
 .Ulfooter {
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .Ulfooter a {
   font-size: 15px;
 }
+
 .DesktopView {
   position: relative;
   background-color: var(--color--green);
 }
+
 .DesktopView h5 {
   font-weight: bold;
   font-size: 9px;
@@ -118,10 +142,12 @@ a {
   top: 41.5%;
   transform: translate(-50%, -50%);
 }
+
 .DesktopView svg {
   color: white;
   font-size: 3.2rem;
 }
+
 .App button {
   border: none;
   /* padding: 5px; */
@@ -129,6 +155,7 @@ a {
   justify-content: space-between;
   border-radius: 10px;
 }
+
 .rowFooter {
   /* flex-direction: row-reverse;
   display: flex;
@@ -137,12 +164,14 @@ a {
   justify-content: space-between;
   gap: 30px; */
 }
+
 .group_footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
 }
+
 .group_1_footer li a,
 .group_2_footer li a,
 .group_3_footer li a {
@@ -151,12 +180,14 @@ a {
   font-size: 15px;
   color: black;
 }
+
 .group_1_footer li a svg,
 .group_2_footer li a svg,
 .group_3_footer li a svg {
   margin-left: 10px;
   color: var(--color--red1);
 }
+
 .Footer_all_list {
   display: flex;
   flex-wrap: wrap;
@@ -165,19 +196,23 @@ a {
   gap: 30px;
   /* margin-top: 20px; */
 }
+
 .App button {
   display: none;
 }
+
 @media screen and (min-width: 5px) and (max-width: 650px) {
   .App button {
     display: block;
   }
+
   .Ulfooter {
     display: flex;
     justify-content: space-evenly;
   }
 }
-.list_footer{
+
+.list_footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

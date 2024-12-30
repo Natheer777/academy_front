@@ -225,6 +225,7 @@ export default function Login_user() {
           localStorage.setItem('userEmail', data.user.email);
           localStorage.setItem('userId', data.user.id);
           localStorage.setItem('userRole', data.user.role);
+          localStorage.setItem('showVideoCall', data.user.showVideoCall );
 
           // التوجيه إلى الصفحة الرئيسية أو لوحة التحكم
           navigate("/");

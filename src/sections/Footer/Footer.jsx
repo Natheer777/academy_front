@@ -24,7 +24,7 @@ export default function Footer() {
     <>
       <footer className="footer">
         <div className="text-white text-center text-lg-left">
-          <div className="p-3 position-relative">
+          <div className="container p-3 position-relative">
             <div className="rowFooter">
               <div className="Footer_all_list">
             
@@ -98,13 +98,13 @@ export default function Footer() {
                       <li className=" item2 hidden">
                         <Link className="nav-a" to="/Level_division">
                           <MdLibraryBooks />
-                          تقسيم المستويات
+                          المستويات الدراسية
                         </Link>
                       </li>
                       <li className=" item3 hidden">
                         <Link className="nav-a" to="/Fees">
                           <BsCashCoin />
-                          الرسوم
+                          الرسوم الدراسية
                         </Link>
                       </li>
                       <li className=" item4 hidden">
