@@ -311,23 +311,24 @@ export default function Dashboard() {
                       value={user.show}
                       onChange={(e) => updateUserShow(user.id, e.target.value)}
                     >
-                      <option value="عدم الاظهار">عدم الاظهار</option>
-                      <option value="المستوى_الاول">المستوى الاول</option>
-                      <option value="المستوى_الثاني">المستوى الثاني</option>
-                      <option value="المستوى_الثالث">المستوى الثالث</option>
-                      <option value="المستوى_الرابع">المستوى الرابع</option>
-                      <option value="المستوى_الخامس">المستوى الخامس</option>
-                      <option value="المستوى_السادس">المستوى السادس</option>
-                      <option value="المستوى_السابع">المستوى السابع</option>
-                      <option value="المستوى_الثامن">المستوى الثامن</option>
-                      <option value="المستوى_التاسع">المستوى التاسع</option>
-                      <option value="المستوى_العاشر">المستوى العاشر</option>
-                      <option value="المستوى_الحادي_عشر">المستوى الحادي عشر</option>
-                      <option value="المستوى_الثاني_عشر">المستوى الثاني عشر</option>
-                      <option value="المستوى_الثالث_عشر">المستوى الثالث عشر</option>
-                      <option value="المستوى_الرابع_عشر">المستوى الرابع عشر</option>
-                      <option value="المستوى_الخامس_عشر">المستوى الخامس عشر</option>
-                      <option value="المستوى_السادس_عشر">المستوى السادس عشر</option>
+       <option value="do_not_show">Do not show</option>
+<option value="Level_One">Level One</option>
+<option value="Level_Two">Level Two</option>
+<option value="Level_Three">Level Three</option>
+<option value="Level_Four">Level Four</option>
+<option value="Level_Five">Level Five</option>
+<option value="Level_Six">Level Six</option>
+<option value="Level_Seven">Level Seven</option>
+<option value="Level_Eight">Level Eight</option>
+<option value="Level_Nine">Level Nine</option>
+<option value="Level_Ten">Level Ten</option>
+<option value="Level_Eleven">Level Eleven</option>
+<option value="Level_Twelve">Level Twelve</option>
+<option value="Level_Thirteen">Level Thirteen</option>
+<option value="Level_Fourteen">Level Fourteen</option>
+<option value="Level_Fifteen">Level Fifteen</option>
+<option value="Level_Sixteen">Level Sixteen</option>
+
                     </select>
                   </td>
 

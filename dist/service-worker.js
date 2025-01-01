@@ -7,9 +7,9 @@ self.addEventListener("install", (event) => {
       return cache.addAll([
         "/",
         "/index.html",
-        "/assets/index.CrSw7oXd.js",
+        "/assets/index.wW6qdiks.js",
         "/assets/vendor.CqcSyPVE.js",
-        "/assets/index.DSmB0q2a.css",
+        "/assets/index.BfGc4QN_.css",
         "/Fonts/ScheherazadeNew-Bold.CrbhGG_h.ttf",
         "/About",
         "/Date",

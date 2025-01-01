@@ -239,30 +239,23 @@
 
 
 
-
-
 import { useState, useEffect } from "react";
-import { MdCallEnd } from "react-icons/md";
-import { BsFillCameraVideoFill, BsFillCameraVideoOffFill } from "react-icons/bs";
-import { HiMicrophone } from "react-icons/hi2";
-import { PiMicrophoneSlashFill } from "react-icons/pi";
-import { MdOutlineChat } from "react-icons/md";
-import { LuScreenShare } from "react-icons/lu";
-import { FaFolder } from "react-icons/fa6";
-import { AiOutlineClose } from "react-icons/ai"; // أيقونة الإغلاق
 import AgoraRTC from "agora-rtc-sdk-ng";
 import { useNavigate } from "react-router-dom"; // لاستخدام التنقل
+import { AiOutlineClose } from "react-icons/ai"; // أيقونة الإغلاق
+import { MdCallEnd } from "react-icons/md";
+import { HiMicrophone } from "react-icons/hi2";
+import { BsFillCameraVideoFill, BsFillCameraVideoOffFill } from "react-icons/bs";
+import { LuScreenShare } from "react-icons/lu";
+import { MdOutlineChat } from "react-icons/md";
+import { FaFolder } from "react-icons/fa6";
 import Chat from "../chat/Chat";
-import "./VideoCall.css";
 import FileSharing from "./FileSharing ";
-// import { useLocation } from "react-router-dom";
-const APP_ID = "46c493c48baf40cead62de60ae7efda5";
-// const CHANNEL = `main${level}`;
+import "./VideoCall.css";
 
+const APP_ID = "46c493c48baf40cead62de60ae7efda5"; // معرف التطبيق
 const MeetingNow = () => {
-  // const location = useLocation();
-  // const queryParams = new URLSearchParams(location.search);
-  const level = localStorage.getItem("showVideoCall");
+  const level = localStorage.getItem("showVideoCall"); // الحصول على المستوى من localStorage
   const [client] = useState(AgoraRTC.createClient({ mode: "rtc", codec: "vp8" }));
   const [localTracks, setLocalTracks] = useState([]);
   const [streams, setStreams] = useState([]);
@@ -273,26 +266,16 @@ const MeetingNow = () => {
   const [isChatOpen, setIsChatOpen] = useState(false); // حالة فتح الشات
   const [isFilesOpen, setIsFilesOpen] = useState(false);
   const [CHANNEL, setChannel] = useState(""); // حالة القناة
-  // حالة فتح الشات
- // جلب المستوى من الرابط
-
   const navigate = useNavigate(); // التنقل بين الصفحات
 
   useEffect(() => {
     if (level) {
       setChannel(`main${level}`);
-    }
-  }, [level]);
-  
-
-  useEffect(() => {
-    if (level) {
-      const channelName = `main${level}`;
-      setChannel(channelName);
-  
       const fetchToken = async () => {
         try {
-          const response = await fetch(`https://api.japaneseacademy.online/get-token?channelName=${channelName}&uid=0`);
+          const response = await fetch(
+            `https://api.japaneseacademy.online/get-token?level=${level}&uid=0`
+          );
           if (!response.ok) throw new Error("Failed to fetch token");
           const data = await response.json();
           setToken(data.token);
@@ -300,12 +283,10 @@ const MeetingNow = () => {
           console.error("Error fetching token:", error);
         }
       };
-  
+
       fetchToken();
     }
-  }, [level]);
-  
-  
+  }, [level]); // تحديث الـ useEffect بناءً على المستوى
 
   const joinAndDisplayLocalStream = async () => {
     if (!token) return;
@@ -328,7 +309,6 @@ const MeetingNow = () => {
     }
   };
 
-
   const handleUserLeft = (user) => {
     setStreams((prevStreams) =>
       prevStreams.filter((stream) => stream.id !== user.uid)
@@ -339,7 +319,6 @@ const MeetingNow = () => {
     await client.subscribe(user, mediaType);
 
     if (mediaType === "video" && user.videoTrack) {
-      // تحقق من أنه لا يوجد مستخدم بنفس الـ UID في قائمة الـ streams
       setStreams((prevStreams) => {
         if (!prevStreams.some((stream) => stream.id === user.uid)) {
           return [
@@ -347,7 +326,7 @@ const MeetingNow = () => {
             { id: user.uid, videoTrack: user.videoTrack },
           ];
         }
-        return prevStreams; // لا تضف المستخدم إذا كان موجودًا بالفعل
+        return prevStreams;
       });
     }
 
@@ -355,7 +334,6 @@ const MeetingNow = () => {
       user.audioTrack?.play();
     }
   };
-
 
   useEffect(() => {
     joinAndDisplayLocalStream();
@@ -368,6 +346,12 @@ const MeetingNow = () => {
         stream.videoTrack.play(videoContainer);
       }
     });
+
+    return () => {
+      streams.forEach((stream) => {
+        stream.videoTrack?.stop();
+      });
+    };
   }, [streams]);
 
   const leaveAndRemoveLocalStream = async () => {
@@ -415,24 +399,21 @@ const MeetingNow = () => {
 
   return (
     <div className="webRtc">
-            <h3 className="text-light">غرفة البث المباشر - المستوى: {level}</h3>
+      <h3 className="text-light">غرفة البث المباشر - المستوى: {level}</h3>
 
- <div id="video-streams">
-  {streams.map((stream) => (
-    <div
-      key={stream.id}
-      id={`user-${stream.id}`}
-      style={{
-        // width: stream.videoTrack ? "100%" : "0px",  // عرض الفيديو حسب وجود الفيديو
-        // height: stream.videoTrack ? "200px" : "0px",  // تحديد ارتفاع الفيديو
-        background: stream.videoTrack ? "black" : "transparent", // تعيين خلفية للفيديو
-      }}
-    >
-      {/* محتوى الفيديو سيذهب هنا */}
-    </div>
-  ))}
-</div>
-
+      <div id="video-streams">
+        {streams.map((stream) => (
+          <div
+            key={stream.id}
+            id={`user-${stream.id}`}
+            style={{
+              background: stream.videoTrack ? "black" : "transparent",
+            }}
+          >
+            {/* محتوى الفيديو سيذهب هنا */}
+          </div>
+        ))}
+      </div>
 
       <div className="webRtcButtons">
         <button
@@ -461,6 +442,7 @@ const MeetingNow = () => {
           <MdCallEnd />
         </button>
       </div>
+
       <button className="chatButton" onClick={() => setIsChatOpen(!isChatOpen)}>
         <MdOutlineChat />
       </button>
@@ -477,12 +459,11 @@ const MeetingNow = () => {
         </div>
       )}
 
-
-      <button className="FileButton " onClick={() => setIsFilesOpen(!isFilesOpen)}>
+      <button className="FileButton" onClick={() => setIsFilesOpen(!isFilesOpen)}>
         <FaFolder />
       </button>
       {isFilesOpen && (
-        <div className="FileContainer ">
+        <div className="FileContainer">
           <button
             className="closeFiles"
             onClick={() => setIsFilesOpen(false)}
@@ -493,10 +474,6 @@ const MeetingNow = () => {
           <FileSharing />
         </div>
       )}
-
-
-
-
     </div>
   );
 };

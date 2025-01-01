@@ -12,7 +12,7 @@
 //       setShowVideoCall(true); // إذا كانت القيمة 1، عرض الفيديو
 //     }
 //   }, []);
-  
+
 
 //   return (
 //     <>
@@ -27,7 +27,7 @@
 
 
 
-import { Navbar, Dash_user, Footer, Chat, VideoCall } from "../../sections";
+import { Navbar, Dash_user, Footer, VideoCall } from "../../sections";
 import { useState, useEffect } from "react";
 
 
@@ -39,31 +39,31 @@ export default function Dash_users() {
     const videoCallValue = localStorage.getItem("showVideoCall");
     const level = localStorage.getItem("showVideoCall"); // جلب المستوى
     setUserLevel(level); // تخزين المستوى في الحالة
-  
+
     const validLevels = [
-      'المستوى_الاول',
-      'المستوى_الثاني',
-      'المستوى_الثالث',
-      'المستوى_الرابع',
-      'المستوى_الخامس',
-      'المستوى_السادس',
-      'المستوى_السابع',
-      'المستوى_الثامن',
-      'المستوى_التاسع',
-      'المستوى_العاشر',
-      'المستوى_الحادي_عشر',
-      'المستوى_الثاني_عشر',
-      'المستوى_الثالث_عشر',
-      'المستوى_الرابع_عشر',
-      'المستوى_الخامس_عشر',
-      'المستوى_السادس_عشر'
+      'Level_One',
+      'Level_Two',
+      'Level_Three',
+      'Level_Four',
+      'Level_Five',
+      'Level_Six',
+      'Level_Seven',
+      'Level_Eight',
+      'Level_Nine',
+      'Level_Ten',
+      'Level_Eleven',
+      'Level_Twelve',
+      'Level_Thirteen',
+      'Level_Fourteen',
+      'Level_Fifteen',
+      'Level_Sixteen'
     ];
-  
+
     if (validLevels.includes(videoCallValue)) {
       setShowVideoCall(true);
     }
   }, []);
-  
+
 
   return (
     <>
@@ -74,7 +74,6 @@ export default function Dash_users() {
           <VideoCall />
         </div>
       )}
-      <Chat />
       <Dash_user />
       <Footer />
     </>

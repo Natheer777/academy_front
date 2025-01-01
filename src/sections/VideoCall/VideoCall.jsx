@@ -26,12 +26,12 @@ const VideoCall = () => {
   const handleJoinStream = () => {
     const level = localStorage.getItem("showVideoCall");
     if (level) {
-      navigate(`/MeetingNow?level=${encodeURIComponent(level)}`); // تمرير المستوى في الرابط
+      navigate(`/MeetingNow?level=${encodeURIComponent(level)}`); // استخدم علامات الاقتباس المناسبة
     } else {
       alert("لم يتم تعيين مستوى بعد!");
     }
   };
-
+  
   return (
     
     <div className="d-flex justify-content-center">
