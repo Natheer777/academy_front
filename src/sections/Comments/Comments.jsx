@@ -84,7 +84,7 @@ export default function Comments() {
 
     useEffect(() => {
         axios
-            .get("https://api.japaneseacademy.online/allcomments")
+            .get("https://api.japaneseacademy.jp/allcomments")
             .then((response) => {
                 setComments(response.data);
             })

@@ -96,7 +96,7 @@ export default function Dashboard() {
 
   // Fetch users when the component mounts
   const fetchUsers = () => {
-    fetch("https://api.japaneseacademy.online/allusers")
+    fetch("https://api.japaneseacademy.jp/allusers")
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);
@@ -106,7 +106,7 @@ export default function Dashboard() {
 
   // Delete user function
   const deleteUser = (id) => {
-    fetch("https://api.japaneseacademy.online/deleteusers", {
+    fetch("https://api.japaneseacademy.jp/deleteusers", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -125,7 +125,7 @@ export default function Dashboard() {
   };
 
   const updateUserRole = (id, role) => {
-    fetch("https://api.japaneseacademy.online/update-role", {
+    fetch("https://api.japaneseacademy.jp/update-role", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -149,7 +149,7 @@ export default function Dashboard() {
 
 
   const updateUserShow = (id, show) => {
-    fetch("https://api.japaneseacademy.online/update-show-video", {
+    fetch("https://api.japaneseacademy.jp/update-show-video", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -311,23 +311,23 @@ export default function Dashboard() {
                       value={user.show}
                       onChange={(e) => updateUserShow(user.id, e.target.value)}
                     >
-       <option value="do_not_show">Do not show</option>
-<option value="Level_One">Level One</option>
-<option value="Level_Two">Level Two</option>
-<option value="Level_Three">Level Three</option>
-<option value="Level_Four">Level Four</option>
-<option value="Level_Five">Level Five</option>
-<option value="Level_Six">Level Six</option>
-<option value="Level_Seven">Level Seven</option>
-<option value="Level_Eight">Level Eight</option>
-<option value="Level_Nine">Level Nine</option>
-<option value="Level_Ten">Level Ten</option>
-<option value="Level_Eleven">Level Eleven</option>
-<option value="Level_Twelve">Level Twelve</option>
-<option value="Level_Thirteen">Level Thirteen</option>
-<option value="Level_Fourteen">Level Fourteen</option>
-<option value="Level_Fifteen">Level Fifteen</option>
-<option value="Level_Sixteen">Level Sixteen</option>
+                      <option value="do_not_show">Do not show</option>
+                      <option value="level_one">Level One</option>
+                      <option value="level_two">Level Two</option>
+                      <option value="level_three">Level Three</option>
+                      <option value="level_four">Level Four</option>
+                      <option value="level_five">Level Five</option>
+                      <option value="level_six">Level Six</option>
+                      <option value="level_seven">Level Seven</option>
+                      <option value="level_eight">Level Eight</option>
+                      <option value="level_nine">Level Nine</option>
+                      <option value="level_ten">Level Ten</option>
+                      <option value="level_eleven">Level Eleven</option>
+                      <option value="level_twelve">Level Twelve</option>
+                      <option value="level_thirteen">Level Thirteen</option>
+                      <option value="level_fourteen">Level Fourteen</option>
+                      <option value="level_fifteen">Level Fifteen</option>
+                      <option value="level_sixteen">Level Sixteen</option>
 
                     </select>
                   </td>

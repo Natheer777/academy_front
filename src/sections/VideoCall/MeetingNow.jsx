@@ -274,7 +274,7 @@ const MeetingNow = () => {
       const fetchToken = async () => {
         try {
           const response = await fetch(
-            `https://api.japaneseacademy.online/get-token?level=${level}&uid=0`
+            `https://api.japaneseacademy.jp/get-token?level=${level}&uid=0`
           );
           if (!response.ok) throw new Error("Failed to fetch token");
           const data = await response.json();

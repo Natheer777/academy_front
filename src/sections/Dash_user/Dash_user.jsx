@@ -15,7 +15,7 @@ function Dash_user() {
     }
 
     // جلب بيانات المستخدمين من الخادم
-    fetch(`https://api.japaneseacademy.online/allusers`, {
+    fetch(`https://api.japaneseacademy.jp/allusers`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

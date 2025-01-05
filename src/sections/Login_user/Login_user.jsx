@@ -202,7 +202,7 @@ export default function Login_user() {
     setError("");
 
     // إرسال طلب تسجيل الدخول إلى الخادم
-    fetch("https://api.japaneseacademy.online/login_user", {
+    fetch("https://api.japaneseacademy.jp/login_user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

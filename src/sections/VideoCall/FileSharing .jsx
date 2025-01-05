@@ -5,8 +5,8 @@ const FileSharing = () => {
     const [selectedFile, setSelectedFile] = useState(null); // الملف الذي يختاره المستخدم
 
     useEffect(() => {
-        // جلب قائمة الملفات من API
-        fetch('https://api.japaneseacademy.online/files')
+        const level = localStorage.getItem('showVideoCall'); // قراءة المستوى من localStorage
+        fetch(`https://api.japaneseacademy.jp/files?level=${level}`)
             .then((res) => res.json())
             .then((data) => setFiles(data))
             .catch((err) => console.error('Error fetching files:', err));
@@ -24,12 +24,15 @@ const FileSharing = () => {
             return;
         }
 
+
+        const level = localStorage.getItem('showVideoCall'); // المستوى المخزن
         const formData = new FormData();
         formData.append('file', selectedFile);
-        formData.append('uploader_id', 'user-id'); // يمكن استبدال user-id بالمعرف الحقيقي
+        formData.append('uploader_id', 'user-id');
+        formData.append('level', level); // إرسال المستوى مع البيانات
 
         try {
-            const response = await fetch('https://api.japaneseacademy.online/uploads', {
+            const response = await fetch('https://api.japaneseacademy.jp/upload', {
                 method: 'POST',
                 body: formData,
             });
@@ -41,8 +44,8 @@ const FileSharing = () => {
             }
 
             const newFile = await response.json();
-            setFiles((prevFiles) => [...prevFiles, newFile.file]); // تحديث قائمة الملفات
-            setSelectedFile(null); // إعادة تعيين الملف المحدد
+            setFiles((prevFiles) => [...prevFiles, newFile.file]);
+            setSelectedFile(null);
             alert('File uploaded successfully.');
         } catch (error) {
             console.error('Error uploading file:', error);
@@ -50,12 +53,13 @@ const FileSharing = () => {
         }
     };
 
+
     return (
         <div className='FilesWeb'>
             <h3>مشاركة الملفات</h3>
             <input type="file" onChange={handleFileChange} />
             <button className='UploadFile' onClick={handleFileUpload}>رفع الملف</button> {/* زر الإرسال */}
-            
+
             <ul className='containerFile'>
                 {files.map((file) => (
                     <li key={file.id}>

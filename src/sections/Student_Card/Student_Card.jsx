@@ -7,7 +7,7 @@ export default function Student_Card() {
   useEffect(() => {
     // جلب البيانات من API
     axios
-      .get("https://api.japaneseacademy.online/allusers")
+      .get("https://api.japaneseacademy.jp/allusers")
       .then((response) => {
         setStudents(response.data);
       })

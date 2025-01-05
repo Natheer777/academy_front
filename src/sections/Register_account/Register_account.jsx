@@ -79,7 +79,7 @@ export default function Register_account() {
 
     setIsRegistering(true); // تغيير الزر إلى "جاري التسجيل"
 
-    fetch("https://api.japaneseacademy.online/register", {
+    fetch("https://api.japaneseacademy.jp/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -108,7 +108,7 @@ export default function Register_account() {
 
     setIsVerifying(true); // تغيير الزر إلى "جاري التحقق"
 
-    fetch("https://api.japaneseacademy.online/verify", {
+    fetch("https://api.japaneseacademy.jp/verify", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
