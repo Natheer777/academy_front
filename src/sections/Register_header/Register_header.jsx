@@ -3,12 +3,14 @@ export default function Register_header() {
   return (
     <>
     <div className="container Register">
+        <div className='RegisterContent'>
         <h2 className='fw-bold' id='Register'>طريقة التسجيل:</h2>
         <p>عملية التسجيل في أكاديميتنا بسيطة ومرنة، تشمل الخطوات التالية:</p>
+        </div>
         <ul className='mt-5'>
             <li className='step1 left item1 academy'>
                 <h2>إنشاء حساب مجاني:</h2>
-                <p>قم بتعبئة نموذج التسجيل باستخدام بريدك الإلكتروني أو حسابات التواصل الاجتماعي. بعد ذلك، ستتلقى رسالة تأكيد بالبريد الإلكتروني.</p>
+                <p>قم بتعبئة نموذج التسجيل لإنشاء حساب في أكاديمية اللغة اليابانية، وستتلقى رسالة تأكيد على بريدك الإلكتروني لتفعيل الحساب.</p>
             </li>
             <li className='step2 top item2 academy'>
                 <h2> اختبار تحديد المستوى:</h2>

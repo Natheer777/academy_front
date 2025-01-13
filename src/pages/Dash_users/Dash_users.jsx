@@ -1,30 +1,4 @@
 
-// import { Navbar, Dash_user, Footer, Chat, VideoCall } from "../../sections";
-// import { useState, useEffect } from "react";
-
-// export default function Dash_users() {
-//   const [showVideoCall, setShowVideoCall] = useState(false); // حالة لعرض المكون
-
-//   useEffect(() => {
-//     const videoCallValue = localStorage.getItem("showVideoCall");
-//     console.log("videoCallValue:", videoCallValue);  // تحقق من القيمة
-//     if (videoCallValue === "1") {
-//       setShowVideoCall(true); // إذا كانت القيمة 1، عرض الفيديو
-//     }
-//   }, []);
-
-
-//   return (
-//     <>
-//       <Navbar />
-//       {showVideoCall && <VideoCall />}
-//       <Chat />
-//       <Dash_user />
-//       <Footer />
-//     </>
-//   ); 
-// }
-
 
 
 import { Navbar, Dash_user, Footer, VideoCall } from "../../sections";
@@ -70,7 +44,7 @@ export default function Dash_users() {
       <Navbar />
       {showVideoCall && (
         <div>
-          <h3>المستوى الحالي: {userLevel}</h3>
+          <h3 className="level_now academy m-4 text-center">المستوى الحالي: {userLevel}</h3>
           <VideoCall />
         </div>
       )}

@@ -126,7 +126,7 @@ export default function Navbar() {
                 >
                   تسجيل الخروج
                 </button>
-                <p className="user-name">{user.firstName}</p>
+                {/* <p className="user-name">{user.firstName}</p> */}
               </div>
             </div>
           )}
@@ -147,11 +147,11 @@ export default function Navbar() {
           <div className="buttons_pc">
             {!user ? (
               <div className="buttons">
-                <Link to="/Login_users">
-                  <button className="login_nav">تسجيل الدخول</button>
-                </Link>
                 <Link to="/Register_account">
                   <button className="register_nav">سجل الآن</button>
+                </Link>
+                <Link to="/Login_users">
+                  <button className="login_nav">تسجيل الدخول</button>
                 </Link>
               </div>
             ) : (
@@ -160,7 +160,7 @@ export default function Navbar() {
                 <span className="user-icon">
                   {/* يمكنك إضافة أيقونة هنا */}
                 </span>
-                <h4 className="user-name">{user.firstName}</h4>
+                {/* <h4 className="user-name">{user.firstName}</h4> */}
                 <Link to={`/Dash_users/${user.id}`}>
                   <button className="register_nav">لوحة التحكم </button>
                 </Link>

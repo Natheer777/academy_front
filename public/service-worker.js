@@ -1,4 +1,4 @@
-const CACHE_NAME = "vite-react-offline-cache-v149";
+const CACHE_NAME = "vite-react-offline-cache-v166";
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
@@ -7,9 +7,9 @@ self.addEventListener("install", (event) => {
       return cache.addAll([
         "/",
         "/index.html",
-        "/assets/index.Bx3vDR36.js",
+        "/assets/index.CtScNRjG.js",
+        "/assets/index.CHJ8Lgvj.css",
         "/assets/vendor.CqcSyPVE.js",
-        "/assets/index.BfGc4QN_.css",
         "/Fonts/ScheherazadeNew-Bold.CrbhGG_h.ttf",
         "/About",
         "/Date",
@@ -53,23 +53,16 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  const requestUrl = new URL(event.request.url);
-  if (
-    requestUrl.protocol === "ws:" ||
-    requestUrl.protocol === "wss:" ||
-    event.request.url.includes("/webrtc")
-  ) {
-    return;
-  }
-
   event.respondWith(
     caches.open(CACHE_NAME).then((cache) => {
-      return fetch(event.request).then((response) => {
-        if (response.ok) {
-          cache.put(event.request, response.clone());
-        }
-        return response;
-      }).catch(() => cache.match(event.request));
+      return fetch(event.request)
+        .then((response) => {
+          if (response.ok) {
+            cache.put(event.request, response.clone());
+          }
+          return response;
+        })
+        .catch(() => cache.match(event.request));
     })
   );
 });

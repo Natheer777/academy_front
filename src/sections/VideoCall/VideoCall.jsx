@@ -1,21 +1,3 @@
-// import { useNavigate } from "react-router-dom"; // استيراد التنقل
-// const VideoCall = () => {
-//   const navigate = useNavigate(); // هوك التنقل
-
-//   const handleJoinStream = () => {
-//     navigate("/MeetingNow"); // إعادة التوجيه إلى صفحة الاجتماع
-//   };
-
-//   return (
-//     <div className="d-flex justify-content-center">
-//       <button id="join-btn" onClick={handleJoinStream}>
-//         الدخول الى البث
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default VideoCall;
 
 
 import { useNavigate } from "react-router";
@@ -36,7 +18,7 @@ const VideoCall = () => {
     
     <div className="d-flex justify-content-center">
       <button id="join-btn" onClick={handleJoinStream}>
-        الدخول إلى البث
+        الانضمام إلى الدرس
       </button>
     </div>
   );

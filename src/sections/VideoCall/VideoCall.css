@@ -240,3 +240,9 @@
 .webRtcSend{
   border-radius: 10px !important;
 }
+
+.level_now{
+  color: var(--color--green);
+  font-weight: bold;
+}
+

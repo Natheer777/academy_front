@@ -1,6 +1,15 @@
 .Dont_have_account span{
     color: var(--color--green);
+    font-size: var(--sec--size);
 }
 .login-form  label{
     text-align: start;
+}
+.error-message{
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.login-form button{
+    font-size: var(--sec--size);
 }

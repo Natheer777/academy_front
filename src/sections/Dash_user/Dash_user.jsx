@@ -1,37 +1,38 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-
+import './Dash_user.css'
 function Dash_user() {
   const [userData, setUserData] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+    const userId = parseInt(localStorage.getItem("userId")); // تحويل userId إلى رقم
 
-    if (!token) {
-      // إعادة التوجيه إلى صفحة تسجيل الدخول إذا لم يكن التوكن موجودًا
-      navigate("/Login_users");
-      return;
-    }
+
 
     // جلب بيانات المستخدمين من الخادم
     fetch(`https://api.japaneseacademy.jp/allusers`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`, // إرسال التوكن في العنوان
       },
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch user data");
+        }
+        return response.json();
+      })
       .then((data) => {
-        // العثور على المستخدم الذي يتطابق التوكن الخاص به
-        const loggedUser = data.find((user) => user.token === user.token);
+        // العثور على المستخدم المتطابق مع userId
+        const loggedUser = data.find((user) => user.id === userId);
 
         if (loggedUser) {
-          setUserData(loggedUser); // عرض بيانات المستخدم
+          setUserData(loggedUser); // تخزين بيانات المستخدم في الحالة
         } else {
-          alert("خدث خطأ أثناء تسجيل الدخول")
-          // إعادة التوجيه إذا لم يتم العثور على المستخدم
-          navigate("/Login_users");
+          console.log("error")
         }
       })
       .catch((error) => {
@@ -47,15 +48,15 @@ function Dash_user() {
   }
 
   return (
-    <div className="dashboard container mt-5">
-      <h1 className="fw-bold">مرحباً، {userData.firstName} {userData.lastName}</h1>
-      <p>البريد الإلكتروني: {userData.email}</p>
-      <p>الدولة: {userData.country}</p>
-      <p>العمر: {userData.age}</p>
-      <p>الجنس: {userData.gender}</p>
-      <p>المستوى التعليمي: {userData.educationLevel}</p>
-      <p>مستوى اللغة اليابانية: {userData.japaneseLevel}</p>
-      <p>رقم الهاتف: {userData.phone}</p>
+    <div className="dashboard container mt-5 mb-5 academy">
+      <h3 className="fw-bold">مرحباً، <span>{userData.firstName} </span> <span>{userData.lastName}</span></h3>
+      <p>البريد الإلكتروني: <span>{userData.email} </span></p>
+      <p>الدولة: <span>{userData.country} </span></p>
+      <p>العمر:<span> {userData.age} </span></p>
+      <p>الجنس: <span>{userData.gender} </span></p>
+      <p>المستوى التعليمي: <span>{userData.educationLevel} </span></p>
+      <p>مستوى اللغة اليابانية: <span>{userData.japaneseLevel} </span></p>
+      <p>رقم الهاتف: <span>{userData.phone} </span></p>
     </div>
   );
 }
