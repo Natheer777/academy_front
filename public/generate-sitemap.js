@@ -33,7 +33,7 @@ userIds.forEach((userId) => {
 });
 
 (async () => {
-  const sitemapStream = new SitemapStream({ hostname: 'https://japaneseacademy.online/' });
+  const sitemapStream = new SitemapStream({ hostname: 'https://japaneseacademy.jp/' });
 
   pages.forEach((page) => {
     sitemapStream.write(page);

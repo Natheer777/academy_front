@@ -161,6 +161,25 @@ function App() {
     };
   }, []);
 
+  /////////
+
+
+  const [hideSocial, setHideSocial] = useState(false);
+
+  useEffect(() => {
+    // التحقق من حالة العنصر في localStorage
+    const hide = localStorage.getItem('hideSocial');
+    if (hide === 'true') {
+      setHideSocial(true);
+    }
+
+    return () => {
+      // إعادة الوضع الطبيعي عندما يغادر المستخدم الصفحة
+      setHideSocial(false);
+    };
+  }, []);
+
+
   return (
     <>
 
@@ -195,7 +214,7 @@ function App() {
           <FaArrowAltCircleUp />
         </button>
 
-        <div className="social">
+        <div className={`social ${hideSocial ? 'noneSocial' : ''}`}>
           <ul onClick={toggleIcons} style={{ cursor: "pointer" }}>
             <li className="click">
               <IoChatbubbleEllipsesOutline />
