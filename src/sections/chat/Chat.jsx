@@ -63,15 +63,14 @@ const Chat = ({ userRole, firstName }) => {
                 {messages.map((msg, index) => (
                   <div
                     key={index}
-                    className={`message ${
-                      msg.role === "teacher" ? "text-primary" : "text-success"
-                    }`}
+                    className={`message ${msg.role === "teacher" ? "text-primary" : "text-success"
+                      }`}
                   >
                     <strong>
                       {msg.sender} (
-                      {localStorage.getItem("userRole") === "teacher"
-                        ? ` ${name}المعلم`
-                        : `${name} الطالب`}
+                      {localStorage.getItem("userRole")
+                        ? ` ${name}`
+                        : `${name}`}
                       ):
                     </strong>{" "}
                     {msg.text}
@@ -88,8 +87,16 @@ const Chat = ({ userRole, firstName }) => {
                     placeholder="اكتب رسالتك هنا..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        e.preventDefault(); // منع إعادة تحميل الصفحة أو إغلاق المكالمة
+                        handleSendMessage(); // إرسال الرسالة
+                      }
+                    }}
                   />
+
                 </Form.Group>
+
                 <Button
                   className="webRtcSend mt-2"
                   variant="primary"
@@ -97,6 +104,16 @@ const Chat = ({ userRole, firstName }) => {
                 >
                   إرسال
                 </Button>
+                {localStorage.getItem("userRole") === "teacher" && (
+                  <Button
+                    className="webRtcSend mt-2"
+                    variant="danger"
+                    onClick={() => socket.emit("clearChat", room)}
+                  >
+                    حذف الدردشة
+                  </Button>
+                )}
+
               </Form>
             </Card.Body>
           </Card>

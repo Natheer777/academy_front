@@ -62,9 +62,10 @@ const FileSharing = () => {
 
             <ul className='containerFile'>
                 {files.map((file) => (
-                    <li key={file.id}>
+                    <li key={file.id}
+                    className='p-2'>
                         {file.name}{' '}
-                        <a className='DownloadFile' href={file.url} download>
+                        <a className='DownloadFile me-3' href={file.url} target='_blank' download>
                             تحميل
                         </a>
                     </li>
