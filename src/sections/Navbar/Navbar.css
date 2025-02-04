@@ -289,3 +289,8 @@
     width: 5.5rem;
   }
 }
+
+.user-info-buttons{
+  display: flex;
+  gap: 10px;
+}

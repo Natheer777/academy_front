@@ -44,6 +44,7 @@ export default function Login_user() {
           localStorage.setItem('userId', data.user.id);
           localStorage.setItem('userRole', data.user.role);
           localStorage.setItem('showVideoCall', data.user.showVideoCall);
+          localStorage.setItem('uid' , 0)
 
           // التوجيه إلى الصفحة الرئيسية أو لوحة التحكم
           navigate("/");

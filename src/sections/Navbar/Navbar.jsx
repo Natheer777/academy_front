@@ -112,6 +112,7 @@ export default function Navbar() {
                     localStorage.removeItem("userRole");
                     localStorage.removeItem("firstName");
                     localStorage.removeItem("showVideoCall");
+                    localStorage.removeItem("uid");
                     // إزالة بيانات المستخدم
                     sessionStorage.removeItem("auth"); // إزالة التوكن من sessionStorage
                     // sessionStorage.removeItem("token"); // إزالة التوكن من sessionStorage
@@ -174,6 +175,7 @@ export default function Navbar() {
                     localStorage.removeItem("userRole");
                     localStorage.removeItem("firstName");
                     localStorage.removeItem("showVideoCall");
+                    localStorage.removeItem("uid");
 
                     // إزالة بيانات المستخدم
                     sessionStorage.removeItem("auth"); // إزالة التوكن من sessionStorage
