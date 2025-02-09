@@ -1,0 +1,10 @@
+.contentVision{
+    background-color: #F6F6F6;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+.contentVision p{
+    font-size: 15px;
+    text-align: center;
+    line-height: 3;
+}

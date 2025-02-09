@@ -1,0 +1,12 @@
+.dashboard p{
+    color: var(--color--green);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+}
+.dashboard p span{
+    font-weight: 100;
+}
+.dashboard h3{
+    color: var(--color--green);
+}

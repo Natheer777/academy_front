@@ -1,0 +1,529 @@
+/* تنسيق عام للتطبيق */
+.webRtc {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.877);
+  padding: 10px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* توزيع متساوٍ */
+  grid-template-rows: repeat(auto-fit, minmax(250px, 1fr)); /* توزيع متساوٍ */
+  gap: 10px;
+  width: 100%;
+  height: calc(105vh - 110px); /* استخدام المساحة بالكامل */
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+}
+
+
+.video-container {
+  position: relative;
+  background: black;
+  overflow: hidden;
+  border-radius: 10px;
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.video-container.teacher {
+  order: -1;
+  /* Ensure teacher is always first */
+}
+
+.video-container.student {
+  grid-column: auto;
+  grid-row: auto;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.video-container .initial {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  color: white;
+  font-size: 24px;
+  border-radius: 0px;
+  border: 2px solid white;
+}
+
+
+
+/* إذا كان هناك فيديو واحد فقط */
+.video-grid:has(.video-container:only-child) {
+  justify-content: center;
+  align-items: center;
+}
+
+/* تنسيق الأزرار */
+.webRtcButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  margin: auto;
+  flex-wrap: wrap;
+  background-color: black;
+  position: relative;
+  bottom: -20px;
+  width: max-content;
+}
+
+.webRtc button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background-color: #3c4043;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  margin: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.webRtc button:hover {
+  background-color: #5f6368;
+  transform: scale(1.1);
+}
+
+.endCall {
+  background-color: #d93025 !important;
+}
+
+.endCall:hover {
+  background-color: #ea4335 !important;
+}
+
+.webRtcSend {
+  border-radius: 10px !important;
+}
+
+.chatButton svg {
+  font-size: 25px;
+}
+
+.closeChat {
+  padding: 5px !important;
+}
+
+
+
+.closeFiles {
+  position: fixed;
+  right: 0;
+  padding: 5px !important;
+  width: 35px;
+  height: 35px;
+}
+
+.FileContainer {
+  padding: 20px;
+  right: 0 !important;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* تنسيق حاوية الدردشة */
+.chatContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* تنسيق شريط التمرير */
+#video-streams::-webkit-scrollbar {
+  width: 8px;
+}
+
+#video-streams::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+#video-streams::-webkit-scrollbar-thumb {
+  background: #3c4043;
+  border-radius: 10px;
+}
+
+.video-streams,
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: auto;
+  gap: 10px;
+  width: 88%;
+  box-sizing: border-box;
+  justify-items: center;
+  align-items: center;
+  place-content: center;
+  overflow: hidden;
+  margin: auto;
+}
+
+
+
+/* تنسيق النص */
+.level_now {
+  color: var(--color--green);
+  font-weight: bold;
+}
+
+/* تنسيق القائمة الإضافية */
+.listIconVideo {
+  position: absolute;
+  bottom: 50px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.579);
+  border-radius: 5px;
+  width: max-content;
+}
+
+.listIconVideo button {
+  font-size: 13px;
+  background-color: transparent;
+}
+
+.listIconVideo svg {
+  font-size: 25px;
+  margin-left: 6px;
+}
+
+.listIconVideo button:hover {
+  background-color: transparent;
+  transform: none;
+}
+
+/* تنسيق الشاشة الكاملة */
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: black;
+}
+
+/* تنسيق الشاشة الكاملة للفيديوهات */
+.fullscreen .video-grid {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+}
+
+.fullscreen .video-container {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: unset;
+  border-radius: 0 !important;
+}
+
+/* تنسيق الشاشة الكاملة للأزرار */
+.fullscreen .webRtcButtons {
+  bottom: 50px;
+}
+
+/* تنسيق الشاشة الكاملة للدردشة والملفات */
+.fullscreen .chatContainer,
+.fullscreen .FileContainer {
+  display: none;
+}
+
+/* تنسيق الشاشة الكاملة للعناصر الأخرى */
+.fullscreen .chatButton,
+.fullscreen .FileButton {
+  display: none;
+}
+
+.FilesWeb h3 {
+  text-align: end;
+}
+
+.UploadFile {
+  border-radius: 10px !important;
+}
+
+#join-btn {
+  margin-top: 50px;
+  font-size: 18px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: #34a853;
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#join-btn:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.DownloadFile {
+  padding: 4px;
+  background-color: #3c4043;
+  color: white;
+  border-radius: 10px;
+}
+
+/* تنسيق الحرف الأول */
+.initial {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: orange;
+  z-index: 100;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  border-radius: 50%;
+  color: white;
+  padding: 20px 37px;
+}
+
+.initial.show {
+  display: block;
+}
+
+.initial.hide {
+  display: none;
+}
+
+.layout-menu {
+  background-color: rgba(0, 0, 0, 0.579);
+  position: absolute;
+  bottom: 50px;
+  width: 20vh;
+  border-radius: 10px;
+}
+
+.layout-menu button {
+  background-color: transparent;
+  box-shadow: none;
+  font-weight: bold;
+}
+
+
+/* شكل المكدس */
+.video-grid.stack {
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-grid.stack .top-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.video-grid.stack .middle-section {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.video-grid.stack .video-container {
+  flex: 1 1 45%;
+  /* عرض الفيديوهات في المنتصف */
+}
+
+.video-grid.stack .top-bar .video-container {
+  flex: 1 1 20%;
+  /* عرض الفيديوهات في الشريط العلوي */
+}
+
+
+/* foucs */
+
+.video-grid.focus {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  position: relative;
+}
+
+.video-grid.focus .video-container.teacher {
+  width: 100%;
+  height: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-grid.focus .student-container {
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  height: 20%;
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  left: -50%;
+  transform: translate(50%, 0);
+}
+
+.video-grid.focus .video-container.student {
+  display: inline-block;
+  width: auto;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.video-grid.focus .video-container.student video {
+  height: 100%;
+}
+
+
+/* stacks */
+
+/* تنسيقات وضع stack */
+.video-grid.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.top-scroll {
+  display: flex;
+  height: 30%;
+  overflow-x: auto;
+  padding: 10px;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.top-scroll .video-container{
+  flex-shrink: 0;
+  width: 200px;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.top-scroll .video-container .select{
+  border: 2px solid #00ff00; 
+}
+
+.video-grid.stack .top-scroll {
+  display: flex;
+}
+
+video{width: 100%;
+height: 100%;
+background-color: black;}
+.main-area.stack {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-area.stack .video-container{
+  width: 100%;
+  height: 100%;
+  aspect-ratio:  16/9;
+}
+
+/* الحفاظ على التنسيقات الحالية */
+.student-container {
+  display: contents;
+  /* يحافظ على التنسيق الشبكي الأصلي */
+}
+
+.student-container.stack {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.AllButtonVideo{
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50% , 0);
+}
+
+/* تنسيق الطبقة الشفافة التي تغطي الصفحة أثناء التحميل */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* خلفية شفافة */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000; /* تأكد من ظهورها فوق كل العناصر */
+}
+
+/* تنسيق spinner التحميل */
+.loading-spinner {
+  border: 4px solid #f3f3f3; /* لون الخلفية */
+  border-top: 4px solid #3498db; /* لون spinner */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite; /* دوران spinner */
+}
+
+/* نص التحميل */
+.loading-overlay p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333; /* لون النص */
+}
+
+/* تعريف دوران spinner */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

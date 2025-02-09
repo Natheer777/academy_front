@@ -1,0 +1,47 @@
+.title_academy{
+    text-align: right;
+    font-weight: bold;
+    color: var(--color--green);
+}
+.academySpan{
+    font-weight: bold;
+    color: var(--color--green);
+}
+.Header ,.details{
+    font-weight: normal;
+    font-size: var(--sec--size);
+    line-height: 2;
+}
+.Header h2{
+    color: var(--color--green);
+}
+.academy{
+    text-align: justify;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(-20deg, #f9f9f9, #e1f2e7);
+}
+.acadeny_logo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.acadeny_logo h2{
+    font-weight: bold;
+}
+.acadeny_logo img{
+    width: 5rem;
+}
+@media screen and (max-width:991px) {
+    .acadeny_logo h2 {
+        margin-top: 20px;
+    }
+    .Header_revers{
+        /* flex-direction: column-reverse; */
+    }
+    .Header_revers img{
+        margin-top: 20px;
+    }
+}

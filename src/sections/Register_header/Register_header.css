@@ -1,0 +1,113 @@
+.Register h2 {
+  margin-top: 20px;
+  color: white;
+}
+.Register ul p{
+  font-size: var(--sec--size);
+  line-height: 2;
+  color: var(--color--green) !important;
+}
+.Register ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-left: 0;
+}
+.Register ul li {
+  border: 2px solid var(--color--green);
+  padding: 10px;
+  border-radius: 20px;
+
+  width: 100%;
+  /* height: 20rem; */
+}
+@media (max-width: 768px){
+  .Register ul li{
+    height: 16rem;
+    margin: 15px;
+  }
+}
+.Register ul li p{
+  font-size: var(--sec--size);
+  line-height: 1.5;
+}
+.Register ul li h2{
+  color: var(--color--green);
+}
+
+.step1,.step2,.step3,.step4,.step5{
+    position: relative;
+}
+
+
+.step1::before {
+  right: -20px;
+  top: -15px;
+  content: "1";
+  background-color: var(--color--red1);
+  position: absolute;
+  color: white;
+  width: 40px;
+  border-radius: 50px;
+  height: 40px;
+  font-size: 30px;
+  text-align: center;
+}
+.step2::before {
+  right: -20px;
+  top: -15px;
+  content: "2";
+  background-color: var(--color--red1);
+  position: absolute;
+  color: white;
+  width: 40px;
+  border-radius: 50px;
+  height: 40px;
+  font-size: 30px;
+  text-align: center;
+}
+.step3::before {
+  right: -20px;
+  top: -15px;
+  content: "3";
+  background-color: var(--color--red1);
+  position: absolute;
+  color: white;
+  width: 40px;
+  border-radius: 50px;
+  height: 40px;
+  font-size: 30px;
+  text-align: center;
+}
+.step4::before {
+  right: -20px;
+  top: -15px;
+  content: "4";
+  background-color: var(--color--red1);
+  position: absolute;
+  color: white;
+  width: 40px;
+  border-radius: 50px;
+  height: 40px;
+  font-size: 30px;
+  text-align: center;
+}
+.step5::before {
+  right: -20px;
+  top: -15px;
+  content: "5";
+  background-color: var(--color--red1);
+  position: absolute;
+  color: white;
+  width: 40px;
+  border-radius: 50px;
+  height: 40px;
+  font-size: 30px;
+  text-align: center;
+}
+.RegisterContent{
+  display: flex !important;
+  align-items: stretch !important;
+}

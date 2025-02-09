@@ -1,0 +1,78 @@
+
+.money_lisson h2{
+    color: var(--color--green);
+}
+.money_lisson a{
+    color: red !important;
+    font-weight: bold;
+}
+.money_lisson p{
+    margin-top: 20px;
+    font-size: var(--sec--size);
+    text-align: justify;
+    line-height: 2;
+}
+.money_lisson ul li::marker{
+    color: var(--color--red1);
+}
+.money_lisson ul li{
+    line-height: 2.5;
+    font-size: var(--sec--size);
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 6px;
+    text-align: center;
+   border: 2px var(--color--green) solid;
+}
+.note{
+    color: red;
+}
+.money_lisson ul{
+  padding-left: 0;
+}
+.How_to_pay h2{
+    margin-top: 40px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+.means{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding-bottom: 50px;
+}
+.mean_1{
+    background-image: url("../../assets/pay/bank-icon-removebg-preview.png");
+}
+.mean_2{
+    background-image: url("../../assets/pay/R-removebg-preview.png");
+}
+.mean_3{
+    background-image: url("../../assets/pay/R.png");
+}
+.mean_4{
+    background-image: url("../../assets/pay/R (1).png");
+}
+.mean_5{
+    background-image: url("../../assets/pay/R (3).png");
+}
+.mean_1,
+.mean_2,
+.mean_3,
+.mean_4,
+.mean_5{
+border-radius: 10px;
+width: 10rem;
+height: 4rem;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+cursor: pointer;
+}
+@media screen and (max-width:768px) {
+    .means{
+        justify-content: center;
+    }
+}

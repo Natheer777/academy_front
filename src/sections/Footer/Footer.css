@@ -1,0 +1,228 @@
+.Contact img {
+  width: 100%;
+}
+
+.footer {
+  background-color: #d1f0dc;
+}
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer ul {
+  line-height: 2;
+  list-style: none;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.list-unstyled {
+  text-align: start;
+}
+
+.logo_white {
+  display: flex;
+  justify-content: center;
+}
+
+.logo_white img {
+  width: 10vh;
+}
+
+.Logo_Footer {
+  width: 10rem;
+}
+
+.adress {
+  text-align: start;
+  font-size: 18px;
+  margin-bottom: 10px;
+  /* line-height: 2; */
+  color: black;
+}
+
+.social_icons a svg {
+  color: black;
+  font-size: var(--sec--size);
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+  .adress[lang="en"] {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 877px) {
+  .rowFooter {
+    justify-content: center !important;
+  }
+
+  .adress {
+    line-height: 2;
+  }
+
+  .group_footer {
+    border-top: 2px green solid;
+    margin-top: 20px;
+  }
+
+  .Footer_all_list {
+    flex-direction: column-reverse;
+  }
+
+  .footer-img {
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 877px) {
+  .adress {
+    top: 8px;
+    position: absolute;
+  }
+
+  .rowFooter {
+    margin-top: 20px;
+  }
+
+}
+
+@media screen and (max-width: 877px) {
+  .Footer_all_list{
+    flex-direction: column-reverse;
+  }
+  .footer-img{
+    margin: auto;
+  }
+}
+
+svg {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+.Ulfooter {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Ulfooter a {
+  font-size: 15px;
+}
+
+.DesktopView {
+  position: relative;
+  background-color: var(--color--green);
+}
+
+.DesktopView h5 {
+  font-weight: bold;
+  font-size: 9px;
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 41.5%;
+  transform: translate(-50%, -50%);
+}
+
+.DesktopView svg {
+  color: white;
+  font-size: 3.2rem;
+}
+
+.App button {
+  border: none;
+  /* padding: 5px; */
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.rowFooter {
+  /* flex-direction: row-reverse;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px; */
+}
+
+.group_footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.group_1_footer li a,
+.group_2_footer li a,
+.group_3_footer li a {
+  line-height: 2.5;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+
+.group_1_footer li a svg,
+.group_2_footer li a svg,
+.group_3_footer li a svg {
+  margin-left: 10px;
+  color: var(--color--red1);
+}
+
+.Footer_all_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: start;
+  gap: 30px;
+  /* margin-top: 20px; */
+}
+
+.App button {
+  display: none;
+}
+
+@media screen and (min-width: 5px) and (max-width: 650px) {
+  .App button {
+    display: block;
+  }
+
+  .Ulfooter {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.list_footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media screen and (min-width:370px) and (max-width:551px){
+  .group_footer{
+    row-gap: 0px;
+  }
+}
+.Footer_ul{
+  padding: 0 0 0 30px;
+}

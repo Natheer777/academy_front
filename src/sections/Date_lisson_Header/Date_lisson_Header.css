@@ -1,0 +1,74 @@
+.Date_lisson_Header ul li{
+    list-style:inside;
+}
+.title_Date_lisson_Header{
+    color: var(--color--green);
+    /* text-align: center; */
+}
+
+.levels{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+.levels ul{
+    width: 26rem;
+    border-radius: 20px;
+    padding: 10px;
+    border: 2px var(--color--green) solid;
+    height: 53rem;
+    background: linear-gradient(-20deg, #f9f9f9, #e1f2e7);
+    position: relative;
+}
+@media (max-width: 768px){
+    .levels ul{
+        height: 44rem;
+    }
+}
+.levels ul h2{
+    color: var(--color--green);
+    margin-bottom: 20px;
+}
+.levels ul li{
+    font-size: var(--sec--size);
+    line-height: 2;
+    
+}
+.levels ul li::marker{
+    color: var(--color--green);
+}
+.levels ul p{
+    font-size: var(--sec--size);
+    text-align: justify;
+    line-height: 2;
+    padding: 10px;
+}
+.levels button{
+    background-color: var(--color--green);
+    color: white;
+    font-weight: bold;
+    padding: 20px 40px;
+    border: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.All_level ul li{
+    list-style: none;
+}
+.All_level ul li h2{
+    color: var(--color--green);
+    font-weight: bold;
+}
+.All_level ul li p{
+    line-height: 2;
+    font-size: var(--sec--size);
+}
+.single{
+    font-size: var(--sec--size);
+    text-align: justify;
+}

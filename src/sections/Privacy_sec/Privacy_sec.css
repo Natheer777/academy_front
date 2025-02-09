@@ -1,0 +1,34 @@
+.details_privacy img{
+    width: 100%;
+}
+.img_privacy{
+    display: flex;
+}
+.text_privacy h2{
+color: var(--color--green);
+font-weight: bold;
+
+}
+.text_privacy p{
+    line-height: 2;
+    font-size: var(--sec--size);
+}
+.ul_privacy h2{
+    color: var(--color--green);
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.ul_privacy p{
+    line-height: 2;
+    font-size: var(--sec--size);
+    text-align: justify;
+}
+.ul_privacy ul li{
+    line-height: 2;
+    margin-bottom: 20px;
+    font-size: 20px;
+
+}
+.ul_privacy a{
+    color: blue;
+}

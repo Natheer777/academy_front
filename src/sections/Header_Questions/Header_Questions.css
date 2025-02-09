@@ -1,0 +1,9 @@
+.img_Questions{
+    background-image: url(../../assets/imgheader/الأسئلة-المتكررة.png);
+    padding: 120px 0;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: #f1fffb;
+}
