@@ -13,47 +13,34 @@ import { FaQuestionCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  const [role, setRole] = useState(null);
-
-  const [user, setUser] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [role, setRole] = useState(localStorage.getItem("userRole"));
+  const [user, setUser] = useState(
+    localStorage.getItem("userEmail") ? { email: localStorage.getItem("userEmail") } : null
+  );
   const [error, setError] = useState(null);
 
-  const userEmail = localStorage.getItem("userEmail");
   const fetchUserData = async () => {
     try {
       const token = localStorage.getItem("token");
-
       if (!token) {
         setError("لا يوجد توكن. يرجى تسجيل الدخول.");
         return;
       }
 
-      const response = await fetch(
-        "https://api.japaneseacademy.jp/allusers",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch("https://api.japaneseacademy.jp/allusers", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
 
-      if (!response.ok) {
-        throw new ("توكن غير صالح");
-      }
-
-      const contentType = response.headers.get("content-type");
-      if (!contentType || !contentType.includes("application/json")) {
-        throw new ("الرد من الخادم ليس بصيغة JSON");
-      }
-
+      if (!response.ok) throw new Error("توكن غير صالح");
       const data = await response.json();
-
-      // استبدال البحث عن المستخدم باستخدام شرط محدد (مثال: باستخدام id أو email)
-      const currentUser = data.find((user) => user.email === userEmail); // استخدم بريد المستخدم هنا
-
+      const currentUser = data.find((u) => u.email === localStorage.getItem("userEmail"));
       if (currentUser) {
         setUser(currentUser);
+        localStorage.setItem("userId", currentUser.id); // تحديث التخزين
       } else {
         setError("اسم المستخدم أو كلمة المرور خطأ");
       }
@@ -62,13 +49,6 @@ export default function Navbar() {
       setError(err.message);
     }
   };
-  useEffect(() => {
-    // جلب الدور من localStorage
-    const storedRole = localStorage.getItem("userRole");
-    if (storedRole) {
-      setRole(storedRole); // تعيين الدور في الحالة
-    }
-  }, []);
 
   useEffect(() => {
     fetchUserData();
@@ -102,6 +82,7 @@ export default function Navbar() {
                 <Link to={`/Dash_users/${user.id}`}>
                   <button className="register_nav">لوحة التحكم </button>
                 </Link>
+                <Link to="/">
                 <button
                   className="logout_nav register_nav"
                   onClick={() => {
@@ -113,39 +94,33 @@ export default function Navbar() {
                     localStorage.removeItem("firstName");
                     localStorage.removeItem("showVideoCall");
                     localStorage.removeItem("uid");
-                    // إزالة بيانات المستخدم
                     sessionStorage.removeItem("auth"); // إزالة التوكن من sessionStorage
-                    // sessionStorage.removeItem("token"); // إزالة التوكن من sessionStorage
-                    // sessionStorage.removeItem("userEmail"); // إزالة التوكن من sessionStorage
-                    // sessionStorage.removeItem("userId"); // إزالة التوكن من sessionStorage
-                    // sessionStorage.removeItem("userRole"); // إزالة التوكن من sessionStorage
-                   
-
-                    // عمل reload للصفحة
-                    window.location.reload();
+                    
                   }}
                 >
                   تسجيل الخروج
                 </button>
+                  </Link>
                 {/* <p className="user-name">{user.firstName}</p> */}
               </div>
             </div>
           )}
         </div>
         <button
-          className="navbar-toggler"
+          className={`navbar-toggler ${isOpen ? "open" : ""}`}
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
+          onClick={() => setIsOpen(!isOpen)}
           aria-controls="navbarNavDropdown"
-          aria-expanded="false"
+          aria-expanded={isOpen}
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <div className="buttons_pc">
+
+        <div className={`collapse navbar-collapse ${isOpen ? "show animated-slide" : "animated-hide"}`} 
+          id="navbarNavDropdown">
+                      <div className="buttons_pc">
             {!user ? (
               <div className="buttons">
                 <Link to="/Register_account">
@@ -165,6 +140,7 @@ export default function Navbar() {
                 <Link to={`/Dash_users/${user.id}`}>
                   <button className="register_nav">لوحة التحكم </button>
                 </Link>
+                <Link to="/">
                 <button
                   className="logout_nav register_nav"
                   onClick={() => {
@@ -176,20 +152,14 @@ export default function Navbar() {
                     localStorage.removeItem("firstName");
                     localStorage.removeItem("showVideoCall");
                     localStorage.removeItem("uid");
-
-                    // إزالة بيانات المستخدم
-                    sessionStorage.removeItem("auth"); // إزالة التوكن من sessionStorage
-                    // sessionStorage.removeItem("token"); // إزالة التوكن من sessionStorage
-                    // sessionStorage.removeItem("userEmail"); // إزالة التوكن من sessionStorage
-                    // sessionStorage.removeItem("userId"); // إزالة التوكن من sessionStorage
-                    // sessionStorage.removeItem("userRole"); // إزالة التوكن من sessionStorage
+                    sessionStorage.removeItem("auth"); 
                    
-                    // عمل reload للصفحة
-                    window.location.reload();
+
                   }}
                 >
                   تسجيل الخروج
                 </button>
+                  </Link>
               </div>
             )}
           </div>
@@ -285,7 +255,7 @@ export default function Navbar() {
               </div>
               <div className="group_3">
                 {role === "teacher" && (
-                  <li className="nav-item item4">
+                  <li className="nav-item item4 DAsh_teacher">
                     <Link className="nav-a dropdown-item" to="/Dash_Teachers">
                       لوحة تحكم الأساتذة
                     </Link>

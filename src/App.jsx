@@ -1,8 +1,7 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
-import { FaTurnUp } from "react-icons/fa6";
 import { FaArrowAltCircleUp } from "react-icons/fa";
 
 import {
@@ -69,7 +68,7 @@ function App() {
   //   setCookiesAccepted(true);
   // };
 
-///////////////////////////////////
+  ///////////////////////////////////
 
 
 
@@ -108,14 +107,20 @@ function App() {
 
   ////////////////////////////////////
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true); // اجعل البداية true
 
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 100);
+    const loadResources = async () => {
+      await document.fonts.ready; // انتظر تحميل الخطوط
+      setTimeout(() => {
+        setLoading(false);
+      }, 500); // تأخير بسيط لإعطاء إحساس بالسلاسة
+    };
+  
+    loadResources();
   }, []);
+  
+  
   ///////////////////////////////////
 
   const [showIcons, setShowIcons] = useState(false);
@@ -180,6 +185,10 @@ function App() {
   }, []);
 
 
+  const OpenPage = () => {
+    return localStorage.getItem("token") && localStorage.getItem("userEmail")
+  }
+
   return (
     <>
 
@@ -209,7 +218,7 @@ function App() {
       {/* {!isLoaded && <Curtain />}  */}
       {/* {isLoaded && ( */}
       <>
-        <Cookies  />
+        <Cookies />
         <button className="up">
           <FaArrowAltCircleUp />
         </button>
@@ -258,8 +267,14 @@ function App() {
               <Route path="/More_services" element={<More_services />} />
               <Route path="/Support" element={<Support />} />
               <Route path="/Fees" element={<Fees />} />
-              <Route path="/Register_account" element={<Register_accounts />} />
-              <Route path="/Login_users" element={<Login_users />} />
+              <Route
+                path="/Register_account"
+                element={OpenPage() ? <Navigate to="/" /> : <Register_accounts />}
+              />
+              <Route
+                path="/Login_users"
+                element={OpenPage() ? <Navigate to="/" /> : <Login_users />}
+              />
               <Route path="/Dash_users/:userId" element={<Dash_users />} />
               <Route path="/Comments" element={<CommetS />} />
               <Route path="/Questions" element={<Questions />} />
@@ -272,7 +287,7 @@ function App() {
                 path="/Dash"
                 element={
                   <ProtectedRoute
-                  isAuthenticated={!!localStorage.getItem("auth")}
+                    isAuthenticated={!!localStorage.getItem("auth")}
                   >
                     <Dash />
                   </ProtectedRoute>

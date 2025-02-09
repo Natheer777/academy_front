@@ -3,14 +3,14 @@ import fs from 'fs'
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  server: {
-    host: '0.0.0.0', // للسماح بالوصول من الأجهزة الأخرى
-    port: 5173,      // يمكن تغييره حسب الحاجة
-    https: {
-      key: fs.readFileSync('./key.pem'),  // Path to the private key file
-      cert: fs.readFileSync('./cert.pem') // Path to the certificate file
-    }
-  },
+  // server: {
+  //   host: '0.0.0.0', // للسماح بالوصول من الأجهزة الأخرى
+  //   port: 5173,      // يمكن تغييره حسب الحاجة
+  //   https: {
+  //     key: fs.readFileSync('./key.pem'),  // Path to the private key file
+  //     cert: fs.readFileSync('./cert.pem') // Path to the certificate file
+  //   }
+  // },
   
   optimizeDeps: {
     exclude: ['lucide-react'],

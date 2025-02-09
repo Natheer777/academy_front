@@ -1,15 +1,90 @@
-.Dont_have_account span{
+.Dont_have_account span {
     color: var(--color--green);
-    font-size: var(--sec--size);
+    font-size: 20px !important;
+    font-weight: bold;
 }
-.login-form  label{
+.login-form label{
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+.login-form h1 {
+    font-size: 20px !important;
+    font-weight: bold;
+    color: var(--color--green);
+}
+
+.login-form h1 span svg {
+    font-size: 20px;
+}
+
+.login-form label {
     text-align: start;
 }
-.error-message{
+
+.error-message {
     color: red;
     font-weight: bold;
     margin-top: 20px;
 }
-.login-form button{
-    font-size: var(--sec--size);
+
+.login-form button {
+    font-weight: bold;
+    font-size: 20px !important;
+}
+
+.ForgetPassword {
+    margin: auto;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+.or {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 20px !important;
+    
+}
+
+.or::after {
+    content: "";
+    height: 1px;
+    width: 40%;
+    background-color: black;
+    display: inline-block;
+    margin-right: 10px;
+}
+.or::before {
+    content: "";
+    height: 1px;
+    width: 40%;
+    background-color: black;
+    display: inline-block;
+    margin-left: 10px;    
+}
+
+.rememberMe{
+    display: inline-flex;
+    cursor: pointer;
+}
+.rememberMe label{
+    cursor: pointer;
+    font-size: 20px !important;
+    font-weight: bold;
+}
+.rememberMe input{
+    cursor: pointer;
+    width: 20px;
+}
+
+.LoginImg{
+    width: 20vh;
+    margin: auto;
+}
+.ForgetPassword{
+    font-size: 20px !important;
+    font-weight: bold;
 }

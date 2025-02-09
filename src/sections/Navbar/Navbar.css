@@ -76,6 +76,7 @@
     display: flex;
     width: 9rem;
   }
+
 }
 
 .register_nav {
@@ -130,26 +131,31 @@
 }
 
 @media screen and (max-width: 990px) {
+  .user-info button{
+    margin: 0 5px;
+    padding-bottom: 5.2px;
+  }
   .collapse {
     /* flex-direction: column-reverse !important; */
     /* display: flex; */
     /* align-items: start; */
-    margin-top: 20px;
+    /* margin-top: 20px; */
   }
 
   .navbar ul {
     margin: auto;
   }
 
+  .navbar ul {
+    background-color: whitesmoke;
+  }
+
   .navbar ul li {
     padding: 6px;
-    background-color: white;
-    border: 2px green solid;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
     display: flex;
     align-items: center;
     text-align: right;
+    border-bottom: 1px solid black;
   }
 
   .navbar-collapse li {
@@ -158,6 +164,7 @@
 
   .navbar-brand img {
     width: 4rem;
+    margin-top: 7px;
   }
 }
 
@@ -170,10 +177,11 @@
     display: block;
   }
 
-  .register_nav {
-    margin-bottom: 10px;
-  }
-   /* .buttons button{
+.buttons_mobile button{
+  margin: 10px;
+}
+
+  /* .buttons button{
     margin: 10px;
    } */
 }
@@ -231,7 +239,6 @@
   }
 
   .user-info-buttons {
-    gap: 5px;
     display: flex;
     align-items: center;
   }
@@ -275,22 +282,129 @@
 
 @media screen and (max-width: 768px) {
   .register_nav {
-    width: 6rem;
+    width: 7rem;
   }
-  .login_nav{
-    width: 6rem;
+
+  .login_nav {
+    width: 7rem;
   }
 }
+
 @media screen and (max-width: 330px) {
   .register_nav {
     width: 5rem;
   }
-  .login_nav{
+
+  .login_nav {
     width: 5.5rem;
   }
 }
 
-.user-info-buttons{
+.user-info-buttons {
   display: flex;
-  gap: 10px;
+}
+
+.user-info button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons_pc button{
+  margin:10px 0;
+}
+
+
+
+.navbar button:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.navbar-toggler {
+  position: relative;
+  border: none;
+  background: transparent;
+}
+
+.navbar-toggler-icon {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #0d5a25;
+  background-image: none;
+  border-radius: 50px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #0d5a25;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50px;
+}
+
+.navbar-toggler-icon::before {
+  top: -8px;
+  left: 0;
+}
+
+.navbar-toggler-icon::after {
+  top: 8px;
+  left: 0;
+}
+
+.navbar-toggler.open .navbar-toggler-icon {
+  background: transparent;
+}
+
+.navbar-toggler.open .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navbar-toggler.open .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+
+.animated-slide {
+  animation: slideDown 0.6s ease-in-out forwards;
+}
+
+.animated-hide {
+  /* animation: slideUp 0.6s ease-in-out forwards; */
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.DAsh_teacher {
+  border-bottom: none !important;
 }

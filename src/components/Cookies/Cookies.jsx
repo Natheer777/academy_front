@@ -55,18 +55,18 @@ export default function Cookies() {
       {!cookiesAccepted && (
         <div className="cookie-banner">
           <p className="mb-4">
-            مرحبًا بكم في موقع أكاديمية اللغة اليابانية! <br />
+            مرحبًا بكم في  <span className="academySpan">أكاديمية اللغة اليابانية</span> ! <br />
             نحن نستخدم ملفات تعريف الارتباط لتحسين تجربتكم. بالضغط على "قبول
             جميع ملفات تعريف الارتباط"، فإنكم توافقون على استخدامها.
             <br />
             لمزيد من التفاصيل، يُرجى الاطلاع على{" "}
-            <a href="/Privacy">سياسة الخصوصية</a>.
+            <a className="SpanPrivacy" href="/Privacy">سياسة الخصوصية</a>.
           </p>
           <div className="buttonsCookies">
-            <button className="mb-4" onClick={handleAcceptCookies}>
+            <button className="mb-3" onClick={handleAcceptCookies}>
               قبول جميع ملفات تعريف الارتباط
             </button>
-            <button className="mb-4" onClick={() => setShowSettingsModal(true)}>
+            <button className="mb-3" onClick={() => setShowSettingsModal(true)}>
               إعدادات تعريف ملفات الارتباط
             </button>
             <button onClick={handleRejectCookies}>رفض</button>

@@ -9,8 +9,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة */
-  z-index: 1000; /* لجعلها تظهر فوق باقي العناصر */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* خلفية شفافة */
+  z-index: 1000;
+  /* لجعلها تظهر فوق باقي العناصر */
 }
 
 .modal {
@@ -20,7 +22,8 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 90%;
   /* max-width: 500px; */
-  z-index: 1001; /* تأكد أن النافذة أعلى من الخلفية */
+  z-index: 1001;
+  /* تأكد أن النافذة أعلى من الخلفية */
   display: block;
   position: absolute;
   left: 50%;
@@ -28,16 +31,20 @@
   transform: translate(-50%, -50%);
   /* تأكد من أن العرض مفعل */
 }
+
 .modal h2 {
   color: var(--color--green);
   font-weight: bold;
 }
+
 .modal p {
   font-size: var(--sec--size);
 }
+
 .modal h3 {
   font-weight: bold;
 }
+
 .actions button,
 .cookie-option button {
   background-color: var(--color--green);
@@ -49,12 +56,14 @@
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
-.cookie-option button{
+
+.cookie-option button {
   background-color: white;
-  border:  2px black solid;
+  border: 2px black solid;
   color: black;
   font-weight: bold;
 }
+
 .cookie-banner {
   position: fixed;
   bottom: 0;
@@ -66,9 +75,14 @@
   text-align: center;
   z-index: 100;
 }
+
 .cookie-banner p {
-  font-size: var(--sec--size);
+  font-size: 22px;
+  width: 90%;
+  margin: auto;
+  text-align: center;
 }
+
 .cookie-banner button {
   background-color: #4caf50;
   color: white;
@@ -76,20 +90,31 @@
   padding: 10px 20px;
   cursor: pointer;
 }
+
 .buttonsCookies {
   display: grid;
   place-content: center;
 }
+
 .buttonsCookies button {
-  width: 50vh;
-  font-weight: bold;
+  width: 100%;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
 }
 
-.cookie-option button.active_disable{
+.cookie-option button.active_disable {
   color: white;
   background-color: var(--color--green);
 }
-.cookie-option button.active_enable{
+
+.cookie-option button.active_enable {
   background-color: red;
   color: white;
+}
+.SpanPrivacy{
+  color: #44be48;
+}
+.Cookies .academySpan{
+  color: #44be48;
 }

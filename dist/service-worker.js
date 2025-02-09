@@ -1,4 +1,4 @@
-const CACHE_NAME = "vite-react-offline-cache-v188";
+const CACHE_NAME = "vite-react-offline-cache-v206"; // تحديث رقم النسخة للكاش
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
@@ -7,8 +7,8 @@ self.addEventListener("install", (event) => {
       return cache.addAll([
         "/",
         "/index.html",
-        "/assets/index.DmCsTn8P.js",
-        "/assets/index.B39wlTlH.css",
+        "/assets/index.C5c0Kicv.css",
+        "/assets/index.t6g_OmOq.js",
         "/assets/vendor.CqcSyPVE.js",
         "/Fonts/ScheherazadeNew-Bold.CrbhGG_h.ttf",
         "/About",
@@ -23,7 +23,6 @@ self.addEventListener("install", (event) => {
         "/Support",
         "/Register_account",
         "/Login_users",
-        "/Dash_users/:userId",
         "/Comments",
         "/Questions",
         "/Terms",
@@ -45,24 +44,28 @@ self.addEventListener("activate", (event) => {
       );
     })
   );
+  self.clients.claim();
 });
 
 self.addEventListener("fetch", (event) => {
-  if (event.request.method !== "GET") {
-    // تخطي الطلبات التي ليست من النوع GET
-    return;
-  }
+  if (event.request.method !== "GET") return;
 
   event.respondWith(
-    caches.open(CACHE_NAME).then((cache) => {
+    caches.match(event.request).then((cachedResponse) => {
+      if (cachedResponse) {
+        return cachedResponse; // استرجاع الملفات المخزنة مباشرة
+      }
       return fetch(event.request)
-        .then((response) => {
-          if (response.ok) {
-            cache.put(event.request, response.clone());
+        .then((networkResponse) => {
+          if (networkResponse.ok) {
+            return caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, networkResponse.clone());
+              return networkResponse;
+            });
           }
-          return response;
+          return networkResponse;
         })
-        .catch(() => cache.match(event.request));
+        .catch(() => caches.match("/")); // إعادة توجيه عند فقدان الاتصال
     })
   );
 });
