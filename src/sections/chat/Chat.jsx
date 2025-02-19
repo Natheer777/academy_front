@@ -46,7 +46,7 @@ const Chat = ({ userRole, firstName }) => {
 
   const name = localStorage.getItem("firstName");
   return (
-    <Container>
+    <Container className="ChatContainer">
       <Row className="justify-content-center mt-4">
         <Col md={11}>
           <Card className="w-100">
@@ -98,7 +98,7 @@ const Chat = ({ userRole, firstName }) => {
                 </Form.Group>
 
                 <Button
-                  className="webRtcSend mt-2"
+                  className="webRtcSend mt-2 m-0"
                   variant="primary"
                   onClick={handleSendMessage}
                 >
@@ -106,7 +106,7 @@ const Chat = ({ userRole, firstName }) => {
                 </Button>
                 {localStorage.getItem("userRole") === "teacher" && (
                   <Button
-                    className="webRtcSend mt-2"
+                    className="webRtcSend mt-2 m-0"
                     variant="danger"
                     onClick={() => socket.emit("clearChat", room)}
                   >

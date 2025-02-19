@@ -1,4 +1,4 @@
-const CACHE_NAME = "vite-react-offline-cache-v206"; // تحديث رقم النسخة للكاش
+const CACHE_NAME = "vite-react-offline-cache-v225"; // تحديث رقم النسخة للكاش
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
@@ -6,11 +6,6 @@ self.addEventListener("install", (event) => {
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll([
         "/",
-        "/index.html",
-        "/assets/index.C5c0Kicv.css",
-        "/assets/index.t6g_OmOq.js",
-        "/assets/vendor.CqcSyPVE.js",
-        "/Fonts/ScheherazadeNew-Bold.CrbhGG_h.ttf",
         "/About",
         "/Date",
         "/Login",

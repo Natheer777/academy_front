@@ -4,7 +4,7 @@ export default function Supports() {
   return (
     <>
       <div className="container Supports" id="Support">
-        <div className="row academy  mt-5 mb-5">
+        <div className="row academy hidden mt-5 mb-5">
           <div className="col-lg-6">
  
             <h2>الدعم الفني:</h2>

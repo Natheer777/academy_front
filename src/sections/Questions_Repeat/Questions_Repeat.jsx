@@ -27,7 +27,7 @@ const ArabicAcademy = () => {
             </div>
           </div>
         </div>
-<img className="w-75 d-flex m-auto" src={question_img} alt="" />
+<img className="w-75 d-flex m-auto top" src={question_img} alt="" />
         <div className="elementor-element elementor-widget elementor-widget-elementskit-accordion mt-5 mb-5">
           <div className="elementor-widget-container">
             <div className="ekit-wid-con">
@@ -40,7 +40,7 @@ const ArabicAcademy = () => {
                     key={index}
                   >
                     <div
-                      className="elementskit-card-header"
+                      className="elementskit-card-header hidden"
                       id={`primaryHeading-${index}`}
                     >
                       <a

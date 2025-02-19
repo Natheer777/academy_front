@@ -52,7 +52,7 @@ export default function Date_lisson_Header() {
 
   return (
     <div className="container Date_lisson_Header mt-5" id="Level_division">
-      <div className="row academy">
+      <div className="row academy hidden">
         <div className="col-lg-7">
           <h2 className="title_Date_lisson_Header fw-bold">
             المستويات الدراسية
@@ -71,7 +71,7 @@ export default function Date_lisson_Header() {
 
       <div className="All_level">
         <ul>
-          <li className="academy mb-4 mt-4">
+          <li className="academy mb-4 mt-4 left">
             <h2>1. المستويات المبتدئة</h2>
             <p>
               تنقسم المستويات المبتدئة في{" "}
@@ -90,7 +90,7 @@ export default function Date_lisson_Header() {
             </p>
           </li>
 
-          <li className="academy mb-4">
+          <li className="academy mb-4 right">
             <h2>2. المستويات المتوسطة</h2>
             <p>
               بمجرد إتمام المستويات المبتدئة، ينتقل طلاب{" "}
@@ -108,7 +108,7 @@ export default function Date_lisson_Header() {
             </p>
           </li>
 
-          <li className="academy mb-4">
+          <li className="academy mb-4 left">
             <h2>3. المستويات المتقدمة</h2>
             <p>
               عند الوصول إلى المستويات المتقدمة، يكتسب الطلاب القدرة على فهم واستخدام اللغة اليابانية في سياقات أكثر تعقيدًا، سواءً في المحادثات أو في قراءة النصوص المكتوبة. وفي
@@ -128,7 +128,7 @@ export default function Date_lisson_Header() {
             </p>
           </li>
 
-          <li className="academy mb-4">
+          <li className="academy mb-4 right">
             <h2>4. المستويات الاحترافية</h2>
             <p>
               المستويات الاحترافية هي مستويات موجهة للطلاب الذين يسعون لاستخدام اللغة اليابانية بشكل متمكن واحترافي في مجالات متنوعة مثل الأكاديمية والمهنية. وتهدف
@@ -152,7 +152,7 @@ export default function Date_lisson_Header() {
             </p>
           </li>
           <hr />
-          <p className="single">
+          <p className="single hidden">
           إن كل مستوى في <span className="academySpan">أكاديمية اللغة اليابانية</span> يتضمن برنامجًا دراسيًا شاملًا يغطي جميع المهارات الأساسية التي يحتاجها الطالب لتعلم اللغة بشكل متكامل. وتشمل هذه المهارات القراءة، والكتابة، والاستماع، والمحادثة، حيث يُعطى كل جانب من هذه المهارات اهتمامًا خاصًا بما يتناسب مع مستوى الطالب وتقدمه. ويتم بناء المنهج بطريقة مرنة بحيث يُمكن للطلاب التقدم حسب قدراتهم الشخصية واحتياجاتهم اللغوية. وتنقسم المهارات اللغوية في أكاديمية اللغة اليابانية إلى المهارات التالية:
 
           </p>
@@ -160,7 +160,7 @@ export default function Date_lisson_Header() {
         <hr />
         <div className="skills All_level">
           <ul>
-            <li className="academy row mb-4">
+            <li className="academy row mb-4 left">
               <div className="col-lg-7">
                 <p>
                   1. {""}
@@ -178,7 +178,7 @@ export default function Date_lisson_Header() {
                 <img className="w-100" src={img_read} alt="" />
               </div>
             </li>
-            <li className="academy row mb-4">
+            <li className="academy row mb-4 right">
               <div className="img_listen col-lg-5">
                 <img className="w-100" src={img_write} alt="" />
               </div>
@@ -195,7 +195,7 @@ export default function Date_lisson_Header() {
                 </p>
               </div>
             </li>
-            <li className="academy row mb-4">
+            <li className="academy row mb-4 left">
               <div className="col-lg-7">
                 <p>
                   3. {""}
@@ -212,7 +212,7 @@ export default function Date_lisson_Header() {
                 <img className="w-100" src={img_listen} alt="" />
               </div>
             </li>
-            <li className="academy row mb-4">
+            <li className="academy row mb-4 right">
               <div className="img_listen col-lg-5">
                 <img className="w-100" src={img_talk} alt="" />
               </div>
@@ -227,7 +227,7 @@ export default function Date_lisson_Header() {
               </div>
             </li>
             <hr />
-            <p className="single">
+            <p className="single hidden">
              وكل هذه المهارات يتم تدريسها في <span className="academySpan"> أكاديمية اللغة اليابانية </span> تحت إشراف فريق من المدرسين المتخصصين، يقومون بتقديم التوجيه والدعم المستمر للطلاب، ويقومون بتحديد تقدم الطلاب بناءً على تقييماتهم الفردية، مما يسمح بتحديد المستويات وطرق التدريس المناسبة لاحتياجات كل طالب. ويتعامل المدرسون في أكاديمية اللغة اليابانية مع الطلاب بشكل شخصي، حيث يساعدونهم على تخطي التحديات اللغوية التي قد يواجهونها، مما يضمن تقدمهم في تعلم اللغة اليابانية بطريقة فعّالة وملائمة لمستوى كل منهم على حدى.
 
             </p>

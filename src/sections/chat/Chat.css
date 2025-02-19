@@ -14,3 +14,9 @@
   .text-success {
     color: #28a745 !important;
   }
+  .ChatContainer button{
+    background-color: var(--color--green) !important;
+  }
+  .closeChat{
+    background-color: var(--color--green) !important;
+  }

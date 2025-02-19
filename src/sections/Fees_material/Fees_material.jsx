@@ -32,7 +32,7 @@ export default function Fees_material() {
     <>
       <div className="container">
         <div className="money_lisson mt-5" id="Fees">
-          <div className="row academy">
+          <div className="row academy hidden">
             <div className="col-lg-7">
               <h2 className="fw-bold mt-4">الرسوم:</h2>
               <p>
@@ -80,7 +80,7 @@ export default function Fees_material() {
 
           <div className="levels_fees">
             <ul>
-              <li className="p-4">
+              <li className="p-4 left">
                 <h2 className="fw-bold text-end">
                   المستوى المبتدئ الأساسي (J1)
                 </h2>
@@ -129,7 +129,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 right">
                 <h2 className="fw-bold text-end">
                   المستوى المبتدئ المتوسط (J2)
                 </h2>
@@ -174,7 +174,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 left">
                 <h2 className="fw-bold text-end">
                   المستوى المبتدئ المتقدم (J3)
                 </h2>
@@ -220,7 +220,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 right">
                 <h2 className="fw-bold text-end">
                   المستوى المبتدئ الاحترافي (J4)
                 </h2>
@@ -263,7 +263,7 @@ export default function Fees_material() {
                   صفحة التسجيل.
                 </p>
               </li>
-              <li className="p-4">
+              <li className="p-4 left">
                 <h2 className="fw-bold text-end">باقة المستويات المبتدئة</h2>
 
                 <p>
@@ -283,7 +283,7 @@ export default function Fees_material() {
                   صفحة التسجيل.
                 </p>
               </li>
-              <li className="p-4">
+              <li className="p-4 right">
                 <h2 className="fw-bold text-end">
                   المستوى المتوسط المبتدئ (J5)
                 </h2>
@@ -330,7 +330,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 left">
                 <h2 className="fw-bold text-end">
                   المستوى المتوسط الأساسي (J6)
                 </h2>
@@ -371,7 +371,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 right">
                 <h2 className="fw-bold text-end">
                   المستوى المتوسط المتقدم (J7)
                 </h2>
@@ -412,7 +412,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 left">
                 <h2 className="fw-bold text-end">
                   المستوى المتوسط الاحترافي (J8)
                 </h2>
@@ -456,7 +456,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 right">
                 <h2 className="fw-bold text-end">باقة المستويات المتوسطة</h2>
 
                 <p>
@@ -482,7 +482,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 left">
                 <h2 className="fw-bold text-end">
                   المستوى المتقدم المبتدئ (J9)
                 </h2>
@@ -525,7 +525,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 right">
                 <h2 className="fw-bold text-end">
                   المستوى المتقدم المتوسط (J10)
                 </h2>
@@ -567,7 +567,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 left">
                 <h2 className="fw-bold text-end">
                   المستوى المتقدم الأساسي (J11)
                 </h2>
@@ -653,7 +653,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 right">
                 <h2 className="fw-bold text-end">باقة المستويات المتقدمة</h2>
 
                 <p>
@@ -692,7 +692,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 left">
                 <h2 className="fw-bold text-end">
                   المستوى الاحترافي المبتدئ (J13)
                 </h2>
@@ -735,7 +735,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 right">
                 <h2 className="fw-bold text-end">
                   المستوى الاحترافي المتوسط (J14)
                 </h2>
@@ -779,7 +779,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 left">
                 <h2 className="fw-bold text-end">
                   المستوى الاحترافي الأساسي (J15)
                 </h2>
@@ -821,7 +821,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 right">
                 <h2 className="fw-bold text-end">
                   المستوى الاحترافي المتقدم (J16)
                 </h2>
@@ -862,7 +862,7 @@ export default function Fees_material() {
                 </p>
               </li>
 
-              <li className="p-4">
+              <li className="p-4 left">
                 <h2 className="fw-bold text-end">باقة المستويات الاحترافية</h2>
 
                 <p>
@@ -899,7 +899,7 @@ export default function Fees_material() {
 
           <div className="How_to_pay academy">
             <h2 className="fw-bold">وسائل الدفع:</h2>
-            <div className="means">
+            <div className="means top">
               <div className="mean_1" onClick={handleRedirect}></div>
               <div className="mean_2" onClick={handleRedirect}></div>
               <div className="mean_3" onClick={handleRedirect}></div>
@@ -933,19 +933,19 @@ export default function Fees_material() {
           <p>
             <ul className="academy p-4">
               <span className="note fw-bold">ملاحظات: </span>
-              <li className="text-end">
+              <li className="text-end left">
                 عند وصول عدد الطلاب المسجلين في نفس المستوى إلى 11 طالبًا أو
                 أكثر، يتم تقسيم الطلاب على فصلين دراسيين أو أكثر، وفقًا لعدد
                 الطلاب المسجلين في نفس المستوى.
               </li>
-              <li className="text-end">
+              <li className="text-end right">
                 تتضمن جميع الرسوم الوصول إلى المواد الدراسية الرقمية، التمارين
                 التفاعلية، والدعم المباشر مع الأساتذة.
               </li>
-              <li className="text-end">
+              <li className="text-end left">
                 لا يمكن استرجاع الرسوم الدراسية بعد بدء الدورة الدراسية.
               </li>
-              <li className="text-end">
+              <li className="text-end right">
                 يمكن استرجاع 25% من الرسوم الدراسية عند الاشتراك في إحدى باقات
                 المستويات الشاملة.
               </li>

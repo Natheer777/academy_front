@@ -8,7 +8,7 @@ export default function Our_Teachers() {
   return (
     <>
       <div className="container   mb-5 Our_Teachers" id="Teachers">
-        <div className="academy mb-4 ">
+        <div className="academy mb-4 hidden">
 
         <h2 className=" fw-bold">أعضاء الهيئة التدريسية</h2>
         <p>
@@ -48,12 +48,12 @@ export default function Our_Teachers() {
         {/* <img className="w-75 d-flex  m-auto" src={Our_Teachers_img} alt="" /> */}
         <div className="row">
           <div className="col-lg-12">
-            <img className="w-100" src={Our_Teachers_img} alt="" />
+            <img className="w-100 hidden" src={Our_Teachers_img} alt="" />
           </div>
 
           <div className="col-lg-12">
             <ul>
-              <li className="academy position-relative mt-5 mb-5">
+              <li className="academy position-relative mt-5 mb-5 left">
                 <div className="img_teacher">
                   <h2>الأستاذة يوكو تاناكا:</h2>
                   <img className="face" src={Teacher_1} alt="" />
@@ -66,7 +66,7 @@ export default function Our_Teachers() {
                 </p>
               </li>
 
-              <li className="academy position-relative mt-5">
+              <li className="academy position-relative mt-5 right">
                 <h2>
                   الأستاذة ناهد المرعي
                   <span>(أستاذة في أكاديمية اللغة اليابانية)</span>
@@ -107,7 +107,7 @@ export default function Our_Teachers() {
                 </p>
               </li>
 
-              <li className="academy position-relative mt-5">
+              <li className="academy position-relative mt-5 left">
                 <h2>
                   الأستاذة ميئكو نشيئوتشي
                   {/* <span>
@@ -166,7 +166,7 @@ export default function Our_Teachers() {
                 </p>
               </li> */}
 
-              <li className="academy position-relative mt-5">
+              <li className="academy position-relative mt-5 right">
                 <h2>
                   الأستاذ خالد سليمان
                   <span>(مدير أكاديمية اللغة اليابانية)</span>

@@ -9,11 +9,14 @@
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* توزيع متساوٍ */
-  grid-template-rows: repeat(auto-fit, minmax(250px, 1fr)); /* توزيع متساوٍ */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* توزيع متساوٍ */
+  grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+  /* توزيع متساوٍ */
   gap: 10px;
   width: 100%;
-  height: calc(105vh - 110px); /* استخدام المساحة بالكامل */
+  height: calc(105vh - 110px);
+  /* استخدام المساحة بالكامل */
   justify-content: center;
   align-content: center;
   padding: 10px;
@@ -132,6 +135,7 @@
   padding: 5px !important;
   width: 35px;
   height: 35px;
+  background-color: var(--color--green) !important;
 }
 
 .FileContainer {
@@ -145,6 +149,7 @@
   overflow-y: auto;
   z-index: 1000;
   transition: transform 0.3s ease-in-out;
+  width: 50%;
 }
 
 /* تنسيق حاوية الدردشة */
@@ -159,6 +164,8 @@
   z-index: 1000;
   transition: transform 0.3s ease-in-out;
 }
+
+
 
 /* تنسيق شريط التمرير */
 #video-streams::-webkit-scrollbar {
@@ -296,6 +303,8 @@
   background-color: #3c4043;
   color: white;
   border-radius: 10px;
+  width: 52px;
+  font-weight: 600;
 }
 
 /* تنسيق الحرف الأول */
@@ -433,7 +442,7 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
-.top-scroll .video-container{
+.top-scroll .video-container {
   flex-shrink: 0;
   width: 200px;
   height: 100%;
@@ -441,17 +450,20 @@
   transition: transform 0.2s ease;
 }
 
-.top-scroll .video-container .select{
-  border: 2px solid #00ff00; 
+.top-scroll .video-container .select {
+  border: 2px solid #00ff00;
 }
 
 .video-grid.stack .top-scroll {
   display: flex;
 }
 
-video{width: 100%;
-height: 100%;
-background-color: black;}
+video {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
 .main-area.stack {
   flex: 1;
   display: grid;
@@ -462,10 +474,10 @@ background-color: black;}
   margin: 0 auto;
 }
 
-.main-area.stack .video-container{
+.main-area.stack .video-container {
   width: 100%;
   height: 100%;
-  aspect-ratio:  16/9;
+  aspect-ratio: 16/9;
 }
 
 /* الحفاظ على التنسيقات الحالية */
@@ -479,11 +491,11 @@ background-color: black;}
   grid-template-columns: 1fr;
 }
 
-.AllButtonVideo{
+.AllButtonVideo {
   position: absolute;
   bottom: 30px;
   left: 50%;
-  transform: translate(-50% , 0);
+  transform: translate(-50%, 0);
 }
 
 /* تنسيق الطبقة الشفافة التي تغطي الصفحة أثناء التحميل */
@@ -493,29 +505,35 @@ background-color: black;}
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8); /* خلفية شفافة */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* خلفية شفافة */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 1000; /* تأكد من ظهورها فوق كل العناصر */
+  z-index: 1000;
+  /* تأكد من ظهورها فوق كل العناصر */
 }
 
 /* تنسيق spinner التحميل */
 .loading-spinner {
-  border: 4px solid #f3f3f3; /* لون الخلفية */
-  border-top: 4px solid #3498db; /* لون spinner */
+  border: 4px solid #f3f3f3;
+  /* لون الخلفية */
+  border-top: 4px solid #3498db;
+  /* لون spinner */
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  animation: spin 1s linear infinite; /* دوران spinner */
+  animation: spin 1s linear infinite;
+  /* دوران spinner */
 }
 
 /* نص التحميل */
 .loading-overlay p {
   margin-top: 10px;
   font-size: 16px;
-  color: #333; /* لون النص */
+  color: #333;
+  /* لون النص */
 }
 
 /* تعريف دوران spinner */
@@ -523,7 +541,45 @@ background-color: black;}
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.FilesWeb button {
+  background-color: var(--color--green);
+}
+
+.FilesWeb a {
+  background-color: var(--color--green);
+}
+
+.FileContainer svg {
+  background-color: var(--color--green);
+}
+
+.buttonsFiles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.deleteFiles {
+  background-color: red !important;
+  border-radius: 20% !important;
+}
+
+.deleteFiles svg {
+  background-color: transparent !important;
+}
+
+.containerFile li h5 {
+  width: inherit;
+}
+@media screen and (max-width:750px) {
+  .FileContainer{
+    width: 100%;
   }
 }

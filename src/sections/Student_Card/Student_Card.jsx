@@ -1,76 +1,38 @@
 import './Student_Card.css'
-import { useState , useEffect } from 'react';
-import axios from 'axios';
+import { useEffect, useState } from 'react'
+
 export default function Student_Card() {
-  const [students, setStudents] = useState([]);
-
+  const [student, setStudent] = useState([])
   useEffect(() => {
-    // جلب البيانات من API
-    axios
-      .get("https://api.japaneseacademy.jp/allusers")
-      .then((response) => {
-        setStudents(response.data);
+    fetch('https://api.japaneseacademy.jp/allusers')
+      .then(response => response.json())
+      .then(data => {
+        const FilterStudnet = data.filter(user => user.role === 'student');
+        setStudent(FilterStudnet)
       })
-      .catch((error) => {
-        console.error("Error fetching students data:", error);
-      });
-  }, []);
-
-  // تصنيف الطلاب حسب المستوى
-  const levels = {
-    "المستوى الاحترافي (N1)": [],
-    "المستوى المتقدم جدًا (N2)": [],
-    "المستوى المتقدم (N3)": [],
-    "المستوى المتوسط (N4)": [],
-    "المستوى المبتدئ (N5)": [],
-  };
-
-  students.forEach((student) => {
-    if (levels[student.Level]) {
-      levels[student.Level].push(student);
-    }
-  });
-
+      .catch(error => console.error('error fetching data :', error))
+  }, [])
   return (
-    <div className="App">
-      <h1>بيانات الطلاب حسب المستوى</h1>
-
-      {/* عرض كروت الطلاب حسب المستوى */}
-      {Object.keys(levels).map((level) => (
-        <div key={level}>
-          <h2>{level}</h2>
-          <div className="cards-container">
-            {levels[level].map((student) => (
-              <StudentCard key={student.id} student={student} />
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-const StudentCard = ({ student }) => {
-  return (
-    <div className="card">
-      <h3>
-        {student.firstName} {student.lastName}
-      </h3>
-      <p>
-        <strong>البلد:</strong> {student.country}
-      </p>
-      <p>
-        <strong>العمر:</strong> {student.age}
-      </p>
-      <p>
-        <strong>الجنس:</strong> {student.gender}
-      </p>
-      <p>
-        <strong>المستوى:</strong> {student.Level}
-      </p>
-      <p>
-        <strong>البريد الإلكتروني:</strong> {student.email}
-      </p>
-    </div>
+    <>
+      <div className="cards-container container mt-5 mb-5">
+        {
+          student.map(student => (
+            <div
+            className='card'
+              key={student.id}
+            >
+              <h2>{student.firstName}</h2>
+              <p><strong>البلد:</strong> {student.country}</p>
+              <p><strong>العمر:</strong> {student.age}</p>
+              <p><strong>الجنس:</strong> {student.gender}</p>
+              <p><strong>مستوى التعليم:</strong> {student.educationLevel}</p>
+              <p><strong>مستوى اليابانية:</strong> {student.japaneseLevel}</p>
+              <p><strong>الهاتف:</strong> {student.phone}</p>
+              <p><strong>البريد الإلكتروني:</strong> {student.email}</p>
+            </div>
+          ))
+        }
+      </div>
+    </>
   )
 }

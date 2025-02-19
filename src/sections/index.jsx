@@ -37,5 +37,5 @@ export {default as Chat} from './chat/Chat'
 export {default as VideoCall} from './VideoCall/VideoCall'
 export {default as MeetingNow} from './VideoCall/MeetingNow'
 export {default as FileSharing } from './VideoCall/FileSharing '
-
+export {default as Reset_password } from './Reset_password/Reset_password'
 

@@ -4,7 +4,7 @@ export default function More_Services() {
   return (
     <>
       <div className="container More_Services" id="More_services">
-        <div className="row academy mt-5 mb-5">
+        <div className="row academy hidden mt-5 mb-5">
           <div className="col-lg-6 mt-5">
             <ul>
               <h2>خدمات إضافية:</h2>

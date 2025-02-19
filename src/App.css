@@ -102,6 +102,11 @@ ol ,ul{
     --sec--size: 25px;
 }
 
+html {
+  touch-action: manipulation;
+}
+
+
 @media (max-width: 768px) {
   :root {
     --sec--size: 20px; 
@@ -110,16 +115,16 @@ ol ,ul{
 
 
 
- /* .left {
+ .left {
   opacity: 0;
   filter: blur(4px);
-  transform: translateX(-2%);
+  transform: translateX(-4%);
   transition: all 1s;
 }
 .right {
   opacity: 0;
   filter: blur(4px);
-  transform: translateX(2%);
+  transform: translateX(4%);
   transition: all 1s;
 }
 .hidden {
@@ -137,10 +142,10 @@ ol ,ul{
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
-}  */
+} 
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 15px;
   height: 0px;
 }
 ::-webkit-scrollbar-thumb {

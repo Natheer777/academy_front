@@ -26,7 +26,7 @@ export default function Header() {
               </div>
             </div>
             <div className="col-lg-6">
-              <img className="w-100" src={img_header} alt="" />
+              <img loading="lazy" className="w-100" src={img_header} alt="" />
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="academy mt-5 mb-5 right row">
+        <div className="academy mt-5 mb-5 left row">
           <div className="col-lg-6 ">
             <h2 className="title_academy mb-3">رسالتنا:</h2>
             <div className="details">
@@ -55,7 +55,7 @@ export default function Header() {
             </div>
           </div>
           <div className="col-lg-6">
-            <img className="w-100" src={letter_img} alt="" />
+            <img loading="lazy" className="w-100" src={letter_img} alt="" />
           </div>
         </div>
 
@@ -64,12 +64,13 @@ export default function Header() {
             ماذا نقدم في أكاديمية اللغة اليابانية؟
           </h2>
           <img
-            className="w-75 m-auto d-flex mb-4"
+            className="w-75 m-auto d-flex mb-4 top"
             src={img_what_we_do}
-            alt=""
+            alt="" 
+            loading="lazy"
           />
           <ul className="ps-0">
-            <li className="academy mb-4">
+            <li className="academy mb-4 left">
               <h2>1. دورات تعليمية شاملة: </h2>
               <p>
                 تقوم{" "}
@@ -78,7 +79,7 @@ export default function Header() {
 
               </p>
             </li>
-            <li className="academy mb-4">
+            <li className="academy mb-4 right">
               <h2>2. تدريس تفاعلي عبر الإنترنت: </h2>
               <p>
                 في{" "}
@@ -87,7 +88,7 @@ export default function Header() {
 
               </p>
             </li>
-            <li className="academy mb-4">
+            <li className="academy mb-4 left">
               <h2>3. برنامج متكامل للتعلم الثقافي: </h2>
               <p>
                 إلى جانب تعليم اللغة اليابانية، نقوم في{" "}
@@ -96,7 +97,7 @@ export default function Header() {
 
               </p>
             </li>
-            <li className="academy mb-4">
+            <li className="academy mb-4 right">
               <h2>4. أساليب تدريس مبتكرة: </h2>
               <p>
                 في{" "}
@@ -105,7 +106,7 @@ export default function Header() {
 
               </p>
             </li>
-            <li className="academy mb-4">
+            <li className="academy mb-4 left">
               <h2>5. دروس خصوصية وجماعية: </h2>
               <p>
                 نقوم في{" "}
@@ -121,12 +122,12 @@ export default function Header() {
             لماذا تختار أكاديمية اللغة اليابانية؟
           </h2>
           <img
-            className="w-75 m-auto d-flex mb-4"
+            className="w-75 m-auto d-flex mb-4 top"
             src={img_why_we_choos}
             alt=""
           />
           <ul className="ps-0">
-            <li className="academy mb-4">
+            <li className="academy mb-4 left">
               <h2>1. فريق تدريس متخصص:</h2>
               <p>
                 يضم فريق{" "}
@@ -135,7 +136,7 @@ export default function Header() {
               </p>
             </li>
 
-            <li className="academy mb-4">
+            <li className="academy mb-4 right">
               <h2>2. مرونة في التعلم: </h2>
               <p>
                 في{" "}
@@ -145,7 +146,7 @@ export default function Header() {
               </p>
             </li>
 
-            <li className="academy mb-4">
+            <li className="academy mb-4 left">
               <h2>3. موارد تعليمية شاملة: </h2>
               <p>
                 بالإضافة إلى الدروس المباشرة، يحصل الطلاب في{" "}
@@ -155,7 +156,7 @@ export default function Header() {
               </p>
             </li>
 
-            <li className="academy mb-4">
+            <li className="academy mb-4 right">
               <h2>4. بيئة تعليمية داعمة:</h2>
               <p>
                 نسعى في{" "}
@@ -165,7 +166,7 @@ export default function Header() {
               </p>
             </li>
 
-            <li className="academy mb-4">
+            <li className="academy mb-4 left">
               <h2>5. شبكة تواصل مع المتعلمين والخبراء: </h2>
               <p>
                 من خلال{" "}

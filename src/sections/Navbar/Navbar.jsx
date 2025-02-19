@@ -11,6 +11,7 @@ import { FaMicrophoneLines } from "react-icons/fa6";
 import { FaCommentAlt } from "react-icons/fa";
 import { FaQuestionCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function Navbar() {
     localStorage.getItem("userEmail") ? { email: localStorage.getItem("userEmail") } : null
   );
   const [error, setError] = useState(null);
-
+  const Navigate = useNavigate()
   const fetchUserData = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -59,9 +60,9 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar navbar-expand-xl navbar-light  container">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img src={Logo} alt="" />
-        </a>
+        </Link>
         <div className="buttons_mobile">
           {!user ? (
             <div className="buttons">
@@ -75,35 +76,43 @@ export default function Navbar() {
           ) : (
             // عرض معلومات المستخدم إذا كان مسجل الدخول
             <div className="user-info">
-              <div className="user-info-buttons">
-                <span className="user-icon">
-                  {/* يمكنك إضافة أيقونة هنا */}
-                </span>
+            <div className="user-info-buttons">
+              <span className="user-icon">
+                {/* يمكنك إضافة أيقونة هنا */}
+              </span>
+              {role !== "teacher" && (
                 <Link to={`/Dash_users/${user.id}`}>
-                  <button className="register_nav">لوحة التحكم </button>
+                  <button className="register_nav">لوحة التحكم</button>
                 </Link>
-                <Link to="/">
+              )}
+              {role === "teacher" && (
+                <Link to="/Dash_Teachers">
+                  <button className="register_nav">لوحة تحكم</button>
+                </Link>
+              )}
+              <Link to="/">
                 <button
                   className="logout_nav register_nav"
                   onClick={() => {
-                    localStorage.removeItem("auth"); // إزالة التوكن من التخزين المحلي
-                    localStorage.removeItem("token"); // إزالة التوكن من التخزين المحلي
-                    localStorage.removeItem("userEmail"); // إزالة التوكن من التخزين المحلي
+                    localStorage.removeItem("auth");
+                    localStorage.removeItem("token");
+                    localStorage.removeItem("userEmail");
                     localStorage.removeItem("userId");
                     localStorage.removeItem("userRole");
                     localStorage.removeItem("firstName");
                     localStorage.removeItem("showVideoCall");
                     localStorage.removeItem("uid");
-                    sessionStorage.removeItem("auth"); // إزالة التوكن من sessionStorage
-                    
+                    sessionStorage.removeItem("auth");
+                    Navigate('/')
+                    window.location.reload()
                   }}
+                
                 >
                   تسجيل الخروج
                 </button>
-                  </Link>
-                {/* <p className="user-name">{user.firstName}</p> */}
-              </div>
+              </Link>
             </div>
+          </div>
           )}
         </div>
         <button
@@ -133,40 +142,46 @@ export default function Navbar() {
             ) : (
               // عرض معلومات المستخدم إذا كان مسجل الدخول
               <div className="user-info">
-                <span className="user-icon">
-                  {/* يمكنك إضافة أيقونة هنا */}
-                </span>
-                {/* <h4 className="user-name">{user.firstName}</h4> */}
+              <span className="user-icon">
+                {/* يمكنك إضافة أيقونة هنا */}
+              </span>
+              {role !== "teacher" && (
                 <Link to={`/Dash_users/${user.id}`}>
-                  <button className="register_nav">لوحة التحكم </button>
+                  <button className="register_nav">لوحة التحكم</button>
                 </Link>
-                <Link to="/">
+              )}
+              {role === "teacher" && (
+                <Link to="/Dash_Teachers">
+                  <button className="register_nav">لوحة تحكم</button>
+                </Link>
+              )}
+              <Link to="/">
                 <button
                   className="logout_nav register_nav"
                   onClick={() => {
-                    localStorage.removeItem("auth"); // إزالة التوكن من التخزين المحلي
-                    localStorage.removeItem("token"); // إزالة التوكن من التخزين المحلي
-                    localStorage.removeItem("userEmail"); // إزالة التوكن من التخزين المحلي
+                    localStorage.removeItem("auth");
+                    localStorage.removeItem("token");
+                    localStorage.removeItem("userEmail");
                     localStorage.removeItem("userId");
                     localStorage.removeItem("userRole");
                     localStorage.removeItem("firstName");
                     localStorage.removeItem("showVideoCall");
                     localStorage.removeItem("uid");
-                    sessionStorage.removeItem("auth"); 
-                   
-
+                    sessionStorage.removeItem("auth");
+                    Navigate('/')
+                    window.location.reload()
                   }}
                 >
                   تسجيل الخروج
                 </button>
-                  </Link>
-              </div>
+              </Link>
+            </div>
             )}
           </div>
           <ul className="navbar-nav">
             <div className="group">
               <div className="group_1">
-                <li className="nav-item active item1 hidden">
+                <li className="nav-item active ">
                   <Link className="nav-a" to="/">
                     <FaHome />
                     الصفحة الرئيسية
@@ -183,21 +198,21 @@ export default function Navbar() {
                 <GrServices /> محتويات الدروس
                 </a>
                 </li> */}
-                <li className="nav-item item4 hidden">
+                <li className="nav-item ">
                   <Link className="nav-a dropdown-item" to="/Teachers">
                     <FaUserGroup />
                     الهيئة التدريسية
                   </Link>
                 </li>
 
-                <li className="nav-item item2 hidden">
+                <li className="nav-item  ">
                   <Link className="nav-a" to="/Level_division">
                     <MdLibraryBooks />
                     المستويات الدراسية
                   </Link>
                 </li>
 
-                <li className="nav-item item4 hidden">
+                <li className="nav-item  ">
                   <Link className="nav-a dropdown-item" to="/Study_materials">
                     <FaBook />
                     المواد الدراسية
@@ -213,33 +228,33 @@ export default function Navbar() {
               */}
               </div>
               <div className="group_2">
-                <li className="nav-item item3 hidden">
+                <li className="nav-item  ">
                   <Link className="nav-a" to="/Fees">
                     <BsCashCoin />
                     الرسوم الدراسية
                   </Link>
                 </li>
 
-                <li className="nav-item item4 hidden">
+                <li className="nav-item  ">
                   <Link className="nav-a dropdown-item" to="/Questions">
                     <FaQuestionCircle />
                     الأسئلة الشائعة
                   </Link>
                 </li>
 
-                <li className="nav-item item4 hidden">
+                <li className="nav-item  ">
                   <Link className="nav-a dropdown-item" to="/Comments">
                     <FaCommentAlt />
                     آراء الطلاب
                   </Link>
                 </li>
-                <li className="nav-item item4 hidden">
+                <li className="nav-item  ">
                   <Link className="nav-a dropdown-item" to="/More_services">
                     <GrMoreVertical />
                     خدمات إضافية
                   </Link>
                 </li>
-                <li className="nav-item item4 hidden">
+                <li className="nav-item  ">
                   <Link className="nav-a dropdown-item" to="/Support">
                     <FaMicrophoneLines />
                     الدعم الفني
@@ -254,13 +269,7 @@ export default function Navbar() {
               </li> */}
               </div>
               <div className="group_3">
-                {role === "teacher" && (
-                  <li className="nav-item item4 DAsh_teacher">
-                    <Link className="nav-a dropdown-item" to="/Dash_Teachers">
-                      لوحة تحكم الأساتذة
-                    </Link>
-                  </li>
-                )}
+        
                 {/* <li className="nav-item item4 hidden">
               <Link className="nav-a dropdown-item" to="/Privacy">
               <MdPrivacyTip />

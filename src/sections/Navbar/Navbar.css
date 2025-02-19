@@ -5,40 +5,8 @@
   border-radius: 60px;
 }
 
-.item1 {
-  transition-delay: 100ms;
-}
-
-.item2 {
-  transition-delay: 200ms;
-}
-
-.item3 {
-  transition-delay: 300ms;
-}
-
-.item4 {
-  transition-delay: 400ms;
-}
-
-.item5 {
-  transition-delay: 500ms;
-}
-
-.item6 {
-  transition-delay: 600ms;
-}
-
-.item7 {
-  transition-delay: 700ms;
-}
-
-.item8 {
-  transition-delay: 800ms;
-}
-
-.item9 {
-  transition-delay: 900ms;
+.navbar-brand {
+  cursor: default;
 }
 
 .navbar {
@@ -75,6 +43,10 @@
     justify-content: center;
     display: flex;
     width: 9rem;
+  }
+
+  .navbar-nav {
+    padding-top: 10px;
   }
 
 }
@@ -131,10 +103,11 @@
 }
 
 @media screen and (max-width: 990px) {
-  .user-info button{
+  .user-info button {
     margin: 0 5px;
-    padding-bottom: 5.2px;
+    /* padding-bottom: 5.2px; */
   }
+
   .collapse {
     /* flex-direction: column-reverse !important; */
     /* display: flex; */
@@ -177,9 +150,9 @@
     display: block;
   }
 
-.buttons_mobile button{
-  margin: 10px;
-}
+  .buttons_mobile button {
+    margin: 10px;
+  }
 
   /* .buttons button{
     margin: 10px;
@@ -310,8 +283,8 @@
   justify-content: center;
 }
 
-.buttons_pc button{
-  margin:10px 0;
+.buttons_pc button {
+  margin: 10px 0;
 }
 
 
@@ -407,4 +380,14 @@
 
 .DAsh_teacher {
   border-bottom: none !important;
+}
+
+@media screen and (max-width:370px) {
+  .register_nav {
+    width: 5rem;
+  }
+
+  .login_nav {
+    width: 5rem;
+  }
 }

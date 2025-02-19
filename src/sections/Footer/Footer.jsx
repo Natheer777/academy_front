@@ -88,32 +88,32 @@ export default function Footer() {
 
                 <div className="group_footer">
                     <div className="group_1_footer">
-                      <li className=" active item1 hidden">
+                      <li className=" active">
                         <Link className="nav-a" to="/">
                           <FaHome />
                           الصفحة الرئيسية
                           <span className="sr-only"></span>
                         </Link>
                       </li>
-                      <li className=" item2 hidden">
+                      <li className="">
                         <Link className="nav-a" to="/Level_division">
                           <MdLibraryBooks />
                           المستويات الدراسية
                         </Link>
                       </li>
-                      <li className=" item3 hidden">
+                      <li className="">
                         <Link className="nav-a" to="/Fees">
                           <BsCashCoin />
                           الرسوم الدراسية
                         </Link>
                       </li>
-                      <li className=" item4 hidden">
+                      <li className="">
                         <Link to="/Teachers">
                           <FaUserGroup />
                           الهيئة التدريسية
                         </Link>
                       </li>
-                      <li className=" item4 hidden">
+                      <li className="">
                         <Link to="/Register">
                           <FaCashRegister />
                           طريقة التسجيل
@@ -121,33 +121,33 @@ export default function Footer() {
                       </li>
                     </div>
                     <div className="group_2_footer">
-                      <li className=" item4 hidden">
+                      <li className="">
                         <Link to="/Study_materials">
                           <FaBook />
                           المواد الدراسية
                         </Link>
                       </li>
 
-                      <li className=" item4 hidden">
+                      <li className="">
                         <Link to="/Questions">
                           <FaQuestionCircle />
                           الأسئلة الشائعة
                         </Link>
                       </li>
 
-                      <li className=" item4 hidden">
+                      <li className="">
                         <Link to="/Comments">
                           <FaCommentAlt />
                           آراء الطلاب
                         </Link>
                       </li>
-                      <li className=" item4 hidden">
+                      <li className="">
                         <Link to="/More_services">
                           <GrMoreVertical />
                           خدمات إضافية
                         </Link>
                       </li>
-                      <li className=" item4 hidden">
+                      <li className="">
                         <Link to="/Support">
                           <FaMicrophoneLines />
                           الدعم الفني
@@ -155,13 +155,13 @@ export default function Footer() {
                       </li>
                     </div>
                     <div className="group_3_footer">
-                      <li className="item4 hidden">
+                      <li className="">
                         <Link to="/Privacy">
                           <MdPrivacyTip />
                           سياسة الخصوصية
                         </Link>
                       </li>
-                      <li className="item4 hidden">
+                      <li className="">
                         <Link to="/Terms">
                           <FaHandshake />
                           شروط الاستخدام

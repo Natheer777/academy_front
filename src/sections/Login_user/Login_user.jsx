@@ -150,7 +150,9 @@ export default function Login_user() {
                 {isLoading ? "جارٍ تسجيل الدخول..." : "تسجيل الدخول"}
               </button>
               {error && <p className="error-message">{error}</p>}
+              <Link className="ForgetPassword" to='/Reset_Password'>
               <p className="ForgetPassword">هل نسيت كلمة المرور؟</p>
+              </Link>
               <p className="or">أو</p>
               <h5 className="createAcount text-center m-auto mt-4 Dont_have_account">
                 <Link to="/Register_account">

@@ -37,7 +37,6 @@ function Dash_user() {
       })
       .catch((error) => {
         console.error("Error fetching user data:", error);
-        alert("حدث خطأ أثناء جلب البيانات. حاول مرة أخرى.");
         navigate("/Login_users");
       });
   }, [navigate]);

@@ -26,6 +26,7 @@ import {
   CommetS,
   Term,
   Dash_Teachers,
+  Reset_Password
 } from "./pages/index";
 
 
@@ -84,26 +85,26 @@ function App() {
     return () => clearTimeout(timer); // تنظيف المؤقت
   }, []);
   /////////////////////////////////////////////
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     const observer = new IntersectionObserver((entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           entry.target.classList.add("show");
-  //         } else {
-  //           entry.target.classList.remove("show");
-  //         }
-  //       });
-  //     });
+  useEffect(() => {
+    setInterval(() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      });
 
-  //     const Elements = document.querySelectorAll(".left ,.right ,.top ,.hidden");
-  //     Elements.forEach((el) => observer.observe(el));
+      const Elements = document.querySelectorAll(".left ,.right ,.top ,.hidden");
+      Elements.forEach((el) => observer.observe(el));
 
-  //     return () => {
-  //       Elements.forEach((el) => observer.unobserve(el));
-  //     };
-  //   });
-  // }, []);
+      return () => {
+        Elements.forEach((el) => observer.unobserve(el));
+      };
+    });
+  }, []);
 
   ////////////////////////////////////
 
@@ -282,6 +283,7 @@ function App() {
               <Route path="/Terms" element={<Term />} />
               <Route path="/Dash_Teachers" element={<Dash_Teachers />} />
               <Route path="/MeetingNow" element={<MeetingNow />} />
+              <Route path="/Reset_Password" element={<Reset_Password />}/>
 
               <Route
                 path="/Dash"

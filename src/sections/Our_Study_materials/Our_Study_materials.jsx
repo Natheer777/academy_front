@@ -5,8 +5,8 @@ export default function Our_Study_materials() {
     <>
     <div className="container Our_Study_materials mt-5 mb-3" id='Study_materials'>
         <h2 className='fw-bold'>تشمل موادنا الدراسية:</h2>
-        <div className="academy">
-      <div className="row">
+        <div className="academy hidden">
+      <div className="row" >
         <div className="col-lg-6">
           <img className='w-100' src={img_material} alt="" />
         </div>
