@@ -8,6 +8,13 @@
 .form-container div {
   width: 100%;
 }
+select {
+  display: flex;
+  flex-direction: column;
+}
+option {
+  order: 0 !important; /* يمكنك تغيير الرقم هنا لتحديد ترتيب العنصر */
+} 
 
 label {
   display: block;

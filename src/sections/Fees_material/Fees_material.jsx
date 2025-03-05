@@ -1,23 +1,11 @@
 import "./Fees_material.css";
 import { useNavigate } from "react-router";
-import img_fees from "../../assets/Ai_img/_73a4c5e5-2e9c-40f3-8260-f94d1fb42248.jpg";
+import img_fees from "../../assets/Ai_img/73a4c5e5-2e9c-40f3-8260-f94d1fb42248.webp";
 import { Link } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
 
 export default function Fees_material() {
-  // const navigate = useNavigate();
-
-  // const handleRedirect = () => {
-  //   const token = localStorage.getItem("token");
-
-  //   if (token) {
-  //     // إذا كان المستخدم مسجل الدخول
-  //     navigate("/dashboard");
-  //   } else {
-  //     // إذا لم يكن مسجل الدخول
-  //     navigate("/login");
-  //   }
-  // };
+ 
   const navigate = useNavigate();
 
   const handleRedirect = () => {

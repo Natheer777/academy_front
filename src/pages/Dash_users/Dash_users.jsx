@@ -1,7 +1,7 @@
 
 
 
-import { Navbar, Dash_user, Footer, VideoCall } from "../../sections";
+import { Navbar, Dash_user, Footer, VideoCall, Level_Determination } from "../../sections";
 import { useState, useEffect } from "react";
 
 
@@ -42,6 +42,7 @@ export default function Dash_users() {
   return (
     <>
       <Navbar />
+      <Level_Determination />
       {showVideoCall && (
         <div>
           <h3 className="level_now academy m-4 text-center">المستوى الحالي: {userLevel}</h3>

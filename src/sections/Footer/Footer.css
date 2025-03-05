@@ -221,6 +221,7 @@ a {
 @media screen and (min-width:370px) and (max-width:551px){
   .group_footer{
     row-gap: 0px;
+    column-gap: 2px;
   }
 }
 .Footer_ul{

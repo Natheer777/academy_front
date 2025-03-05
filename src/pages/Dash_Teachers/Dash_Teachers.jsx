@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Dash_Teacher, Student_Card, Footer, Navbar, VideoCall } from "../../sections";
+import { Student_Card, Footer, Navbar, VideoCall } from "../../sections";
 
 export default function Dash_Teachers() {
   const [select, setSelect] = useState("");
@@ -59,7 +59,6 @@ export default function Dash_Teachers() {
       {/* عرض VideoCall فقط إذا تم اختيار مستوى */}
       {select && <VideoCall select={select} />}
 
-      <Dash_Teacher />
       <Student_Card />
       <Footer />
     </>

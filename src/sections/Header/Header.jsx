@@ -1,9 +1,9 @@
 import "./Header.css";
-import img_header from "../../assets/Ai_img/_c44c06cf-5421-4193-b9bb-cd39a86e679f.jpg";
-import img_what_we_do from "../../assets/imgheader/_dcdcbe88-4c28-4699-bb82-1d2754efe109.jpg";
-import img_why_we_choos from "../../assets/imgheader/_993a5416-0b18-4ddb-869a-a5b99532ffe5.jpg";
-import vision_img from "../../assets/imgheader/_fa1d11a6-f7f0-49d6-8ba9-5ea0abd69afe.jpg";
-import letter_img from "../../assets/imgheader/_9e9b0610-8fca-4c60-8d4d-d734e8182c46.jpg";
+import img_header from "../../assets/Ai_img/_c44c06cf-5421-4193-b9bb-cd39a86e679f.webp";
+import img_what_we_do from "../../assets/imgheader/_dcdcbe88-4c28-4699-bb82-1d2754efe109.webp";
+import img_why_we_choos from "../../assets/imgheader/_993a5416-0b18-4ddb-869a-a5b99532ffe5.webp";
+import vision_img from "../../assets/imgheader/_fa1d11a6-f7f0-49d6-8ba9-5ea0abd69afe.webp";
+import letter_img from "../../assets/imgheader/_9e9b0610-8fca-4c60-8d4d-d734e8182c46.webp";
 // import learn_img from '../../assets/imgheader/R (1).jpg'
 export default function Header() {
   return (

@@ -17,17 +17,6 @@ export default function Login_user() {
   const [rememberMe, setRememberMe] = useState(false);
 
   // ✅ عند تحميل الصفحة، تحقق من البيانات المحفوظة في localStorage
-  useEffect(() => {
-    const savedEmail = localStorage.getItem("savedEmail");
-    const savedPassword = localStorage.getItem("savedPassword");
-    const savedRememberMe = localStorage.getItem("rememberMe") === "true";
-
-    if (savedEmail && savedPassword && savedRememberMe) {
-      setEmail(savedEmail);
-      setPassword(savedPassword);
-      setRememberMe(false);
-    }
-  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -80,6 +69,19 @@ export default function Login_user() {
       });
   };
 
+  useEffect(() => {
+    const savedEmail = localStorage.getItem("savedEmail");
+    const savedPassword = localStorage.getItem("savedPassword");
+    const savedRememberMe = localStorage.getItem("rememberMe") === "true";
+
+    if (savedEmail && savedPassword && savedRememberMe) {
+      setEmail(savedEmail);
+      setPassword(savedPassword);
+      setRememberMe(true);
+    }
+  }, []);
+
+
   const handleInputChange = (event) => {
     const value = event.target.value;
     setDirection(/[\u0600-\u06FF]/.test(value) ? "rtl" : "ltr");
@@ -93,11 +95,11 @@ export default function Login_user() {
     <>
       <div className="container">
         <div className="row">
-          <div className="col-lg-6 col-md-6">
+          <div className="col-lg-6  col-md-6 m-auto">
             <form className="login-form academy container mt-5 mb-5" onSubmit={handleSubmit}>
               <img className="LoginImg" src={LoginImg} alt="" />
 
-              <h1 className="fw-bold m-auto">تسجيل الدخول</h1>
+              <h1 className="fw-bold m-auto mb-5">تسجيل الدخول</h1>
               <div className="w-100">
                 <label className="mb-3">البريد الإلكتروني:</label>
                 <input
@@ -111,7 +113,7 @@ export default function Login_user() {
                   style={{ direction: direction }}
                 />
               </div>
-              <div className="w-100 mb-3">
+              <div className="w-100 mb-3 mt-3">
                 <label className="mb-2">كلمة المرور:</label>
                 <div style={{ position: "relative" }}>
                   <input
@@ -154,7 +156,7 @@ export default function Login_user() {
               <p className="ForgetPassword">هل نسيت كلمة المرور؟</p>
               </Link>
               <p className="or">أو</p>
-              <h5 className="createAcount text-center m-auto mt-4 Dont_have_account">
+              <h5 className="w-100 createAcount text-center m-auto mt-4 Dont_have_account">
                 <Link to="/Register_account">
                   <button>إنشاء حساب جديد</button>
                 </Link>

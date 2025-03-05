@@ -1,4 +1,4 @@
-const CACHE_NAME = "vite-react-offline-cache-v225"; // تحديث رقم النسخة للكاش
+const CACHE_NAME = "vite-react-offline-cache-v254";//حديث رقم النسخة للكاش
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();

@@ -1,9 +1,13 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import { FaArrowAltCircleUp } from "react-icons/fa";
-
 import {
   About,
   Dash,
@@ -26,10 +30,8 @@ import {
   CommetS,
   Term,
   Dash_Teachers,
-  Reset_Password
+  Reset_Password,
 } from "./pages/index";
-
-
 
 // import {VerifyAccount , Register_account} from "./sections/index";
 import { useEffect, useState } from "react";
@@ -41,9 +43,11 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { Cookies, ScrollToTop } from "./components";
 import { MeetingNow } from "./sections";
+import { LevelTest } from "./sections/index";
+
+const API_URL = "https://api.japaneseacademy.jp/allusers";
 
 function App() {
-
   /////////////////////////////////////////////
 
   // const [cookiesAccepted, setCookiesAccepted] = useState(false);
@@ -71,9 +75,6 @@ function App() {
 
   ///////////////////////////////////
 
-
-
-
   /////////////////////////////////////////////
   const [isLoaded, setIsLoaded] = useState(false); // حالة التحكم في عرض الموقع
 
@@ -97,7 +98,9 @@ function App() {
         });
       });
 
-      const Elements = document.querySelectorAll(".left ,.right ,.top ,.hidden");
+      const Elements = document.querySelectorAll(
+        ".left ,.right ,.top ,.hidden"
+      );
       Elements.forEach((el) => observer.observe(el));
 
       return () => {
@@ -105,6 +108,8 @@ function App() {
       };
     });
   }, []);
+
+  ////////////////////////////////////
 
   ////////////////////////////////////
 
@@ -117,11 +122,10 @@ function App() {
         setLoading(false);
       }, 500); // تأخير بسيط لإعطاء إحساس بالسلاسة
     };
-  
+
     loadResources();
   }, []);
-  
-  
+
   ///////////////////////////////////
 
   const [showIcons, setShowIcons] = useState(false);
@@ -169,13 +173,12 @@ function App() {
 
   /////////
 
-
   const [hideSocial, setHideSocial] = useState(false);
 
   useEffect(() => {
     // التحقق من حالة العنصر في localStorage
-    const hide = localStorage.getItem('hideSocial');
-    if (hide === 'true') {
+    const hide = localStorage.getItem("hideSocial");
+    if (hide === "true") {
       setHideSocial(true);
     }
 
@@ -185,14 +188,61 @@ function App() {
     };
   }, []);
 
-
   const OpenPage = () => {
-    return localStorage.getItem("token") && localStorage.getItem("userEmail")
-  }
+    return localStorage.getItem("token") && localStorage.getItem("userEmail");
+  };
+
+  ////////////////////////////////////////////////////////
+
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const storedUserId = localStorage.getItem("userId");
+      if (!storedUserId) return;
+
+      try {
+        const response = await fetch(API_URL);
+        const users = await response.json();
+
+        // البحث عن بيانات المستخدم المطابقة للـ userId
+        const updatedUser = users.find((user) => user.id == storedUserId);
+        if (updatedUser) {
+          // جلب البيانات الحالية من localStorage
+          const currentShowVideoCall = localStorage.getItem("showVideoCall");
+          const currentUserRole = localStorage.getItem("userRole"); // يتم تخزين role باسم userRole
+
+          // تحديث localStorage فقط إذا تغيرت البيانات
+          if (
+            updatedUser.showVideoCall !== currentShowVideoCall ||
+            updatedUser.role !== currentUserRole // استخدام "role" من API وتخزينها كـ "userRole"
+          ) {
+            localStorage.setItem("showVideoCall", updatedUser.showVideoCall);
+            localStorage.setItem("userRole", updatedUser.role); // تصحيح الاسم
+
+            // تحديث الحالة لتحديث الواجهة
+            setUserData({
+              ...updatedUser,
+              userRole: updatedUser.role, // استخدام "userRole" بدلاً من "role"
+            });
+          }
+        }
+      } catch (error) {
+        console.error("خطأ في جلب البيانات:", error);
+      }
+    };
+
+    // جلب البيانات عند تحميل الصفحة
+    fetchUserData();
+
+    // جلب البيانات كل 30 ثانية لتحديثها تلقائيًا
+    const interval = setInterval(fetchUserData, 30000);
+
+    return () => clearInterval(interval); // تنظيف الـ Interval عند إلغاء تحميل المكون
+  }, []);
 
   return (
     <>
-
       {/* <div>
         {!cookiesAccepted && (
           <div className="cookie-banner">
@@ -224,7 +274,7 @@ function App() {
           <FaArrowAltCircleUp />
         </button>
 
-        <div className={`social ${hideSocial ? 'noneSocial' : ''}`}>
+        <div className={`social ${hideSocial ? "noneSocial" : ""}`}>
           <ul onClick={toggleIcons} style={{ cursor: "pointer" }}>
             <li className="click">
               <IoChatbubbleEllipsesOutline />
@@ -270,7 +320,9 @@ function App() {
               <Route path="/Fees" element={<Fees />} />
               <Route
                 path="/Register_account"
-                element={OpenPage() ? <Navigate to="/" /> : <Register_accounts />}
+                element={
+                  OpenPage() ? <Navigate to="/" /> : <Register_accounts />
+                }
               />
               <Route
                 path="/Login_users"
@@ -283,8 +335,8 @@ function App() {
               <Route path="/Terms" element={<Term />} />
               <Route path="/Dash_Teachers" element={<Dash_Teachers />} />
               <Route path="/MeetingNow" element={<MeetingNow />} />
-              <Route path="/Reset_Password" element={<Reset_Password />}/>
-
+              <Route path="/Reset_Password" element={<Reset_Password />} />
+              <Route path="/Level-test" element={<LevelTest />} />
               <Route
                 path="/Dash"
                 element={

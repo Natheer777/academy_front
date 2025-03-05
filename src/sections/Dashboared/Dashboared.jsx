@@ -311,6 +311,7 @@ export default function Dashboard() {
                       value={user.show}
                       onChange={(e) => updateUserShow(user.id, e.target.value)}
                     >
+                      <option></option>
                       <option value="do_not_show">Do not show</option>
                       <option value="level_one">Level One</option>
                       <option value="level_two">Level Two</option>

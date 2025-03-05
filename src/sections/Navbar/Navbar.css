@@ -52,17 +52,30 @@
 }
 
 .register_nav {
-  background-color: white;
+  background-color: var(--color--green);
   border: none;
   padding: 10px;
   border-radius: 20px;
-  color: var(--color--green);
+  color: white;
   width: 24vh;
   font-size: 18px;
   font-weight: bold;
-  border: 2px var(--color--green) solid;
+  border: 2px solid wheat;
   /* transition: 0.4s; */
 }
+.register_nav:hover{
+  background-color: white;
+  color: var(--color--green);
+  border: 2px solid var(--color--green);
+  transition: 0.9s;
+}
+.login_nav:hover{
+  background-color: white;
+  color: var(--color--green);
+  border: 2px solid var(--color--green);
+  transition: 0.9s;
+}
+
 
 /* .register_nav:hover{
     background-color: white;
@@ -76,7 +89,7 @@
 } */
 
 .login_nav {
-  background-color: white;
+  background-color: var(--color--green);
   transition: 0.4s;
   border: none;
   font-weight: bold;
@@ -85,8 +98,8 @@
   border-radius: 20px;
   font-size: 18px;
   color: white;
-  color: var(--color--green);
-  border: 2px solid var(--color--green);
+  /* color: var(--color--green); */
+  border: 2px solid wheat;
 }
 
 .dropdown-toggle::after {
@@ -94,7 +107,8 @@
 }
 
 .navbar-toggler {
-  margin-right: 8px;
+  top: 4px;
+  padding-left: 0;
 }
 
 .dropdown-menu a {
@@ -263,15 +277,6 @@
   }
 }
 
-@media screen and (max-width: 330px) {
-  .register_nav {
-    width: 5rem;
-  }
-
-  .login_nav {
-    width: 5.5rem;
-  }
-}
 
 .user-info-buttons {
   display: flex;
@@ -382,12 +387,34 @@
   border-bottom: none !important;
 }
 
-@media screen and (max-width:370px) {
+@media screen and (min-width:330px) and (max-width:380px) {
+  .register_nav {
+    width: 6rem;
+  }
+
+  .login_nav {
+    width: 6rem;
+  }
+
+  .navbar-brand img{
+    width: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 338px) {
   .register_nav {
     width: 5rem;
+    margin: 0 !important;
+    font-size: 12px;
+  }
+
+  .navbar-brand img{
+    width: 3rem;
   }
 
   .login_nav {
     width: 5rem;
+    margin: 0 !important;
+    font-size: 12px;
   }
 }

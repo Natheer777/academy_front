@@ -1,5 +1,5 @@
 import "./Supports.css";
-import img_Supports from "../../assets/Ai_img/_f43c3626-6c13-4a8d-82d5-697203e33105.jpg";
+import img_Supports from "../../assets/Ai_img/f43c3626-6c13-4a8d-82d5-697203e33105.webp";
 export default function Supports() {
   return (
     <>

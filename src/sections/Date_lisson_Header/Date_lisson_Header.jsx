@@ -1,55 +1,14 @@
 import "./Date_lisson_Header.css";
-import img_lisson from "../../assets/Ai_img/_9bf252b1-f72c-4ab3-b8d4-f9dbd6ba947f.jpg";
-import img_read from "../../assets/Level_div/_f8bcafb4-5b49-4da9-8bb3-92e3f75bce9e.jpg";
-import img_listen from "../../assets/Level_div/_20102b1c-f765-4316-b5ce-f6690c682010.jpg";
-import img_write from "../../assets/Level_div/_621b977e-14ea-4c95-96a0-b4487827a673.jpg";
-import img_talk from "../../assets/Level_div/_a8d31677-60f5-4507-9984-ebdced19d05a.jpg";
-// import { useNavigate } from "react-router";
-// import axios from "axios";
+
+import img_lisson from "../../assets/Level_div/9bf252b1-f72c-4ab3-b8d4-f9dbd6ba947f.webp";
+import img_read from "../../assets/Level_div/f8bcafb4-5b49-4da9-8bb3-92e3f75bce9e.webp";
+import img_listen from "../../assets/Level_div/20102b1c-f765-4316-b5ce-f6690c682010.webp";
+import img_write from "../../assets/Level_div/621b977e-14ea-4c95-96a0-b4487827a673.webp";
+import img_talk from "../../assets/Level_div/a8d31677-60f5-4507-9984-ebdced19d05a.webp";
+
 
 export default function Date_lisson_Header() {
-  // const navigate = useNavigate();
-
-  // const handleRedirect = async (Level) => {
-  //   const token = localStorage.getItem("token");
-  //   const id = localStorage.getItem("userId"); // جلب id من localStorage
-
-  //   if (token && id) {
-  //     try {
-  //       // إرسال طلب لتحديث المستوى في قاعدة البيانات
-  //       const response = await axios.put(
-  //         "https://api.japaneseacademy.online/api/update-level",
-  //         {
-  //           id, // استخدام id الذي تم جلبه من localStorage
-  //           Level,
-  //         },
-  //         {
-  //           headers: {
-  //             Authorization: token,
-  //           },
-  //         }
-  //       );
-
-  //       // تحقق من محتوى الاستجابة
-  //       console.log(response); // تحقق من شكل الاستجابة
-  //       if (response && response.data) {
-  //         alert(`تم تسجيلك في ${Level} بنجاح!`); // تأكد من أن الرسالة هي في response.data.message
-  //       } else {
-  //         alert("حدث خطأ في استلام البيانات.");
-  //       }
-  //     } catch (error) {
-  //       console.error("خطأ:", error);
-  //       if (error.response && error.response.status === 401) {
-  //         navigate("/Login_users");
-  //       } else {
-  //         alert("حدث خطأ أثناء التحديث");
-  //       }
-  //     }
-  //   } else {
-  //     navigate("/Login_users");
-  //   }
-  // };
-
+ 
   return (
     <div className="container Date_lisson_Header mt-5" id="Level_division">
       <div className="row academy hidden">
@@ -237,95 +196,7 @@ export default function Date_lisson_Header() {
         </div>
       </div>
 
-      {/* <div className="levels mt-5">
-        <ul className="right">
-          <h2 className="fw-bold mt-4">المستوى المبتدئ (N5):</h2>
-          <p>
-            في هذا المستوى، ستركز على أساسيات اللغة اليابانية، بما في ذلك تعلم
-            حروف الهيراغانا والكاتاكانا، وبعض الكانجي الأساسية. سيتم تقديمك
-            أيضًا لمفردات الحياة اليومية، مثل الأرقام، التحيات، والألوان، مما
-            يساعدك على بناء أساس قوي.
-            <br />
-            المحتوى يشمل:
-          </p>
-          <li> 100 مفردة يابانية أساسية.</li>
-          <li>تدريبات على النطق السليم.</li>
-          <li>قواعد الجملة الأساسية (فعل، فاعل، مفعول).</li>
-          <li>جلسات حوار بسيطة (مع تطبيقات عملية).</li>
-          <button onClick={() => handleRedirect("المستوى المبتدئ (N5)")}>
-            اشترك الآن
-          </button>
-        </ul>
-        <ul className="top">
-          <h2 className="fw-bold mt-4">المستوى المتوسط (N4):</h2>
-          <p>
-            هنا تتوسع في قواعد اللغة وتتعمق في تعلم حروف الكانجي الأكثر تعقيدًا.
-            ستتعلم تكوين جمل أكثر تعقيدًا وستبدأ في استخدام اللغة في مواقف
-            حقيقية مثل التحدث عن العائلة، العمل، والهوايات.
-            <br />
-            المحتوى يشمل:
-          </p>
-          <li> 300 مفردة يابانية إضافية.</li>
-          <li> كتابة وقراءة نصوص قصيرة.</li>
-          <li>تدريبات على فهم النصوص (استماع وقراءة).</li>
-          <li>تدريبات تفاعلية على الحوار اليومي.</li>
-          <button onClick={() => handleRedirect("المستوى المتوسط (N4)")}>
-            اشترك الآن
-          </button>
-        </ul>
-        <ul className="left">
-          <h2 className="fw-bold mt-4">المستوى المتقدم (N3):</h2>
-          <p>
-            في هذا المستوى، يتم التركيز على تطوير مهارات الاستماع والقراءة بشكل
-            أكبر، مما يساعدك على التعامل مع نصوص ومحادثات أكثر تعقيدًا. ستتمكن
-            من التواصل في مواضيع أكثر تنوعًا مثل السياسة، الأعمال، والثقافة
-            اليابانية.
-            <br />
-            المحتوى يشمل:
-          </p>
-          <li>600 مفردة جديدة.</li>
-          <li> كتابة مقالات قصيرة باللغة اليابانية.</li>
-          <li>قراءة نصوص إخبارية وقصص يابانية.</li>
-          <li>جلسات نقاش مفتوحة.</li>
-          <button onClick={() => handleRedirect("المستوى المتقدم (N3)")}>
-            اشترك الآن
-          </button>
-        </ul>
-        <ul className="hidden">
-          <h2 className="fw-bold mt-4">المستوى المتقدم جدًا (N2):</h2>
-          <p>
-            يُعد هذا المستوى نقلة نوعية حيث ستركز على المفردات المتخصصة وتطوير
-            قدرتك على التفاعل في بيئات عمل يابانية. ستتعلم كيف تكتب رسائل البريد
-            الإلكتروني، التقارير، وتقديم عروض تقديمية باللغة اليابانية.
-            <br />
-            المحتوى يشمل:
-          </p>
-          <li> 1000 مفردة متقدمة.</li>
-          <li> تحليل نصوص ثقافية وأدبية يابانية.</li>
-          <li> محادثات يومية ومهنية مع اليابانيين.</li>
-          <button onClick={() => handleRedirect("المستوى المتقدم جدًا (N2)")}>
-            اشترك الآن
-          </button>
-        </ul>
-        <ul className="hidden">
-          <h2 className="fw-bold mt-4">المستوى الاحترافي (N1):</h2>
-          <p>
-            هذا هو مستوى الإتقان، حيث ستتمكن من فهم اللغة اليابانية بشكل شامل
-            واستخدامها بطلاقة في البيئات الأكاديمية والمهنية المعقدة. ستكون
-            قادرًا على قراءة الكتب العلمية والأدبية، كتابة مقالات طويلة، والتحدث
-            في المؤتمرات والندوات.
-            <br />
-            المحتوى يشمل:
-          </p>
-          <li> 2000 مفردة متقدمة جدًا.</li>
-          <li> تدريبات على النقاشات الأكاديمية والمهنية.</li>
-          <li> كتابة أبحاث وتقارير احترافية.</li>
-          <li> تحليل نصوص أدبية يابانية قديمة وحديثة.</li>
-          <button onClick={() => handleRedirect("المستوى الاحترافي (N1)")}>
-            اشترك الآن
-          </button>
-        </ul>
-      </div> */}
+    
     </div>
   );
 }

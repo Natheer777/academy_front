@@ -1,0 +1,56 @@
+.Level_Determination .row {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.Level_Determination h2 {
+  color: var(--color--green);
+  font-weight: bold;
+  margin-bottom: 60px;
+
+}
+.Level_Determination p {
+  font-size: var(--sec--size);
+  margin-bottom: 20px;
+}
+.Level_Determination button {
+  padding: 10px;
+  border: 2px solid white;
+  background-color: var(--color--green);
+  color: white;
+  font-size: var(--sec--size);
+  border-radius: 10px;
+}
+.LevelTest p {
+    font-size: var(--sec--size);
+    font-weight: bold;
+    color: var(--color--green);
+    direction: ltr;
+}
+.LevelTest h2 {
+  direction: ltr;
+  font-weight: bold;
+}
+.LevelTest h1{
+  direction: ltr;
+  font-weight: bold;
+}
+.LevelTest input[type="radio"] {
+  height: 30px;
+  width: auto;
+  color: var(--color--green);
+}
+.LevelTest label {
+  margin-top: 40px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  gap: 15px;
+  /* justify-content: space-between; */
+}
+.LevelTest .CardTest {
+  border-bottom: 2px solid var(--color--green);
+  width: 90%;
+  margin: auto;
+}
+

@@ -1,8 +1,8 @@
 import "./Our_Teachers.css";
-import Teacher_1 from "../../assets/Teacher/OIP.jpg";
+import Teacher_1 from "../../assets/Teacher/OIP.webp";
 import Teacher_2 from "../../assets/Teacher/photo_2024-10-30_14-24-02.webp";
-import Teacher_3 from '../../assets/Teacher/photo_2024-11-03_14-14-22.jpg'
-import Our_Teachers_img from "../../assets/Ai_img/_d0260767-0c90-4923-9381-3f0fb9b206d2.jpg";
+import Teacher_3 from '../../assets/Teacher/photo_2024-11-03_14-14-22.webp'
+import Our_Teachers_img from "../../assets/Teacher/_d0260767-0c90-4923-9381-3f0fb9b206d2.webp";
 
 export default function Our_Teachers() {
   return (
